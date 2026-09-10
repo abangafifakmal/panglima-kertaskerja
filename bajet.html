@@ -140,11 +140,11 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     <div>
       <p class="org">PSSGCSM Zon Johor Bahru · Perkampungan Perdana Panglima 2026</p>
       <h1>Kalkulator Bajet</h1>
-      <p class="sub">Ubah bilangan peserta, AJK, penguji dan VVIP — dorm, makanan, jumlah kos, permohonan Induk dan titik seimbang dikira semula serta-merta. Kadar tempat mengikut sebut harga FELDA Residence Tanjung Leman, 10 September 2026. Tetapan asal ialah Draf V5: 6 hidangan, yuran RM 220, bengkung dikutip berasingan.</p>
+      <p class="sub">Ubah bilangan peserta, AJK, penguji dan VVIP — dorm, dewan, jumlah kos, permohonan Induk dan titik seimbang dikira semula serta-merta. Kadar tempat mengikut sebut harga FELDA Residence Tanjung Leman, 10 September 2026. Tetapan asal ialah Draf V6: yuran RM 130 tanpa makanan; makanan diuruskan dengan katering luar dan dikira berasingan setelah harga diperoleh.</p>
     </div>
     <div class="acts">
       <a class="btn" href="index.html" style="text-decoration:none">← Kertas kerja</a>
-      <button class="btn" id="btnReset" type="button">Set semula V5</button>
+      <button class="btn" id="btnReset" type="button">Set semula V6</button>
       <button class="btn" id="btnCopy" type="button">Salin pautan senario</button>
       <button class="btn primary" id="btnPresent" type="button">Mod bentang</button>
     </div>
@@ -171,19 +171,9 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
       </section>
 
       <section class="panel">
-        <h2>Hidangan &amp; dewan</h2>
-        <p class="hint">Resort mengenakan kadar sehidangan seorang, jadi setiap hidangan boleh dibuang.</p>
+        <h2>Dewan &amp; malam</h2>
+        <p class="hint">Makanan tidak dimasukkan — katering luar diuruskan berasingan, harga belum diperoleh.</p>
         <div class="stack" style="gap:2px">
-          <label class="chk"><input type="checkbox" id="m_l1"> Hari 1 · makan tengah hari <small class="rlL">RM 17</small></label>
-          <label class="chk"><input type="checkbox" id="m_d1"> Hari 1 · makan malam <small class="rlL">RM 17</small></label>
-          <label class="chk"><input type="checkbox" id="m_s1"> Hari 1 · supper <small class="rsL">RM 7</small></label>
-          <label class="chk"><input type="checkbox" id="m_b2"> Hari 2 · sarapan <small class="rbL">RM 10</small></label>
-          <label class="chk"><input type="checkbox" id="m_l2"> Hari 2 · makan tengah hari <small class="rlL">RM 17</small></label>
-          <label class="chk"><input type="checkbox" id="m_d2"> Hari 2 · makan malam <small class="rlL">RM 17</small></label>
-          <label class="chk"><input type="checkbox" id="m_s2"> Hari 2 · supper <small class="rsL">RM 7</small></label>
-          <label class="chk"><input type="checkbox" id="m_b3"> Hari 3 · sarapan <small class="rbL">RM 10</small></label>
-          <label class="chk"><input type="checkbox" id="m_l3"> Hari 3 · jamuan penutup <small class="rlL">RM 17</small></label>
-          <div class="sep" style="margin:8px 0"></div>
           <div class="ctl"><label for="dh">Dewan Tenggaroh 5<small>hari × RM <span id="dewLab">500</span></small></label><input type="number" id="dh" min="0" max="3" step="1"></div>
           <div class="ctl"><label for="mlm">Bilangan malam</label><input type="number" id="mlm" min="1" max="4" step="1"></div>
         </div>
@@ -208,10 +198,6 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
           <div class="ctl"><label for="r16">Dorm 16 katil</label><input type="number" id="r16" min="0" step="10"></div>
           <div class="ctl"><label for="r8">Dorm 8 katil</label><input type="number" id="r8" min="0" step="10"></div>
           <div class="ctl"><label for="rdew">Dewan sehari</label><input type="number" id="rdew" min="0" step="50"></div>
-          <p class="grp">Makanan (sehidangan seorang)</p>
-          <div class="ctl"><label for="rb">Sarapan</label><input type="number" id="rb" min="0" step="1"></div>
-          <div class="ctl"><label for="rl">Makan tengah hari / malam</label><input type="number" id="rl" min="0" step="1"></div>
-          <div class="ctl"><label for="rs">Supper</label><input type="number" id="rs" min="0" step="1"></div>
           <p class="grp">Keperluan program</p>
           <div class="ctl"><label for="sag">Saguhati penguji<small>seorang</small></label><input type="number" id="sag" min="0" step="10"></div>
           <div class="ctl"><label for="sij">Sijil<small>sekeping · peserta &amp; penguji</small></label><input type="number" id="sij" min="0" step="0.5"></div>
@@ -230,7 +216,7 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
       <div class="tiles" id="kpi">
         <div class="tile"><div class="lab">Kehadiran</div><div class="val" id="k_pax">—</div><div class="note" id="k_paxn"></div></div>
         <div class="tile"><div class="lab">Jumlah kos</div><div class="val"><small>RM</small><span id="k_tot">—</span></div><div class="note" id="k_totn"></div></div>
-        <div class="tile"><div class="lab">1 · Kos tempat seorang</div><div class="val"><small>RM</small><span id="k_pp">—</span></div><div class="note" id="k_ppn">dorm + makan + dewan</div></div>
+        <div class="tile"><div class="lab">1 · Kos tempat seorang</div><div class="val"><small>RM</small><span id="k_pp">—</span></div><div class="note" id="k_ppn">dorm + dewan</div></div>
         <div class="tile"><div class="lab">2 · Yuran program</div><div class="val"><small>RM</small><span id="k_yp">—</span></div><div class="note" id="k_ypn"></div></div>
         <div class="tile"><div class="lab">3 · Peserta bayar</div><div class="val"><small>RM</small><span id="k_fee">—</span></div><div class="note" id="k_feen"></div></div>
         <div class="tile hi"><div class="lab">Mohon Induk</div><div class="val"><small>RM</small><span id="k_induk">—</span></div><div class="note" id="k_indukn"></div></div>
@@ -258,7 +244,7 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
         <svg id="sens" viewBox="0 0 760 240" role="img" aria-label="Carta sensitiviti"></svg>
       </div>
 
-      <div class="foot"><span>Kadar tempat: sebut harga FELDA Residence Tanjung Leman 0120-2026/FRTL/Q, termasuk caj perkhidmatan dan SST.</span><span>Keperluan program: anggaran pasaran.</span><span>Tidak dikira: pengangkutan (zon), deposit keselamatan RM 50 seunit (dikembalikan), peralatan sedia ada Zon.</span></div>
+      <div class="foot"><span>Kadar tempat: sebut harga FELDA Residence Tanjung Leman 0120-2026/FRTL/Q, termasuk caj perkhidmatan dan SST.</span><span>Keperluan program: anggaran pasaran.</span><span>Tidak dikira: makanan (katering luar, harga belum diperoleh — dikutip berasingan), pengangkutan (zon), deposit keselamatan RM 50 seunit (dikembalikan), peralatan sedia ada Zon.</span></div>
     </main>
   </div>
 </div>
@@ -266,9 +252,9 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
 <script>
 (function(){
   var D = {pl:32,pp:8,ajk:9,pg:6,ajkp:0,share:0,vv:6,vvper:3,vvtype:170,
-    m_l1:0,m_d1:1,m_s1:0,m_b2:1,m_l2:1,m_d2:1,m_s2:0,m_b3:1,m_l3:1,dh:2,mlm:2,
-    fee:220,feemode:'tetap',belt:0,oil:50,induk:'',
-    r16:500,r8:300,rdew:500,rb:10,rl:17,rs:7,sag:50,sij:3,cen:40,lan:3,ban:120,buk:150,air:150,gel:1,gelr:200};
+    dh:2,mlm:2,
+    fee:130,feemode:'tetap',belt:0,oil:50,induk:'',
+    r16:500,r8:300,rdew:500,sag:50,sij:3,cen:40,lan:3,ban:120,buk:150,air:150,gel:1,gelr:200};
   var S = {};
   var $ = function(id){return document.getElementById(id)};
   var fmt = function(n){n=Math.round(n);var s=Math.abs(n).toLocaleString('en-MY');return (n<0?'−':'')+s};
@@ -278,11 +264,11 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     try{
       var q = new URLSearchParams(location.search);
       if([...q.keys()].length){ q.forEach(function(v,k){ if(k in D) o[k]= (k==='induk'? v : (isNaN(+v)?v:+v)); }); }
-      else { var ls = localStorage.getItem('panglima-bajet-v5'); if(ls){ Object.assign(o, JSON.parse(ls)); } }
+      else { var ls = localStorage.getItem('panglima-bajet-v6'); if(ls){ Object.assign(o, JSON.parse(ls)); } }
     }catch(e){}
     S = o;
   }
-  function save(){ try{ localStorage.setItem('panglima-bajet-v5', JSON.stringify(S)); }catch(e){} }
+  function save(){ try{ localStorage.setItem('panglima-bajet-v6', JSON.stringify(S)); }catch(e){} }
 
   function bind(){
     Object.keys(D).forEach(function(k){
@@ -316,11 +302,6 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
 
   function compute(s){
     s=s||S;
-    var mealsHeavy=['m_l1','m_d1','m_l2','m_d2','m_l3'].filter(function(k){return s[k]}).length;
-    var mealsB=['m_b2','m_b3'].filter(function(k){return s[k]}).length;
-    var mealsS=['m_s1','m_s2'].filter(function(k){return s[k]}).length;
-    var mealPP=mealsHeavy*s.rl+mealsB*s.rb+mealsS*s.rs;
-    var nMeals=mealsHeavy+mealsB+mealsS;
     var peserta=s.pl+s.pp, staff=s.ajk+s.pg, staffM=Math.max(0,staff-s.ajkp), staffF=Math.min(staff,s.ajkp);
     var pax=peserta+staff+s.vv;
     // dorms
@@ -336,11 +317,11 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     else { dormPeserta = dormM + dormF*(s.pp/Math.max(1,s.pp+staffF)); dormStaff = dormS + dormF*(staffF/Math.max(1,s.pp+staffF)); }
     var vvRooms=s.vv>0?Math.ceil(s.vv/s.vvper):0; var vvRoomCost=vvRooms*s.vvtype*nights;
     var dewan=s.dh*s.rdew;
-    var A = dormPeserta + peserta*mealPP + dewan;
+    var A = dormPeserta + dewan;
     var D0 = (peserta+s.pg)*s.sij + (s.vv+s.pg)*s.cen + pax*s.lan + s.ban + s.buk + s.air + (s.gel? s.gelr:0);
     var fee = (s.feemode==='auto' && peserta>0) ? Math.ceil((A+D0)/peserta/10)*10 : s.fee;
     var B = peserta*(s.belt+s.oil);
-    var C = dormStaff + staff*mealPP + vvRoomCost + s.vv*mealPP + s.pg*s.sag;
+    var C = dormStaff + vvRoomCost + s.pg*s.sag;
     var gel = s.gel? s.gelr:0;
     var D_ = (peserta+s.pg)*s.sij + (s.vv+s.pg)*s.cen + pax*s.lan + s.ban + s.buk + s.air + gel;
     var total=A+B+C+D_;
@@ -350,7 +331,7 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     var bal = incFee + incPass + induk - total;
     var perPesertaVenue = peserta? (A/peserta):0;
     var breakEvenFee = peserta? ((A+D_+C-induk)/peserta):0;
-    return {fee:fee,mealPP:mealPP,nMeals:nMeals,peserta:peserta,staff:staff,staffM:staffM,staffF:staffF,pax:pax,aM:aM,aF:aF,aS:aS,dormM:dormM,dormF:dormF,dormS:dormS,dormPeserta:dormPeserta,dormStaff:dormStaff,vvRooms:vvRooms,vvRoomCost:vvRoomCost,dewan:dewan,A:A,B:B,C:C,D:D_,gel:gel,total:total,induk:induk,indukAuto:indukAuto,incFee:incFee,incPass:incPass,bal:bal,perPesertaVenue:perPesertaVenue,breakEvenFee:breakEvenFee,nights:nights};
+    return {fee:fee,peserta:peserta,staff:staff,staffM:staffM,staffF:staffF,pax:pax,aM:aM,aF:aF,aS:aS,dormM:dormM,dormF:dormF,dormS:dormS,dormPeserta:dormPeserta,dormStaff:dormStaff,vvRooms:vvRooms,vvRoomCost:vvRoomCost,dewan:dewan,A:A,B:B,C:C,D:D_,gel:gel,total:total,induk:induk,indukAuto:indukAuto,incFee:incFee,incPass:incPass,bal:bal,perPesertaVenue:perPesertaVenue,breakEvenFee:breakEvenFee,nights:nights};
   }
 
   function dormTxt(a){ var p=[]; if(a.u16) p.push(a.u16+' × 16 katil'); if(a.u8) p.push(a.u8+' × 8 katil'); return p.length?p.join(', '):'tiada'; }
@@ -422,50 +403,47 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     var feeEl=$('fee'); feeEl.disabled=(S.feemode==='auto'); feeEl.value=r.fee; $('feeHint').textContent = S.feemode==='auto' ? 'dikira automatik daripada kos' : 'seorang peserta';
     var s=S;
     $('k_pax').textContent=r.pax; $('k_paxn').textContent=r.peserta+' peserta · '+r.staff+' AJK & penguji · '+s.vv+' VVIP';
-    $('k_tot').textContent=fmt(r.total); $('k_totn').textContent='termasuk RM '+fmt(r.B)+(s.belt>0?' bengkung & Mandi Minyak':' Mandi Minyak (salur terus)');
+    $('k_tot').textContent=fmt(r.total); $('k_totn').textContent='termasuk RM '+fmt(r.B)+(s.belt>0?' bengkung & Mandi Minyak':' Mandi Minyak (salur terus)')+' · tanpa makanan';
     var nP=Math.max(1,r.peserta), dormPP=r.dormPeserta/nP, dewPP=r.dewan/nP, dPP=r.D/nP, pen=r.fee-(r.perPesertaVenue+dPP);
-    $('k_pp').textContent=fmt(r.perPesertaVenue); $('k_ppn').textContent='tidur '+fmt(dormPP)+' + makan '+fmt(r.mealPP)+' + dewan '+fmt(dewPP);
+    $('k_pp').textContent=fmt(r.perPesertaVenue); $('k_ppn').textContent='tidur '+fmt(dormPP)+' + dewan '+fmt(dewPP)+' · makanan berasingan';
     $('k_yp').textContent=fmt(r.fee); $('k_ypn').textContent='tempat '+fmt(r.perPesertaVenue)+' + barang '+fmt(dPP)+(pen>=0?' + penampan '+fmt(pen):' — kurang '+fmt(-pen));
-    $('k_fee').textContent=fmt(r.fee+s.belt+s.oil); $('k_feen').textContent='yuran '+fmt(r.fee)+' + Mandi Minyak '+fmt(s.oil)+(s.belt>0?' + bengkung '+fmt(s.belt):' · bengkung RM 80 kemudian');
+    $('k_fee').textContent=fmt(r.fee+s.belt+s.oil); $('k_feen').textContent='yuran '+fmt(r.fee)+' + Mandi Minyak '+fmt(s.oil)+(s.belt>0?' + bengkung '+fmt(s.belt):'')+' · makanan & bengkung RM 80 kemudian';
     $('k_induk').textContent=fmt(r.induk); $('k_indukn').textContent=(s.induk===''?'ikut kos AJK, penguji & VVIP':'ditetapkan · kos sebenar RM '+fmt(r.indukAuto));
     $('k_bal').textContent=fmt(r.bal);
     var tb=$('t_bal'); tb.classList.remove('good','bad'); tb.classList.add(r.bal>=0?'good':'bad');
     $('k_baln').textContent= r.bal>=0 ? 'lebihan · yuran titik seimbang RM '+fmt(r.breakEvenFee) : 'kekurangan · yuran perlu RM '+fmt(r.breakEvenFee)+' atau tambah '+fmt(Math.abs(r.bal))+' dari Induk';
     $('shareNote').textContent = s.share ? 'jimat dorm' : '';
-    document.querySelectorAll('.rlL').forEach(function(e){e.textContent='RM '+fmt(s.rl)}); document.querySelectorAll('.rbL').forEach(function(e){e.textContent='RM '+fmt(s.rb)}); document.querySelectorAll('.rsL').forEach(function(e){e.textContent='RM '+fmt(s.rs)});
     $('sagLab').textContent=s.sag; $('dewLab').textContent=s.rdew; $('gelLab').textContent=s.gelr;
 
     // resit seorang peserta
     (function(){
       var n=Math.max(1,r.peserta);
-      var parts=[['Tidur',r.dormPeserta/n,'rs1'],['Makan',r.mealPP,'rs2'],['Dewan',r.dewan/n,'rs3'],['Barang',r.D/n,'rs4']];
+      var parts=[['Tidur',r.dormPeserta/n,'rs1'],['Dewan',r.dewan/n,'rs3'],['Barang',r.D/n,'rs4']];
       var used=parts.reduce(function(a,p){return a+p[1]},0); var pen=r.fee-used;
       if(pen>=0) parts.push(['Penampan',pen,'rs5']); else parts.push(['Kurang',-pen,'rs6']);
       var tot=parts.reduce(function(a,p){return a+p[1]},0)||1, h='';
       parts.forEach(function(p){ var w=p[1]/tot*100; if(p[1]<=0) return; h+='<div class="seg '+p[2]+'" style="width:'+w.toFixed(1)+'%" title="'+p[0]+' RM '+fmt(p[1])+'"><b>'+fmt(p[1])+'</b>'+(w>9?'<span>'+p[0]+'</span>':'')+'</div>'; });
       $('resit').innerHTML=h;
-      $('resitn').textContent='Yuran program RM '+fmt(r.fee)+' = tidur RM '+fmt(r.dormPeserta/n)+' + makan RM '+fmt(r.mealPP)+' ('+r.nMeals+' hidangan) + dewan RM '+fmt(r.dewan/n)+' + barang RM '+fmt(r.D/n)+(pen>=0?' + penampan RM '+fmt(pen):' — kekurangan RM '+fmt(-pen)+' seorang')+'. Dikutip berasingan: Mandi Minyak RM '+fmt(s.oil)+(s.belt>0?', bengkung RM '+fmt(s.belt):'; bengkung RM 80 selepas keputusan')+'.';
+      $('resitn').textContent='Yuran program RM '+fmt(r.fee)+' = tidur RM '+fmt(r.dormPeserta/n)+' + dewan RM '+fmt(r.dewan/n)+' + barang RM '+fmt(r.D/n)+(pen>=0?' + penampan RM '+fmt(pen):' — kekurangan RM '+fmt(-pen)+' seorang')+'. Dikutip berasingan: Mandi Minyak RM '+fmt(s.oil)+(s.belt>0?', bengkung RM '+fmt(s.belt):'; bengkung RM 80 selepas keputusan')+'; makanan mengikut harga katering luar (belum diperoleh).';
     })();
 
     $('dorms').innerHTML=dormCards(r);
 
-    var mealTxt=r.nMeals+' hidangan × RM '+fmt(r.mealPP);
     var t='';
     t+=row('A','<strong>Kos peserta</strong> — '+r.peserta+' orang','','',r.A,'grp');
     if(s.share) t+=row('A1','Dorm lelaki berkongsi — bahagian peserta ('+s.pl+' daripada '+(s.pl+r.staffM)+')','','',r.dormM*(s.pl/Math.max(1,s.pl+r.staffM)));
     else t+=row('A1','Dorm peserta lelaki — '+dormTxt(r.aM)+' × '+r.nights+' malam','','',r.dormM);
     t+=row('A2','Dorm wanita — '+dormTxt(r.aF)+' × '+r.nights+' malam'+(r.staffF?' (bahagian peserta)':''),'','',r.dormF*(s.pp/Math.max(1,s.pp+r.staffF)));
-    t+=row('A3','Makanan peserta — '+mealTxt,r.peserta,r.mealPP,r.peserta*r.mealPP);
-    t+=row('A4','Dewan Tenggaroh 5 — '+s.dh+' hari',s.dh,s.rdew,r.dewan);
+    t+=row('A3','Dewan Tenggaroh 5 — '+s.dh+' hari',s.dh,s.rdew,r.dewan);
+    t+='<tr><td class="kod">—</td><td>Makanan peserta — katering luar, harga belum diperoleh; dikutip berasingan</td><td class="num">'+r.peserta+'</td><td class="num">—</td><td class="num">—</td></tr>';
     t+=row('B','<strong>Kos wajib peserta</strong> — disalurkan terus','','',r.B,'grp');
     t+=row('B1','Bengkung',r.peserta,s.belt,r.peserta*s.belt);
     t+=row('B2','Mandi Minyak',r.peserta,s.oil,r.peserta*s.oil);
     t+=row('C','<strong>Tanggungan Induk</strong> — AJK, penguji, VVIP','','',r.C,'grp');
     t+=row('C1','Dorm AJK & penguji'+(s.share?' — bahagian dalam dorm berkongsi':' — '+dormTxt(r.aS)+' × '+r.nights+' malam'),'','',r.dormStaff);
-    t+=row('C2','Makanan AJK & penguji — '+mealTxt,r.staff,r.mealPP,r.staff*r.mealPP);
-    t+=row('C3','Bilik VVIP — '+r.vvRooms+' bilik × '+r.nights+' malam',r.vvRooms*r.nights,s.vvtype,r.vvRoomCost);
-    t+=row('C4','Makanan VVIP — '+mealTxt,s.vv,r.mealPP,s.vv*r.mealPP);
-    t+=row('C5','Saguhati jurulatih penguji',s.pg,s.sag,s.pg*s.sag);
+    t+=row('C2','Bilik VVIP — '+r.vvRooms+' bilik × '+r.nights+' malam',r.vvRooms*r.nights,s.vvtype,r.vvRoomCost);
+    t+=row('C3','Saguhati jurulatih penguji',s.pg,s.sag,s.pg*s.sag);
+    t+='<tr><td class="kod">—</td><td>Makanan AJK, penguji &amp; VVIP — katering luar, harga belum diperoleh</td><td class="num">'+(r.staff+s.vv)+'</td><td class="num">—</td><td class="num">—</td></tr>';
     t+=row('D','<strong>Keperluan program</strong>','','',r.D,'grp');
     t+=row('D1','Sijil — peserta dan penguji',r.peserta+s.pg,s.sij,(r.peserta+s.pg)*s.sij);
     t+=row('D2','Cenderahati — VVIP dan penguji',s.vv+s.pg,s.cen,(s.vv+s.pg)*s.cen);
