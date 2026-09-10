@@ -1,0 +1,1543 @@
+<!doctype html><html lang="ms"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>
+<title>Perkampungan Perdana Panglima 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+/* Tema tunggal — terang. Dipilih supaya kertas kerja dibaca sama di semua peranti dan boleh dicetak. */
+:root{
+  color-scheme:light;
+  --bg:#F4F6F2; --surface:#FFFFFF; --surface2:#ECF0EA; --surface3:#DFE5DD;
+  --ink:#151B18; --ink2:#43504A; --ink3:#71807A;
+  --line:#D6DDD4; --line2:#BFC9BE;
+  --brand:#1D4A3A; --brandsoft:#E0EAE3; --brandink:#1D4A3A; --brandmid:#3B6E5A;
+  --bar:#3B6E5A; --bartrack:#DFE5DD;
+  --good:#2A7A4E; --goodsoft:#DFF0E5;
+  --crit:#963040; --critsoft:#F7E3E6;
+  --gold:#7D6220; --goldsoft:#F5EDD8; --goldline:#D9C58B;
+  --shadow:0 1px 2px rgba(21,27,24,.06),0 8px 24px rgba(21,27,24,.06);
+}
+
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:Archivo,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.5; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- bar atas ---------- */
+.bar{
+  position:fixed; inset:0 0 auto 0; height:46px; z-index:40;
+  display:flex; align-items:center; gap:14px; padding:0 18px;
+  background:rgba(244,246,242,.92); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.bar .mark{
+  font-family:Bitter,Georgia,serif; font-weight:700; font-size:13px;
+  letter-spacing:.02em; color:var(--brandink); white-space:nowrap;
+}
+.bar .mark small{font-family:Archivo,sans-serif; font-weight:500; color:var(--ink3); margin-left:8px; letter-spacing:.08em; font-size:10.5px; text-transform:uppercase}
+.bar .part{
+  font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink3); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  padding-left:14px; border-left:1px solid var(--line2);
+}
+.bar .spacer{flex:1}
+.bar .count{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px;
+  color:var(--ink2); font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+.btn{
+  border:1px solid var(--line2); background:var(--surface); color:var(--ink);
+  border-radius:7px; height:30px; min-width:30px; padding:0 11px;
+  font:inherit; font-size:12.5px; font-weight:500; cursor:pointer; display:inline-flex;
+  align-items:center; justify-content:center; gap:6px;
+}
+.btn:hover{background:var(--surface2)}
+.btn:focus-visible{outline:2px solid var(--brand); outline-offset:2px}
+.btn.primary{background:var(--brand); color:#fff; border-color:var(--brand)}
+.btn.primary:hover{background:var(--brandmid)}
+.prog{position:fixed; top:46px; left:0; height:2px; background:var(--brand); z-index:41; width:0; transition:width .18s ease}
+
+/* ---------- deck ---------- */
+.deck{
+  display:flex; overflow-x:auto; overflow-y:hidden;
+  scroll-snap-type:x mandatory; scroll-behavior:smooth;
+  height:100vh; padding-top:48px; scrollbar-width:none;
+}
+.deck::-webkit-scrollbar{display:none}
+.slide{
+  flex:0 0 100%; scroll-snap-align:center; scroll-snap-stop:always;
+  height:calc(100vh - 48px); overflow-y:auto; padding:26px 28px 72px;
+  display:flex; flex-direction:column;
+}
+.inner{width:100%; max-width:1080px; margin:0 auto}
+
+/* Nombor seksyen mengikut konvensyen kertas kerja (1.0, 2.0 …) */
+.eyebrow{
+  max-width:none; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink3); margin:0 0 6px;
+  display:flex; align-items:center; gap:10px;
+}
+.eyebrow .n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace; color:var(--brandink);
+  font-weight:600; letter-spacing:.04em; font-size:11.5px;
+  background:var(--brandsoft); padding:2px 7px; border-radius:4px;
+}
+.eyebrow .aud{
+  margin-left:auto; font-weight:600; color:var(--gold); background:var(--goldsoft);
+  padding:2px 8px; border-radius:4px; letter-spacing:.1em;
+}
+h2{
+  font-family:Bitter,Georgia,serif; font-weight:700; font-size:27px;
+  line-height:1.18; margin:0 0 6px; text-wrap:balance; letter-spacing:-.01em;
+}
+.sub{color:var(--ink2); margin:0 0 18px; max-width:66ch; font-size:14px}
+p{margin:0 0 10px; max-width:70ch}
+.small{font-size:12.75px; color:var(--ink2)}
+.tiny{font-size:11.5px; color:var(--ink3)}
+strong{font-weight:600}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+
+/* ---------- muka hadapan ---------- */
+.cover{justify-content:center; background:linear-gradient(180deg,var(--brandsoft) 0%,var(--bg) 100%)}
+.cover .rule{width:56px; height:3px; background:var(--brandink); margin-bottom:22px}
+.cover h1{
+  font-family:Bitter,Georgia,serif; font-weight:700; font-size:clamp(32px,5vw,56px);
+  line-height:1.06; margin:0 0 14px; letter-spacing:-.02em; text-wrap:balance;
+}
+.cover .org{font-size:12px; letter-spacing:.15em; text-transform:uppercase; color:var(--ink2); margin:0 0 4px}
+.cover .zone{font-size:12px; letter-spacing:.15em; text-transform:uppercase; color:var(--brandink); font-weight:600; margin:0 0 28px}
+.coverfacts{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px; background:var(--line2); border:1px solid var(--line2);
+  border-radius:10px; overflow:hidden; margin-top:28px;
+}
+.coverfacts div{background:var(--surface); padding:13px 15px}
+.coverfacts dt{font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink3); margin:0 0 4px}
+.coverfacts dd{margin:0; font-weight:600; font-size:14px}
+.covermeta{display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:22px; font-size:12px; color:var(--ink2)}
+.covermeta b{color:var(--ink); font-weight:600}
+.hint{display:block; margin-top:26px; font-size:12px; color:var(--ink3); max-width:none; line-height:1.9}
+.hint kbd{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; border:1px solid var(--line2); border-bottom-width:2px; border-radius:5px; padding:1px 6px; background:var(--surface); color:var(--ink2)}
+
+/* ---------- jubin angka ---------- */
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin:0 0 18px}
+.tile{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:14px 15px}
+.tile .lab{font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink3); margin-bottom:7px}
+.tile .val{font-family:Bitter,Georgia,serif; font-weight:700; font-size:27px; line-height:1; letter-spacing:-.02em; font-variant-numeric:tabular-nums}
+.tile .val small{font-family:Archivo,sans-serif; font-size:12px; font-weight:500; color:var(--ink3); letter-spacing:0; margin-right:3px}
+.tile .note{font-size:11.5px; color:var(--ink2); margin-top:6px}
+.tile.hi{background:var(--brandsoft); border-color:transparent}
+.tile.hi .val{color:var(--brandink)}
+
+/* ---------- jadual ---------- */
+.tw{overflow-x:auto; border:1px solid var(--line); border-radius:10px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:13px}
+th,td{text-align:left; padding:8px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+thead th{
+  background:var(--surface2); font-size:10.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--ink2); font-weight:600; white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right; font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums; white-space:nowrap}
+tr.grp td{background:var(--surface2); font-weight:600}
+tr.tot td{background:var(--brandsoft); font-weight:700; color:var(--brandink)}
+tr.new td{background:#FBF7EA}
+td.kod{font-family:"IBM Plex Mono",ui-monospace,monospace; color:var(--ink3); font-size:12px; white-space:nowrap}
+td.t{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; color:var(--ink2); white-space:nowrap; font-variant-numeric:tabular-nums}
+
+/* ---------- cip status ---------- */
+.chip{
+  display:inline-flex; align-items:center; gap:5px; white-space:nowrap;
+  font-size:11px; padding:2px 8px; border-radius:99px; font-weight:600;
+  letter-spacing:.02em; line-height:1.5;
+}
+.chip.ok{background:var(--goodsoft); color:var(--good)}
+.chip.no{background:var(--critsoft); color:var(--crit)}
+.chip.wait{background:var(--goldsoft); color:var(--gold)}
+.chip.neu{background:var(--surface3); color:var(--ink2)}
+.chip.new{background:var(--goldsoft); color:var(--gold); border:1px solid var(--goldline)}
+.chip::before{content:"●"; font-size:7px; line-height:1}
+.chip.new::before{content:"＋"; font-size:10px}
+
+/* ---------- lajur / kad ---------- */
+.cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:14px}
+.cols.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:15px 17px}
+.card h3{font-family:Bitter,Georgia,serif; font-size:15px; margin:0 0 8px; font-weight:700}
+.card h3 .who{font-family:Archivo,sans-serif; font-weight:500; font-size:11px; color:var(--ink3); letter-spacing:.08em; text-transform:uppercase; margin-left:8px}
+.card.flag{border-left:3px solid var(--crit)}
+.card.pick{border-left:3px solid var(--good)}
+.card.adat{border-left:3px solid var(--gold); background:#FDFBF4}
+.card.soft{background:var(--surface2); border-color:transparent}
+ul,ol{margin:0 0 10px; padding-left:18px}
+li{margin-bottom:5px}
+li::marker{color:var(--ink3)}
+ol.steps{counter-reset:s; list-style:none; padding-left:0}
+ol.steps li{counter-increment:s; display:grid; grid-template-columns:24px 1fr; gap:10px; margin-bottom:8px}
+ol.steps li::before{content:counter(s); font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; font-weight:600; color:var(--brandink); background:var(--brandsoft); border-radius:5px; height:22px; display:flex; align-items:center; justify-content:center}
+.kv{display:grid; grid-template-columns:auto 1fr; gap:5px 14px; font-size:13px; margin:0}
+.kv dt{color:var(--ink3); white-space:nowrap}
+.kv dd{margin:0}
+.note{background:var(--surface2); border-radius:8px; padding:10px 14px; font-size:12.75px; color:var(--ink2); margin-top:14px}
+.note b{color:var(--ink)}
+
+/* ---------- carta bar ---------- */
+figure{margin:0 0 16px; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:15px 17px}
+figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
+.fignote{font-size:11.5px; color:var(--ink3); margin-bottom:14px}
+.rows{display:flex; flex-direction:column; gap:11px}
+.row{display:grid; grid-template-columns:140px 1fr; gap:12px; align-items:center}
+.row .rl{font-size:12.5px; color:var(--ink2); line-height:1.25}
+.track{position:relative; height:26px; background:var(--bartrack); border-radius:5px}
+.fill{
+  position:absolute; inset:0 auto 0 0; border-radius:4px;
+  background:var(--bar); display:flex; align-items:center; justify-content:flex-end;
+  padding-right:9px; min-width:68px;
+}
+.fill.good{background:var(--good)}
+.fill.crit{
+  background:var(--crit);
+  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.22) 0 4px,transparent 4px 9px);
+}
+.fill span{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; font-weight:600; color:#fff; font-variant-numeric:tabular-nums}
+.thresh{position:absolute; top:-5px; bottom:-5px; width:0; border-left:2px dashed var(--ink3)}
+.threshlab{position:absolute; top:-19px; transform:translateX(-50%); font-size:10.5px; color:var(--ink3); white-space:nowrap}
+.legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:14px; padding-top:12px; border-top:1px solid var(--line); font-size:11.5px; color:var(--ink2)}
+.legend i{display:inline-block; width:11px; height:11px; border-radius:3px; margin-right:6px; vertical-align:-1px}
+.chartwrap{position:relative; padding-top:22px}
+
+/* ---------- tentatif ---------- */
+.tt{display:flex; flex-direction:column; border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--surface)}
+.tt .r{display:grid; grid-template-columns:82px 1fr 150px; gap:12px; padding:8px 14px; border-bottom:1px solid var(--line); align-items:start}
+.tt .r:last-child{border-bottom:none}
+.tt .t{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px; color:var(--ink2); font-variant-numeric:tabular-nums; padding-top:2px}
+.tt .a{font-size:13px}
+.tt .a b{font-weight:600}
+.tt .a em{font-style:normal; color:var(--ink2); font-size:12.5px; display:block; margin-top:1px}
+.tt .r.key{background:var(--brandsoft)}
+.tt .r.key .a b{color:var(--brandink)}
+.tt .r.adat{background:#FBF7EA}
+.tt .r.adat .a b{color:var(--gold)}
+.tt .r > :nth-child(3) .chip{white-space:normal; text-align:left; line-height:1.3}
+.tt .r.hd{background:var(--surface2); padding:5px 14px; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink3); font-weight:600; grid-template-columns:1fr}
+
+/* ---------- jalur waktu solat ---------- */
+.solat{display:flex; flex-wrap:wrap; gap:6px 18px; align-items:center; margin:0 0 12px; padding:8px 12px; background:var(--goldsoft); border:1px solid var(--goldline); border-radius:8px; font-size:12px; color:var(--ink2)}
+.solat b{color:var(--gold); font-weight:600; letter-spacing:.08em; text-transform:uppercase; font-size:10.5px; margin-right:4px}
+.solat span{white-space:nowrap}
+.solat .tm{font-family:"IBM Plex Mono",ui-monospace,monospace; color:var(--ink); font-variant-numeric:tabular-nums; font-weight:600}
+.tt .r.solat-r{background:#FBF7EA}
+.tt .r.solat-r .a{color:var(--ink2)}
+
+/* ---------- carta organisasi ---------- */
+.org{display:flex; flex-direction:column; gap:10px}
+.orgrow{display:grid; gap:10px}
+.orgrow.top{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.orgrow.mid{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.orgrow.biro{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.box{background:var(--surface); border:1px solid var(--line); border-radius:9px; padding:10px 12px; font-size:12.5px}
+.box .role{font-weight:600; color:var(--ink); font-size:13px}
+.box .name{color:var(--ink3); font-size:11.5px; margin-top:2px}
+.box .desc{color:var(--ink2); font-size:11.75px; margin-top:6px; line-height:1.4}
+.box.adv{background:var(--surface2); border-style:dashed}
+.box.lead{border-color:var(--brandmid); border-width:1.5px}
+.box.kk{background:var(--brandsoft); border-color:transparent}
+.box.kk .role{color:var(--brandink)}
+.orgline{height:12px; position:relative}
+.orgline::before{content:""; position:absolute; left:50%; top:0; bottom:0; border-left:2px solid var(--line2)}
+.orglab{max-width:none; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink3); margin:2px 0 -4px}
+
+/* ---------- carta perbatuan ---------- */
+.ms{position:relative; display:grid; grid-template-columns:repeat(8,minmax(118px,1fr)); gap:10px; padding-top:34px; overflow-x:auto}
+.ms::before{content:""; position:absolute; left:0; right:0; top:14px; border-top:2px solid var(--line2)}
+.m{position:relative; background:var(--surface); border:1px solid var(--line); border-radius:9px; padding:10px 11px; font-size:12px}
+.m::before{content:""; position:absolute; left:14px; top:-28px; width:12px; height:12px; border-radius:50%; background:var(--surface); border:3px solid var(--brandmid)}
+.m.now::before{background:var(--brandmid)}
+.m.gold::before{border-color:var(--gold)}
+.m .w{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; color:var(--brandink); font-weight:600}
+.m .d{font-weight:600; font-size:12.5px; margin:2px 0 5px}
+.m .x{color:var(--ink2); font-size:11.5px; line-height:1.4}
+
+/* ---------- pelan dewan (SVG) ---------- */
+.plan{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:12px; overflow-x:auto}
+.plan svg{display:block; width:100%; height:auto; max-height:560px; min-width:640px; font-family:Archivo,sans-serif}
+.sv-wall{fill:none; stroke:var(--ink2); stroke-width:2.5}
+.sv-zone{fill:var(--surface2); stroke:var(--line2); stroke-width:1}
+.sv-stage{fill:var(--brandsoft); stroke:var(--brandmid); stroke-width:1.2}
+.sv-vip{fill:var(--goldsoft); stroke:var(--gold); stroke-width:1.2}
+.sv-seat{fill:#fff; stroke:var(--ink3); stroke-width:1}
+.sv-seatv{fill:#fff; stroke:var(--gold); stroke-width:1.4}
+.sv-p{fill:var(--brandsoft); stroke:var(--brandmid); stroke-width:1}
+.sv-dot{fill:#fff; stroke:var(--brandmid); stroke-width:1.2}
+.sv-dotl{fill:var(--brandmid); stroke:var(--brandmid)}
+.sv-t{fill:var(--ink2); font-size:10.5px}
+.sv-tb{fill:var(--ink); font-size:11px; font-weight:600}
+.sv-tl{fill:var(--ink3); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase}
+.sv-tg{fill:var(--gold); font-size:10.5px; font-weight:600}
+.sv-path{fill:none; stroke:var(--gold); stroke-width:2; stroke-dasharray:6 5}
+.sv-fire{fill:var(--crit)}
+.sv-exit{fill:none; stroke:var(--good); stroke-width:3}
+.plegend{display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:12px; font-size:11.5px; color:var(--ink2)}
+.plegend i{display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-2px; border:1px solid var(--line2)}
+
+/* ---------- kandungan (overview) ---------- */
+.ov{position:fixed; inset:0; z-index:60; background:var(--bg); overflow-y:auto; padding:64px 24px 40px}
+.ov[hidden]{display:none!important}
+.ovwrap{max-width:1080px; margin:0 auto}
+.ovh{font-family:Bitter,Georgia,serif; font-weight:700; font-size:20px; margin:0 0 4px}
+.ovs{font-size:13px; color:var(--ink2); margin:0 0 20px}
+.ovpart{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink3); margin:18px 0 8px; padding-bottom:6px; border-bottom:1px solid var(--line)}
+.ovgrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:10px}
+.ovitem{
+  text-align:left; background:var(--surface); border:1px solid var(--line);
+  border-radius:9px; padding:11px 12px; cursor:pointer; font:inherit; color:var(--ink);
+  display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:start;
+}
+.ovitem:hover{border-color:var(--brandmid)}
+.ovitem:focus-visible{outline:2px solid var(--brand); outline-offset:2px}
+.ovitem .on{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px; color:var(--brandink); font-weight:600; background:var(--brandsoft); padding:2px 6px; border-radius:4px}
+.ovitem .ot{font-size:13px; font-weight:600; line-height:1.3}
+.ovitem.cur{border-color:var(--brand); background:var(--brandsoft)}
+
+/* ---------- kaki & navigasi ---------- */
+.foot{
+  position:fixed; left:0; right:0; bottom:0; height:38px; z-index:39;
+  display:flex; align-items:center; gap:14px; padding:0 18px;
+  font-size:11px; color:var(--ink3); letter-spacing:.04em;
+  background:rgba(244,246,242,.92); border-top:1px solid var(--line); backdrop-filter:blur(10px);
+}
+.foot .ft{color:var(--ink2); font-weight:500; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.foot .spacer{flex:1}
+.nav{position:fixed; right:14px; bottom:48px; z-index:45; display:flex; gap:7px}
+.nav .btn{height:38px; min-width:40px; box-shadow:var(--shadow)}
+
+@media (max-width:720px){
+  .slide{padding:18px 16px 76px}
+  h2{font-size:22px}
+  .row{grid-template-columns:96px 1fr}
+  .tt .r{grid-template-columns:70px 1fr}
+  .tt .r > :nth-child(3){grid-column:2}
+  .bar .part{display:none}
+  .eyebrow .aud{display:none}
+  .foot .ft{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .deck{scroll-behavior:auto}
+  .prog{transition:none}
+}
+
+/* ---------- cetak: satu slaid satu muka ---------- */
+@media print{
+  @page{size:A4 landscape; margin:12mm}
+  .bar,.prog,.nav,.foot,.ov,.hint{display:none!important}
+  .deck{display:block; height:auto; padding:0; overflow:visible}
+  .slide{height:auto; overflow:visible; page-break-after:always; break-after:page; padding:0 0 18px}
+  .slide:last-child{page-break-after:auto}
+  .cover{background:none}
+  .plan svg{min-width:0}
+  body{font-size:12px}
+}
+</style>
+
+<header class="bar">
+  <span class="mark">PANGLIMA 2026 <small>Kertas Kerja · Draf V4</small></span>
+  <span class="part" id="part">Program</span>
+  <span class="spacer"></span>
+  <span class="count"><span id="cur">1</span> / <span id="tot">29</span></span>
+  <a class="btn" href="bajet.html" style="text-decoration:none">🧮 Kalkulator bajet</a>
+  <button class="btn" id="ovbtn" aria-label="Kandungan">☰ Kandungan</button>
+</header>
+<div class="prog" id="prog"></div>
+
+<main class="deck" id="deck">
+
+<!-- 1 MUKA HADAPAN -->
+<section class="slide cover" data-part="Program" data-title="Muka hadapan" data-n="">
+  <div class="inner">
+    <div class="rule"></div>
+    <p class="org">Pertubuhan Silat Seni Gayung Cula Sakti Malaysia</p>
+    <p class="zone">Zon Johor Bahru</p>
+    <h1>Kertas Kerja<br>Perkampungan Perdana Panglima</h1>
+    <p class="sub">Sesi 2026 · Draf V4 — disusun semula selepas lawatan tapak dan sebut harga rasmi FELDA Residence Tanjung Leman. Untuk perbincangan AJK Pengurusan sebelum dikemukakan kepada Induk, Majlis Jurulatih dan Majlis Adat.</p>
+    <dl class="coverfacts">
+      <div><dt>Tarikh</dt><dd>4 – 6 Disember 2026</dd></div>
+      <div><dt>Tempat</dt><dd>FELDA Residence Tanjung Leman, Mersing</dd></div>
+      <div><dt>Kehadiran</dt><dd>61 orang</dd></div>
+      <div><dt>Yuran peserta</dt><dd class="mono">RM 380 semua sekali</dd></div>
+      <div><dt>Mohon Induk</dt><dd class="mono">RM 4,479</dd></div>
+    </dl>
+    <div class="covermeta">
+      <span>Disediakan oleh <b>AJK Pengurusan Zon Johor Bahru</b></span>
+      <span>Dikemas kini <b>10 September 2026</b></span>
+      <span>Status <b>Draf — angka tempat berdasarkan sebut harga, selebihnya anggaran</b></span>
+    </div>
+    <p class="hint">Tekan <kbd>→</kbd> untuk slaid seterusnya, atau buka <kbd>Kandungan</kbd> di penjuru atas kanan. Boleh dicetak terus (A4 melintang). Bajet interaktif: <a href="bajet.html" style="color:var(--brandink);font-weight:600">Kalkulator Bajet</a>.</p>
+  </div>
+</section>
+
+<!-- 2 RINGKASAN -->
+<section class="slide" data-part="Program" data-title="Ringkasan eksekutif" data-n="1.0">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">1.0</span> Ringkasan eksekutif</p>
+    <h2>Enam angka yang menentukan kertas kerja ini</h2>
+    <p class="sub">Kos tempat dan makanan diambil terus daripada sebut harga FELDA Residence Tanjung Leman bertarikh 10 September 2026 (rujukan 0120-2026/FRTL/Q). Baris lain kekal anggaran sehingga dibeli.</p>
+    <div class="tiles">
+      <div class="tile"><div class="lab">Kehadiran</div><div class="val">61</div><div class="note">40 peserta · 15 AJK &amp; penguji · 6 VVIP</div></div>
+      <div class="tile"><div class="lab">Jumlah kos</div><div class="val"><small>RM</small>19,464</div><div class="note">termasuk RM 5,200 bengkung &amp; Mandi Minyak</div></div>
+      <div class="tile"><div class="lab">Kos tempat seorang</div><div class="val"><small>RM</small>209</div><div class="note">dorm 2 malam · 9 hidangan · dewan</div></div>
+      <div class="tile"><div class="lab">Yuran peserta</div><div class="val"><small>RM</small>380</div><div class="note">RM 250 program + RM 80 bengkung + RM 50 Mandi Minyak</div></div>
+      <div class="tile hi"><div class="lab">Mohon Induk</div><div class="val"><small>RM</small>4,479</div><div class="note">AJK, penguji dan VVIP sahaja</div></div>
+      <div class="tile"><div class="lab">Pemantapan &amp; Penilaian</div><div class="val">14<small>j</small>20<small>m</small></div><div class="note">9 sesi · Sesi 2025: 8 sesi, 14j 45m</div></div>
+    </div>
+    <div class="cols">
+      <div class="card pick">
+        <h3>Model kewangan V4 — siapa tanggung apa</h3>
+        <ul class="small" style="margin-bottom:0">
+          <li><strong>Peserta</strong> menanggung kos peserta sepenuhnya: dorm, makanan, dewan dan keperluan program (RM 250), serta bengkung dan Mandi Minyak (RM 130)</li>
+          <li><strong>Induk</strong> menanggung orang yang tidak membayar: 15 AJK dan penguji, 6 VVIP, dan saguhati penguji — <strong class="mono">RM 4,479</strong></li>
+          <li>Tiada tier, tiada luar jangka berasingan — lebihan yuran RM 215 menjadi penampan</li>
+        </ul>
+      </div>
+      <div class="card flag">
+        <h3>Apa yang belum selesai</h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Empat soalan kepada pihak resort sebelum deposit — Bahagian 7.2</li>
+          <li>Kebenaran bertulis Lompatan Gelung Berapi di premis resort</li>
+          <li>Silibus, senarai penguji dan kriteria penilaian — Majlis Jurulatih</li>
+          <li>Bilangan peserta: bajet hanya seimbang pada 38 peserta ke atas — Bahagian 12.4</li>
+        </ul>
+        <p class="tiny" style="margin:8px 0 0">Senarai penuh ada di Bahagian 14.0.</p>
+      </div>
+      <div class="card adat">
+        <h3>Perubahan daripada Draf V3</h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Tempat disahkan: FELDA Residence Tanjung Leman — pakej dorm, makan buffet dan dewan berhawa dingin dengan PA</li>
+          <li>Kapasiti peserta dinaikkan kepada 40 (32 lelaki, 8 wanita) mengikut saiz dorm</li>
+          <li>Bengkung RM 80 dan Mandi Minyak RM 50 dimasukkan sebagai kos wajib peserta</li>
+          <li>AJK dan penguji digabungkan sebagai satu kumpulan 15 orang; VVIP 6 orang dalam 2 bilik</li>
+          <li>Peti kecemasan, genset, extension dan minyak kenderaan dikeluarkan daripada bajet — disediakan Zon dan AJK</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 RASIONAL & OBJEKTIF -->
+<section class="slide" data-part="Program" data-title="Rasional dan objektif" data-n="2.0">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">2.0</span> Rasional dan objektif</p>
+    <h2>Pemantapan dan pengiktirafan bengkung para Panglima</h2>
+    <div class="cols two">
+      <div>
+        <p><strong>Panglima</strong> ialah gelaran yang diberikan kepada jurulatih muda, jurulatih dan jurulatih kanan PSSGCSM yang memegang atau bakal memegang bengkung <strong>Pra Pelangi Merah (M0)</strong> hingga <strong>Pelangi Kuning Cula 4 (PK4)</strong>. Perkampungan Perdana Panglima diadakan bagi memantapkan pelajaran para pesilat di peringkat ini, seterusnya menilai dan mengiktiraf bengkung mengikut tahap masing-masing.</p>
+        <p>Silibus di peringkat ini sebahagian besarnya permainan bersenjata. Teras program ialah sesi <strong>Pemantapan &amp; Penilaian</strong> yang dikendalikan jurulatih penguji yang dilantik Majlis Jurulatih — sama seperti Sesi 2025.</p>
+        <p class="small">Sesi 2026 mengekalkan struktur Sesi 2025 dan menambah dua perkara atas permintaan pertubuhan: adat <strong>Mandi Minyak</strong> dan <strong>Lompatan Gelung Berapi</strong>. Perkara adat tertakluk kepada ketetapan Majlis Adat; tentatif, silibus dan senarai penguji tertakluk kepada kelulusan Majlis Jurulatih.</p>
+      </div>
+      <div>
+        <div class="card">
+          <h3>Objektif</h3>
+          <ol class="steps small" style="margin:0">
+            <li><span>Menguji kelayakan dan kemantapan pelajaran Silat Seni Gayung bagi memperoleh bengkung tahap seterusnya.</span></li>
+            <li><span>Merapatkan hubungan silaturahim sesama barisan jurulatih dari gelanggang dan zon berlainan.</span></li>
+            <li><span>Mengekalkan adat pertubuhan melalui Mandi Minyak dan Lompatan Gelung Berapi, dipimpin Guru atau Waris Amanah.</span></li>
+          </ol>
+        </div>
+        <div class="card soft" style="margin-top:14px">
+          <h3>Berbeza daripada Hulubalang Muda</h3>
+          <p class="small" style="margin-bottom:0">Hulubalang Muda ialah program untuk pelajar sekolah dan calon pembantu jurulatih dengan banyak sesi sahsiah dan kepimpinan. Panglima ialah program untuk ahli dewasa yang sudah menjadi jurulatih — tumpuannya penilaian, bukan pendidikan; peserta diamanahkan, bukan dididik.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 SESI 2025 SEBAGAI ASAS -->
+<section class="slide" data-part="Program" data-title="Sesi 2025 sebagai asas" data-n="3.0">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">3.0</span> Sesi 2025 sebagai asas</p>
+    <h2>Apa yang dikekalkan, apa yang berubah</h2>
+    <p class="sub">Rujukan: Kertas Kerja Perkampungan Perdana Panglima Sesi 2025, 18 – 20 Oktober 2025, Savanna Hill Resort, Ulu Tiram.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:16%">Aspek</th><th style="width:38%">Sesi 2025</th><th>Sesi 2026 (cadangan)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Hari dan masa</strong></td><td>Sabtu – Isnin, 2.30 petang hingga 2.00 petang</td><td>Jumaat – Ahad, 12.00 tengah hari hingga 2.00 petang — peserta yang bekerja hanya perlu cuti setengah hari</td></tr>
+          <tr><td><strong>Kehadiran</strong></td><td>46 — 31 peserta (28 Johor, 3 Selangor), 15 AJK dan penguji</td><td>61 — 40 peserta, 15 AJK dan penguji, 6 VVIP hadir sepanjang program</td></tr>
+          <tr><td><strong>Pemantapan &amp; Penilaian</strong></td><td>8 sesi, 14 jam 45 minit; sesi terpanjang 3 jam</td><td>9 sesi, 14 jam 20 minit; sesi terpanjang 2 jam 30 minit; rehat Zohor 1 jam 30 minit</td></tr>
+          <tr><td><strong>Kerohanian</strong></td><td>Tahlil malam pertama; Amanah Guru malam kedua dan pagi ketiga</td><td>Dikekalkan sepenuhnya</td></tr>
+          <tr><td><strong>Adat</strong></td><td>Tiada</td><td>Mandi Minyak (dalam yuran) dan Lompatan Gelung Berapi (pilihan, tertakluk kebenaran resort) malam Hari 2 — tidak dinilai</td></tr>
+          <tr><td><strong>Kumpulan</strong></td><td>Pembahagian kumpulan pada taklimat Hari 1</td><td>Dikekalkan; persembahan penutup dibuat mengikut kumpulan</td></tr>
+          <tr><td><strong>Majlis Penutup</strong></td><td>12.00 – 2.00 petang; perasmi Pengarah Eksekutif resort</td><td>11.30 pagi – 1.00 petang; perasmi mengikut ketetapan Induk</td></tr>
+          <tr><td><strong>Hari 3 pagi</strong></td><td>Mesyuarat Perwakilan PSSGCSM (3 jam)</td><td>Sesi 9 pengesahan penilaian; slot mesyuarat boleh dibuka jika Induk mahu</td></tr>
+          <tr><td><strong>Model kos</strong></td><td>Pakej resort RM 172 × 46 termasuk makan; jumlah RM 9,480; Induk RM 3,000; yuran RM 210</td><td>Pakej resort seunit dan sehidangan (FELDA Tanjung Leman); jumlah RM 14,264 tanpa bengkung; Induk RM 4,479 untuk AJK, penguji dan VVIP; yuran RM 250 + RM 130 bengkung dan Mandi Minyak</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><b>Mengapa tidak menambah aktiviti lain:</b> Sesi 2025 mencapai kedua-dua objektifnya dengan Pemantapan &amp; Penilaian sebagai hampir keseluruhan program. Setiap aktiviti tambahan mengambil masa daripada penilaian dan tenaga daripada peserta yang berumur 30 hingga 40 tahun ke atas. Draf ini hanya menambah adat yang diminta pertubuhan.</div>
+  </div>
+</section>
+
+<!-- 5 BUTIRAN -->
+<section class="slide" data-part="Program" data-title="Butiran program" data-n="4.0">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">4.0</span> Butiran program</p>
+    <h2>Masa, tempoh dan kehadiran</h2>
+    <div class="cols">
+      <div class="card">
+        <h3>Masa dan tempoh</h3>
+        <dl class="kv">
+          <dt>Tarikh</dt><dd>4 – 6 Disember 2026 (Jumaat – Ahad)</dd>
+          <dt>Tempat</dt><dd>FELDA Residence Tanjung Leman, Mukim Tenggaroh, Mersing</dd>
+          <dt>Tempoh</dt><dd>3 hari 2 malam</dd>
+          <dt>Advance party</dt><dd>10.00 pagi Hari 1 (AJK sahaja) — dewan dan tapak</dd>
+          <dt>Daftar masuk</dt><dd>2.00 petang Hari 1, selepas Solat Jumaat di zon masing-masing; bilik dibuka 3.00 petang</dd>
+          <dt>Majlis Penutup</dt><dd>11.30 pagi – 1.00 petang Hari 3</dd>
+          <dt>Bersurai</dt><dd>2.00 petang Hari 3, selepas Zohor dan jamuan; daftar keluar bilik sebelum 12.00 tengah hari</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h3>Siapa hadir · 61 orang</h3>
+        <dl class="kv">
+          <dt>Peserta</dt><dd>40 — 32 lelaki (2 dorm 16 katil) dan 8 wanita (1 dorm 8 katil); pemegang atau bakal pemegang M0 hingga PK4</dd>
+          <dt>AJK &amp; penguji</dt><dd>15 — 6 jurulatih penguji yang dilantik Majlis Jurulatih dan 9 AJK Pengurusan; 1 dorm 16 katil</dd>
+          <dt>VVIP</dt><dd>6 — Guru, Waris Amanah dan Pengerusi; 2 bilik Superior Deluxe</dd>
+        </dl>
+        <p class="tiny" style="margin-top:10px">Bilangan 61 digunakan secara konsisten dalam anggaran makanan: semua dikira hadir dari Hari 1 hingga Hari 3. Tetamu tambahan majlis penutup tidak dikira — Bahagian 11.3.</p>
+      </div>
+      <div class="card soft">
+        <h3>Waktu solat yang menjadi paksi tentatif</h3>
+        <p class="small">Zon JHR02 (Johor Bahru, Kota Tinggi, Mersing, Kulai), anggaran untuk 4 – 6 Disember 2026:</p>
+        <dl class="kv">
+          <dt>Subuh</dt><dd class="mono">5.41 pagi</dd>
+          <dt>Syuruk</dt><dd class="mono">6.55 pagi</dd>
+          <dt>Zohor</dt><dd class="mono">12.58 tengah hari</dd>
+          <dt>Asar</dt><dd class="mono">4.21 petang</dd>
+          <dt>Maghrib</dt><dd class="mono">6.57 petang</dd>
+          <dt>Isyak</dt><dd class="mono">8.11 malam</dd>
+        </dl>
+        <p class="tiny" style="margin-top:10px">Kiraan astronomi yang dikalibrasi dengan jadual e-Solat JAKIM JHR02; ketepatan ±2 minit. AJK Keagamaan menyemak semula dengan e-Solat pada T−2 minggu dan mencetak jadual untuk Bilik Gerakan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 PESERTA -->
+<section class="slide" data-part="Peserta" data-title="Sasaran dan syarat penyertaan" data-n="5.1">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">5.1</span> Peserta</p>
+    <h2>Sasaran peserta, yuran dan syarat penyertaan</h2>
+    <p class="sub">Terbuka kepada ahli PSSGCSM dari semua zon dan negeri yang memegang atau bakal memegang bengkung Pra Pelangi Merah hingga Pelangi Kuning Cula 4, dan disahkan layak oleh jurulatih gelanggang masing-masing. Kapasiti maksimum 40 orang mengikut katil dorm.</p>
+    <div class="cols">
+      <div class="card pick">
+        <h3>Yuran RM 380 seorang</h3>
+        <div class="tw" style="border:none">
+          <table style="font-size:12.5px">
+            <tbody>
+              <tr><td>Yuran program — dorm 2 malam, 9 hidangan, dewan, sijil, lanyard, buku program</td><td class="num">250</td></tr>
+              <tr><td>Bengkung tahap seterusnya</td><td class="num">80</td></tr>
+              <tr><td>Mandi Minyak — minyak dan bahan</td><td class="num">50</td></tr>
+              <tr class="tot"><td>Jumlah</td><td class="num">380</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tiny" style="margin:10px 0 0">Bengkung dan Mandi Minyak ialah kos wajib program dan disalurkan terus mengikut kadar pertubuhan; ia bukan pendapatan program. Pengangkutan ke Tanjung Leman diuruskan zon masing-masing dan tidak termasuk.</p>
+      </div>
+      <div class="card">
+        <h3>Syarat</h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Ahli berdaftar dan yuran tahunan telah dijelaskan</li>
+          <li>Mengisi borang pendaftaran, borang kesihatan dan akuan risiko</li>
+          <li>Peserta 40 tahun ke atas atau mempunyai sejarah kesihatan wajib mengisytiharkan keadaan kesihatan; penyertaan fizikal dalam Mandi Minyak tertakluk kepada pengesahan First Aider</li>
+          <li>Menyatakan pilihan penyertaan Lompatan Gelung Berapi semasa pendaftaran — pilihan dan tidak mempengaruhi penilaian</li>
+          <li>Membawa pakaian gelanggang penuh dengan bengkung untuk Majlis Penutup, dan <strong>pakaian kapas sahaja</strong> untuk malam adat</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Garis masa pendaftaran</h3>
+        <dl class="kv">
+          <dt>Buka</dt><dd>Selepas kelulusan Induk (sasaran 25 September)</dd>
+          <dt>Tutup</dt><dd>9 Oktober 2026 (T−8 minggu)</dd>
+          <dt>Bayaran</dt><dd>RM 380 seorang kepada akaun zon, sebelum tarikh tutup; boleh dua ansuran</dd>
+          <dt>Kumpulan</dt><dd>Diumumkan pada taklimat Hari 1, seperti 2025</dd>
+        </dl>
+        <p class="tiny" style="margin-top:10px">Deposit 50% kepada resort dibayar sebaik kelulusan Induk — sebut harga tidak menyimpan tarikh. Pendaftaran ditutup awal supaya bilangan sebenar diketahui sebelum bayaran progresif 80% pada T−3 minggu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 KUMPULAN -->
+<section class="slide" data-part="Peserta" data-title="Pembahagian kumpulan" data-n="5.2">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">5.2</span> Struktur peserta</p>
+    <h2>Pembahagian kumpulan</h2>
+    <p class="sub">Seperti Sesi 2025, peserta dibahagikan kepada 5 hingga 6 kumpulan campuran gelanggang dan zon pada taklimat Hari 1. Ketua kumpulan dilantik daripada pemegang bengkung tertinggi dalam kumpulan.</p>
+    <div class="cols">
+      <div class="card">
+        <h3>Tujuan kumpulan</h3>
+        <p class="small">Objektif kedua program ialah silaturahim antara jurulatih dari gelanggang berlainan. Kumpulan campuran memastikan peserta berlatih, makan dan membuat persembahan bersama orang yang tidak mereka kenal sebelum ini — tanpa perlu aktiviti tambahan di luar gelanggang.</p>
+        <p class="small" style="margin-bottom:0">Penguji digalakkan memasangkan peserta silang gelanggang dalam sesi permainan berpasangan.</p>
+      </div>
+      <div class="card">
+        <h3>Tanggungjawab ketua kumpulan</h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Mengira dan melaporkan kehadiran kumpulan kepada Kem Komandan pada setiap sesi</li>
+          <li>Membantu penguji mengurus giliran kumpulan semasa penilaian</li>
+          <li>Mengetuai kumpulan semasa masuk dewan dan menerima anugerah pada Majlis Penutup</li>
+          <li>Menyelaras persembahan penutup kumpulan (3 – 4 minit)</li>
+          <li>Melaporkan sebarang kecederaan atau masalah kesihatan ahli kumpulan dengan segera</li>
+        </ul>
+      </div>
+      <div class="card soft">
+        <h3>Yang tidak ada dalam program ini</h3>
+        <p class="small" style="margin-bottom:0">Tiada sistem mata, tiada pertandingan antara kumpulan, tiada kawalan malam oleh peserta. Kumpulan ialah alat pengurusan dan silaturahim, bukan unsur pertandingan. Anugerah Peserta Terbaik, jika ada, ditetapkan oleh Majlis Jurulatih berdasarkan penilaian, bukan mata kumpulan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 JAWATANKUASA -->
+<section class="slide" data-part="Pengurusan" data-title="Jawatankuasa Pelaksana" data-n="6.1">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">6.1</span> Jawatankuasa Pelaksana</p>
+    <h2>Sembilan AJK Pengurusan dan enam jurulatih penguji</h2>
+    <p class="sub">Bajet memperuntukkan 15 tempat dorm dan makanan untuk AJK dan penguji. Enam daripadanya jurulatih penguji yang dilantik Majlis Jurulatih; sembilan lagi AJK Pengurusan Zon Johor Bahru. Nama diisi selepas mesyuarat AJK; semua AJK melapor kepada Kem Komandan semasa program berjalan.</p>
+    <div class="org">
+      <p class="orglab">Penasihat — tidak dikira dalam 15</p>
+      <div class="orgrow top">
+        <div class="box adv"><div class="role">Penasihat</div><div class="name">Pengerusi dan Waris Amanah PSSGCSM</div></div>
+        <div class="box adv"><div class="role">Penasihat Kejurulatihan</div><div class="name">Ketua Majlis Jurulatih</div></div>
+        <div class="box adv"><div class="role">Penasihat Adat</div><div class="name">Ketua Majlis Adat</div></div>
+      </div>
+      <div class="orgline"></div>
+      <p class="orglab">Jawatan utama · 4</p>
+      <div class="orgrow mid">
+        <div class="box lead"><div class="role">Penyelaras Program</div><div class="name">— nama —</div><div class="desc">Bertanggungjawab kepada Induk; menandatangani kertas kerja, surat dan tempahan resort; ucapan alu-aluan</div></div>
+        <div class="box kk"><div class="role">Kem Komandan</div><div class="name">— nama —</div><div class="desc">Mengawal perjalanan tentatif di tapak sepanjang 3 hari; titik rujukan tunggal pihak resort · Bahagian 6.2</div></div>
+        <div class="box"><div class="role">Setiausaha</div><div class="name">— nama —</div><div class="desc">Surat, minit, senarai jemputan, senarai penerima sijil dan bengkung, laporan akhir</div></div>
+        <div class="box"><div class="role">Bendahari</div><div class="name">— nama —</div><div class="desc">Kutipan yuran RM 380, bayaran deposit dan baki resort, resit, laporan kewangan kepada Induk</div></div>
+      </div>
+      <div class="orgline"></div>
+      <p class="orglab">AJK · 5</p>
+      <div class="orgrow biro">
+        <div class="box"><div class="role">Kejurulatihan &amp; Penilaian</div><div class="desc">Penghubung kepada penguji; borang penilaian; senjata latihan; bilik penguji; keputusan kepada Setiausaha</div></div>
+        <div class="box"><div class="role">Disiplin &amp; Keselamatan</div><div class="desc">First Aider, burn kit Zon, Pasukan Api 5 orang, kenderaan sokongan, waktu senyap</div></div>
+        <div class="box"><div class="role">Kebajikan &amp; Logistik</div><div class="desc">Kiraan kepala hidangan dengan resort, air minum di tapak, agihan dorm, kawah dan gelung, genset AJK, gotong-royong</div></div>
+        <div class="box"><div class="role">Keagamaan &amp; Adat</div><div class="desc">Solat berjemaah, Tahlil, zikir gelanggang, jadual waktu solat; penghubung kepada Majlis Adat; tapak Mandi Minyak</div></div>
+        <div class="box"><div class="role">Pendaftaran, Protokol &amp; Multimedia</div><div class="desc">Borang, lanyard, kehadiran, borang kesihatan; pengacara, skrip, sambutan VVIP, susunan dewan; banner, sijil, fail lagu, rakaman</div></div>
+      </div>
+      <div class="orgline"></div>
+      <p class="orglab">Jurulatih penguji · 6 — dilantik Majlis Jurulatih</p>
+      <div class="orgrow top">
+        <div class="box adv"><div class="role">Ketua Penguji + 5 penguji</div><div class="name">Pemegang bengkung kuning dan hitam pelangi</div><div class="desc">Hanya melatih dan menilai; tidak dibebankan tugas AJK. Saguhati RM 50 seorang dan sijil penyertaan.</div></div>
+      </div>
+    </div>
+    <div class="note"><b>Prinsip:</b> AJK tidak menerima saguhati. Seorang AJK boleh memegang lebih daripada satu bidang; jika Zon dapat menyediakan lebih daripada 9 AJK, tempat tambahan tertakluk kepada katil dorm yang berbaki (1 katil) atau ditanggung sendiri pada kadar RM 119 makanan seorang.</div>
+  </div>
+</section>
+
+<!-- 9 KEM KOMANDAN -->
+<section class="slide" data-part="Pengurusan" data-title="Kem Komandan dan Bilik Gerakan" data-n="6.2">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">6.2</span> Kem Komandan dan Bilik Gerakan</p>
+    <h2>Satu orang yang memastikan tentatif berjalan</h2>
+    <p class="sub">Penyelaras bertanggungjawab kepada Induk; Kem Komandan bertanggungjawab kepada tentatif. Semasa program, semua AJK melapor kepada Kem Komandan, dan hanya Kem Komandan yang boleh mengubah masa sesi — dengan persetujuan Ketua Penguji bagi sesi Pemantapan &amp; Penilaian.</p>
+    <div class="cols">
+      <div class="card">
+        <h3>Tanggungjawab</h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Memulakan dan menamatkan setiap slot mengikut tentatif; boleh mengubah masa sehingga <strong>30 minit</strong> tanpa rujukan, lebih daripada itu dirujuk kepada Penyelaras dan Ketua Penguji</li>
+          <li>Memastikan tiada aktiviti bertindih dengan waktu solat; jadual e-Solat dipaparkan di Bilik Gerakan</li>
+          <li>Boleh <strong>menangguhkan atau membatalkan</strong> aktiviti atas sebab keselamatan atau cuaca; keputusan dimaklumkan kepada Penyelaras</li>
+          <li>Menyelia waktu senyap <span class="mono">12.00 – 5.00 pagi</span> — dijaga AJK bergilir, bukan peserta</li>
+          <li>Menjadi titik rujukan tunggal pihak tempat dan katering semasa program</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Rutin harian</h3>
+        <div class="tw" style="border:none">
+          <table style="font-size:12.5px">
+            <tbody>
+              <tr><td class="t">6.30 pg</td><td>Taklimat pagi AJK — 15 minit, selari dengan regangan peserta: tentatif hari itu, cuaca, peserta sakit</td></tr>
+              <tr><td class="t">−15 min</td><td>Semakan sebelum setiap sesi: tapak, PA, lampu, air minum, First Aider dan penguji hadir</td></tr>
+              <tr><td class="t">Setiap makan</td><td>Kiraan kepala hidangan disahkan AJK Kebajikan dan direkod</td></tr>
+              <tr><td class="t">Malam</td><td>Debrief AJK 15 minit selepas peserta masuk waktu senyap: isu hari itu, pindaan tentatif esok</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Kelengkapan Bilik Gerakan</h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Satu bilik AJK tetap berhampiran tapak utama, berkunci</li>
+          <li>Papan tentatif, jadual waktu solat, senarai kumpulan</li>
+          <li>Senarai peserta dengan nombor telefon dan waris terdekat</li>
+          <li>Borang kesihatan dalam fail berkunci, akses First Aider sahaja</li>
+          <li>Nombor penting: pihak tempat, katering, klinik dan hospital terdekat, balai polis, bomba</li>
+          <li>Kit kecemasan, lampu suluh, kunci pendua bilik</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cols" style="margin-top:14px">
+      <div class="card soft">
+        <h3>Komunikasi</h3>
+        <p class="small" style="margin-bottom:0">Kumpulan WhatsApp <strong>Urus Setia Panglima</strong> untuk AJK dan penguji sahaja; satu nombor Kem Komandan dimaklumkan kepada semua peserta dan pihak tempat. Panggilan berkumpul dibuat melalui PA atau pengumuman ketua kumpulan, bukan wisel.</p>
+      </div>
+      <div class="card soft">
+        <h3>Aliran tindakan kecemasan</h3>
+        <p class="small" style="margin-bottom:0">First Aider merawat → AJK Disiplin &amp; Keselamatan memaklumkan Kem Komandan → Kem Komandan memutuskan rujukan ke klinik atau hospital dan menghubungi waris → Penyelaras memaklumkan Induk. Kenderaan sokongan dan pemandu ditetapkan pada setiap sesi; kunci di Bilik Gerakan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 CARTA PERBATUAN -->
+<section class="slide" data-part="Pengurusan" data-title="Carta perbatuan" data-n="6.3">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">6.3</span> Carta perbatuan</p>
+    <h2>Dua belas minggu sebelum Hari 1</h2>
+    <p class="sub">Tarikh dikira ke belakang daripada 4 Disember 2026 dan diselaraskan dengan syarat bayaran resort: deposit 50% semasa pengesahan, bayaran progresif hingga 80% tiga minggu sebelum, baki penuh tujuh hari bekerja sebelum ketibaan.</p>
+    <div class="ms">
+      <div class="m now"><div class="w">T−12 minggu</div><div class="d">11 September</div><div class="x">Kertas kerja V4 kepada AJK Pengurusan dan Induk · empat soalan kepada resort dijawab</div></div>
+      <div class="m"><div class="w">T−10 minggu</div><div class="d">25 September</div><div class="x">Kelulusan Induk · deposit 50% kepada resort · pendaftaran dibuka · surat panggilan ke semua zon</div></div>
+      <div class="m"><div class="w">T−8 minggu</div><div class="d">9 Oktober</div><div class="x">Pendaftaran ditutup · bilangan peserta muktamad · bajet dikemas kini · bilangan dorm disahkan dengan resort</div></div>
+      <div class="m gold"><div class="w">T−6 minggu</div><div class="d">23 Oktober</div><div class="x">Keputusan Majlis Jurulatih (silibus, penguji, borang) · ketetapan Majlis Adat (Guru pemimpin, bahan, iringan)</div></div>
+      <div class="m"><div class="w">T−4 minggu</div><div class="d">6 November</div><div class="x">Surat jemputan VVIP dan veteran dikeluarkan · bengkung dipesan mengikut senarai · sijil dan banner ke percetakan</div></div>
+      <div class="m"><div class="w">T−3 minggu</div><div class="d">13 November</div><div class="x">Bayaran progresif 80% kepada resort · pengesahan tetamu penutup ditutup 20 November</div></div>
+      <div class="m"><div class="w">T−1 minggu</div><div class="d">25 – 27 November</div><div class="x">Baki penuh kepada resort (25 Nov) · taklimat AJK · semakan e-Solat dan MetMalaysia · kawah, gelung, genset dan pemadam api disemak</div></div>
+      <div class="m"><div class="w">Hari 1</div><div class="d">4 Disember</div><div class="x">10.00 pagi advance party AJK: dewan, Bilik Gerakan, ukur backdrop, uji PA · 2.00 petang daftar masuk peserta</div></div>
+    </div>
+    <div class="note"><b>Titik tidak boleh undur:</b> pembatalan tanpa caj hanya 15 hari dan ke atas sebelum ketibaan (sebelum 19 November); 8 – 14 hari dikenakan 25%, 4 – 7 hari 50%. Deposit 50% tidak dikembalikan. Sebab itu bilangan peserta mesti muktamad pada T−8 minggu.</div>
+  </div>
+</section>
+<!-- 11 TEMPAT DISAHKAN -->
+<section class="slide" data-part="Tempat" data-title="Tempat disahkan: FELDA Residence Tanjung Leman" data-n="7.1">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">7.1</span> Tempat</p>
+    <h2>FELDA Residence Tanjung Leman, Mersing</h2>
+    <p class="sub">Lot PTD 144, Mukim Tenggaroh, 86810 Mersing, Johor. Dipilih selepas lawatan tapak: pantai di hadapan resort, dorm berkadar seunit, dewan berhawa dingin dengan PA dan projektor, makanan buffet di hadapan dewan. Sebut harga rasmi diterima 10 September 2026.</p>
+    <div class="tiles">
+      <div class="tile"><div class="lab">Dorm 16 katil</div><div class="val"><small>RM</small>500</div><div class="note">semalam seunit · RM 31 sekepala · 10 unit ada</div></div>
+      <div class="tile"><div class="lab">Dorm 8 katil</div><div class="val"><small>RM</small>300</div><div class="note">semalam seunit · RM 38 sekepala · 2 unit ada</div></div>
+      <div class="tile"><div class="lab">Superior Deluxe</div><div class="val"><small>RM</small>170</div><div class="note">semalam sebilik · garden &amp; sea view · untuk VVIP</div></div>
+      <div class="tile"><div class="lab">Makanan sehari penuh</div><div class="val"><small>RM</small>51</div><div class="note">sarapan 10 · tengah hari 17 · malam 17 · supper 7</div></div>
+      <div class="tile hi"><div class="lab">Dewan Tenggaroh 5</div><div class="val"><small>RM</small>500</div><div class="note">sehari · 2 mic wireless · projektor · set kerusi majlis penutup</div></div>
+    </div>
+    <div class="cols">
+      <div class="card pick">
+        <h3>Kenapa tempat ini</h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Pantai berpasir di hadapan resort dengan latar pokok — suasana yang diminta pertubuhan sejak awal</li>
+          <li>Kadar dorm seunit, bukan sebilik: 40 peserta muat dalam 3 unit, RM 209 sekepala termasuk makan dan dewan — setara dengan Savanna Hill 2025 (RM 172 tanpa dewan)</li>
+          <li>Dewan tertutup berhawa dingin dengan PA sedia ada menyelesaikan risiko monsun Disember dan kekurangan lampu padang</li>
+          <li>Set kerusi majlis penutup (sofa, rostrum, mic stand) termasuk dalam sewa dewan</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Butiran tempahan</h3>
+        <dl class="kv">
+          <dt>Daftar masuk</dt><dd>4 Disember, 3.00 petang ke atas (dewan boleh digunakan lebih awal)</dd>
+          <dt>Daftar keluar</dt><dd>6 Disember, sebelum 12.00 tengah hari</dd>
+          <dt>Makanan</dt><dd>Buffet di hadapan Dewan Tenggaroh 5; makanan luar tidak dibenarkan</dd>
+          <dt>Kadar</dt><dd>Termasuk caj perkhidmatan 10% dan SST 8%</dd>
+          <dt>Deposit keselamatan</dt><dd>RM 50 sebilik/unit secara tunai semasa ketibaan, dikembalikan — 6 unit, RM 300 tunai disediakan Bendahari</dd>
+          <dt>Hubungi</dt><dd>Muhammad Akid Norizan, Jabatan Jualan · <span class="mono">011-5668 2651</span> · akid.n@feldaresidences.com</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 SEBUT HARGA -->
+<section class="slide" data-part="Tempat" data-title="Sebut harga dan empat soalan sebelum deposit" data-n="7.2">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">7.2</span> Tempat</p>
+    <h2>Sebut harga resort dan empat perkara yang perlu dijelaskan</h2>
+    <p class="sub">Sebut harga disediakan untuk 68 orang (55 peserta, 6 penceramah, 7 pentadbiran) berjumlah RM 14,000. Kertas kerja ini <strong>tidak menggunakan jumlah pakej itu</strong>; ia mengira semula daripada kadar seunit dan sehidangan untuk 61 orang mengikut susunan sebenar program.</p>
+    <div class="cols two">
+      <div class="tw">
+        <table>
+          <thead><tr><th>Perkara dalam sebut harga</th><th>Kesan kepada program</th></tr></thead>
+          <tbody>
+            <tr><td>“Minimum of 50 pax” di muka 2, tetapi “minimum booking of 30 paying guest” dalam syarat</td><td>Perlu disahkan angka mana yang terpakai jika peserta kurang daripada 40</td></tr>
+            <tr><td>Kadar pakej seorang (RM 221 peserta, RM 185 penceramah, RM 105 pentadbiran) tidak dapat dipadankan dengan kadar seunit dan sehidangan</td><td>Minta pecahan bertulis; kertas kerja ini menggunakan kadar seunit yang tersiar di muka 2</td></tr>
+            <tr><td>Dewan RM 500 sehari — bilangan hari tidak dinyatakan</td><td>Bajet mengira 2 hari; jika resort mengira 3 hari, tambah RM 500</td></tr>
+            <tr><td>Mandi Minyak RM 50 seorang disebut semasa lawatan tapak</td><td>Sahkan sama ada caj resort atau anggaran bahan; bajet mengira RM 50 sebagai kos bahan yang ditanggung peserta</td></tr>
+            <tr><td>Surat bertarikh 10 September <strong>2025</strong></td><td>Minta salinan yang dibetulkan sebelum dilampirkan kepada Induk</td></tr>
+            <tr><td>“No reservation, only quotation” — tarikh tidak disimpan</td><td>Deposit 50% (tidak dikembalikan) perlu dibayar sebaik kelulusan Induk</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="card flag">
+          <h3>Syarat pembatalan</h3>
+          <dl class="kv">
+            <dt>15 hari ke atas</dt><dd>Tiada caj</dd>
+            <dt>8 – 14 hari</dt><dd>25% keseluruhan tempoh</dd>
+            <dt>4 – 7 hari</dt><dd>50% keseluruhan tempoh</dd>
+            <dt>Hari ketibaan</dt><dd>100%</dd>
+          </dl>
+          <p class="tiny" style="margin:10px 0 0">Pembatalan atau pindaan mesti bertulis dan diakui terima oleh resort. Bilangan hidangan yang dijamin dikenakan mengikut kadar kumpulan; tambahan pada kadar biasa.</p>
+        </div>
+        <div class="card" style="margin-top:14px">
+          <h3>Jadual bayaran</h3>
+          <ol class="steps small" style="margin-bottom:0">
+            <li><span>Deposit 50% daripada anggaran keseluruhan semasa pengesahan tempahan — tidak dikembalikan</span></li>
+            <li><span>Bayaran progresif hingga 80% tiga minggu sebelum ketibaan (13 November)</span></li>
+            <li><span>Baki penuh tujuh hari bekerja sebelum ketibaan (25 November); pindahan bank diakui selepas pelunasan</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 DAPATAN LAWATAN TAPAK -->
+<section class="slide" data-part="Tempat" data-title="Dapatan lawatan tapak" data-n="7.3">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">7.3</span> Tempat</p>
+    <h2>Dapatan lawatan tapak dan susunan penginapan</h2>
+    <p class="sub">Lawatan tapak dibuat sebelum sebut harga diterima. Dapatan di bawah menentukan susunan dorm, tapak setiap sesi dan peralatan yang perlu dibawa Zon.</p>
+    <div class="cols">
+      <div class="card">
+        <h3>Penginapan · 6 unit</h3>
+        <div class="tw" style="border:none">
+          <table style="font-size:12.5px">
+            <thead><tr><th>Unit</th><th>Penghuni</th><th class="num">Katil</th></tr></thead>
+            <tbody>
+              <tr><td>Dorm 16 — A</td><td>Peserta lelaki</td><td class="num">16</td></tr>
+              <tr><td>Dorm 16 — B</td><td>Peserta lelaki</td><td class="num">16</td></tr>
+              <tr><td>Dorm 16 — C</td><td>AJK dan penguji</td><td class="num">15 / 16</td></tr>
+              <tr><td>Dorm 8</td><td>Peserta wanita</td><td class="num">8</td></tr>
+              <tr><td>Superior Deluxe × 2</td><td>VVIP, 3 sebilik</td><td class="num">6</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tiny" style="margin:10px 0 0">Dorm 16 katil: tandas berkongsi; dorm asing tersedia di tingkat atas jika diperlukan. Merokok di luar bangunan. Bilik pengurusan 2 – 3 katil boleh diminta sebagai Bilik Gerakan. AJK atau penguji wanita, jika ada, masuk dorm wanita.</p>
+      </div>
+      <div class="card">
+        <h3>Tapak sesi</h3>
+        <dl class="kv">
+          <dt>Dewan Tenggaroh 5</dt><dd>Tertutup, berhawa dingin, PA dan projektor sedia ada — semua sesi malam dan pelan hujan; bawa mic mudah alih sebagai gantian</dd>
+          <dt>Padang</dt><dd>Bersebelahan dewan — sesi siang; lampu tidak mencukupi untuk sesi malam; barikad disediakan resort</dd>
+          <dt>Pantai</dt><dd>Sesi siang terpilih dan sesi bergambar; tiada bekalan elektrik</dd>
+          <dt>Backdrop</dt><dd>Saiz belum diukur — diukur pada advance party atau lawatan T−1 minggu sebelum dicetak</dd>
+          <dt>Tempat kumpul</dt><dd>Kawasan hadapan dewan; parkir tetamu majlis penutup perlu disahkan dengan resort</dd>
+        </dl>
+      </div>
+      <div class="card adat">
+        <h3>Adat di premis resort</h3>
+        <p class="small"><strong>Mandi Minyak:</strong> dibenarkan. Kawasan mesti dialas; bekalan elektrik melalui extension dari dewan, atau genset AJK jika di tepi pantai. Bajet memilih kawasan bersebelahan dewan supaya tidak perlu genset. Kos bahan RM 50 seorang.</p>
+        <p class="small" style="margin-bottom:0"><strong>Lompatan Gelung Berapi:</strong> <span class="chip wait">belum dibincangkan dengan resort</span> — kebenaran bertulis diperlukan sebelum dimasukkan dalam tentatif muktamad. Jika tidak dibenarkan, slot Sabtu 10.00 malam menjadi Aktiviti Bebas dan baris D6 bajet digugurkan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 HARI 1 -->
+<section class="slide" data-part="Tentatif" data-title="Tentatif Hari 1 — Jumaat" data-n="8.1">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">8.1</span> Tentatif · Hari Pertama</p>
+    <h2>Jumaat, 4 Disember</h2>
+    <div class="solat"><b>Waktu solat JHR02</b><span>Zohor <span class="tm">12.58</span></span><span>Asar <span class="tm">4.21</span></span><span>Maghrib <span class="tm">6.57</span></span><span>Isyak <span class="tm">8.11</span></span><span class="tiny">anggaran ±2 min · sahkan e-Solat T−2 minggu</span></div>
+    <div class="tt">
+      <div class="r hd">Pagi — AJK sahaja</div>
+      <div class="r"><div class="t">10.00 pg</div><div class="a"><b>Advance party AJK</b><em>Terima dewan, susun Bilik Gerakan, ukur backdrop, uji PA dan projektor, tanda tapak Mandi Minyak dan Gelung Berapi</em></div><div><span class="chip neu">Kem Komandan</span></div></div>
+      <div class="r hd">Tengah hari dan petang</div>
+      <div class="r solat-r"><div class="t">12.58 tgh</div><div class="a"><b>Solat Jumaat di zon masing-masing</b><em>Peserta bertolak ke Tanjung Leman selepas Jumaat; pergerakan diuruskan zon</em></div><div><span class="chip neu">Perhubungan Zon</span></div></div>
+      <div class="r"><div class="t">2.00 ptg</div><div class="a"><b>Ketibaan, pendaftaran dan makan tengah hari</b><em>Lanyard, semakan borang kesihatan, agihan dorm · buffet di hadapan dewan · kunci dorm dari 3.00 petang</em></div><div><span class="chip neu">Pendaftaran · Kebajikan</span></div></div>
+      <div class="r"><div class="t">2.45 ptg</div><div class="a"><b>Taklimat peserta dan pembahagian kumpulan</b><em>Peraturan resort, keselamatan, waktu senyap, pilihan Gelung Berapi</em></div><div><span class="chip neu">Penyelaras · Kem Komandan</span></div></div>
+      <div class="r key"><div class="t">3.30 ptg</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 1</b><em>50 minit · padang sebelah dewan · dimulakan dengan adat buka gelanggang jika ditetapkan Majlis Adat</em></div><div><span class="chip ok">Teras</span></div></div>
+      <div class="r solat-r"><div class="t">4.25 ptg</div><div class="a"><b>Solat Asar · minum petang</b><em>Asar masuk 4.21</em></div><div><span class="chip neu">Keagamaan · Kebajikan</span></div></div>
+      <div class="r key"><div class="t">5.00 ptg</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 2</b><em>1 jam 30 minit · padang atau pantai</em></div><div><span class="chip ok">Teras</span></div></div>
+      <div class="r hd">Malam</div>
+      <div class="r solat-r"><div class="t">6.30 ptg</div><div class="a"><b>Khidmat Diri · makan malam · Solat Maghrib · Tahlil · Solat Isyak</b><em>Makan malam buffet 6.30 · Maghrib masuk 6.57, Isyak 8.11 · Tahlil selepas Maghrib, seperti 2025</em></div><div><span class="chip neu">Keagamaan</span></div></div>
+      <div class="r key"><div class="t">8.45 mlm</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 3</b><em>2 jam 15 minit · di dalam dewan (padang kurang lampu)</em></div><div><span class="chip ok">Teras</span></div></div>
+      <div class="r"><div class="t">11.00 mlm</div><div class="a">Supper · Aktiviti Bebas</div><div><span class="chip neu">Kebajikan</span></div></div>
+      <div class="r"><div class="t">11.45 mlm</div><div class="a">Waktu senyap hingga 5.00 pagi · debrief AJK 15 minit · AJK bergilir berjaga</div><div><span class="chip neu">Kem Komandan</span></div></div>
+    </div>
+    <p class="tiny" style="margin-top:12px">Pemantapan &amp; Penilaian Hari 1: 4 jam 35 minit (2025: 5 jam). Waktu tidur peserta kira-kira 5 jam 30 minit.</p>
+  </div>
+</section>
+
+<!-- 15 HARI 2 -->
+<section class="slide" data-part="Tentatif" data-title="Tentatif Hari 2 — Sabtu" data-n="8.2">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">8.2</span> Tentatif · Hari Kedua</p>
+    <h2>Sabtu, 5 Disember</h2>
+    <div class="solat"><b>Waktu solat JHR02</b><span>Subuh <span class="tm">5.41</span></span><span>Syuruk <span class="tm">6.55</span></span><span>Zohor <span class="tm">12.59</span></span><span>Asar <span class="tm">4.22</span></span><span>Maghrib <span class="tm">6.58</span></span><span>Isyak <span class="tm">8.12</span></span></div>
+    <div class="tt">
+      <div class="r hd">Pagi</div>
+      <div class="r solat-r"><div class="t">5.15 pg</div><div class="a"><b>Khidmat Diri · Solat Subuh · zikir gelanggang</b><em>Subuh masuk 5.41</em></div><div><span class="chip neu">Keagamaan</span></div></div>
+      <div class="r"><div class="t">6.30 pg</div><div class="a"><b>Regangan pagi</b><em>Ringan, di tapak · taklimat AJK selari</em></div><div><span class="chip neu">Kejurulatihan</span></div></div>
+      <div class="r"><div class="t">7.15 pg</div><div class="a">Sarapan pagi</div><div><span class="chip neu">Kebajikan</span></div></div>
+      <div class="r key"><div class="t">8.00 pg</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 4</b><em>2 jam 30 minit</em></div><div><span class="chip ok">Teras</span></div></div>
+      <div class="r"><div class="t">10.30 pg</div><div class="a">Rehat · air minum di tapak</div><div><span class="chip neu">Kebajikan</span></div></div>
+      <div class="r key"><div class="t">11.00 pg</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 5</b><em>2 jam</em></div><div><span class="chip ok">Teras</span></div></div>
+      <div class="r hd">Tengah hari dan petang</div>
+      <div class="r solat-r"><div class="t">1.00 ptg</div><div class="a"><b>Solat Zohor · makan tengah hari · rehat</b><em>Zohor masuk 12.59 · rehat penuh 1 jam 30 minit untuk peserta dewasa</em></div><div><span class="chip neu">Keagamaan · Kebajikan</span></div></div>
+      <div class="r key"><div class="t">2.30 ptg</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 6</b><em>1 jam 45 minit</em></div><div><span class="chip ok">Teras</span></div></div>
+      <div class="r solat-r"><div class="t">4.25 ptg</div><div class="a"><b>Solat Asar · minum petang · ketibaan Guru dan Waris Amanah</b><em>Asar masuk 4.22 · Guru disambut Penyelaras</em></div><div><span class="chip neu">Keagamaan · Protokol</span></div></div>
+      <div class="r key"><div class="t">5.00 ptg</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 7</b><em>1 jam 15 minit · disaksikan Guru</em></div><div><span class="chip ok">Teras</span></div></div>
+      <div class="r hd">Malam</div>
+      <div class="r solat-r"><div class="t">6.15 ptg</div><div class="a"><b>Khidmat Diri · Solat Maghrib · makan malam bersama Guru · Amanah Guru · Solat Isyak</b><em>Maghrib masuk 6.58, Isyak 8.12 · Amanah Guru 30 minit selepas makan, seperti 2025</em></div><div><span class="chip neu">Keagamaan · Guru</span></div></div>
+      <div class="r key"><div class="t">8.45 mlm</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 8</b><em>1 jam · gelanggang malam, cahaya terhad, senjata latihan kayu · boleh digugurkan atas keputusan Majlis Jurulatih</em></div><div><span class="chip ok">Teras</span></div></div>
+      <div class="r"><div class="t">9.45 mlm</div><div class="a"><b>Raptai ringkas Majlis Penutup</b><em>15 minit · susunan masuk dewan dan urutan penganugerahan, seperti 2025</em></div><div><span class="chip neu">Pengacaraan</span></div></div>
+      <div class="r adat"><div class="t">10.00 mlm</div><div class="a"><b>Lompatan Gelung Berapi</b><em>40 minit · tertakluk kebenaran bertulis resort · pakaian kapas · Pasukan Api bersedia · Bahagian 10.0</em></div><div><span class="chip wait">Pilihan · Majlis Adat</span></div></div>
+      <div class="r adat"><div class="t">10.45 mlm</div><div class="a"><b>Mandi Minyak</b><em>1 jam · dipimpin Guru atau Waris Amanah · kawasan beralas bersebelahan dewan, elektrik melalui extension · kawah dipanaskan dari 9.00 malam · Bahagian 10.0</em></div><div><span class="chip wait">Pilihan · Majlis Adat</span></div></div>
+      <div class="r"><div class="t">11.45 mlm</div><div class="a">Supper · waktu senyap 12.00 · debrief AJK</div><div><span class="chip neu">Kem Komandan</span></div></div>
+    </div>
+    <p class="tiny" style="margin-top:12px">Pemantapan &amp; Penilaian Hari 2: 8 jam 30 minit (2025: 9 jam 45 minit). Waktu tidur peserta kira-kira 5 jam 15 minit — sama seperti 2025, dengan malam adat menggantikan sebahagian Sesi 8.</p>
+  </div>
+</section>
+
+<!-- 16 HARI 3 -->
+<section class="slide" data-part="Tentatif" data-title="Tentatif Hari 3 — Ahad" data-n="8.3">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">8.3</span> Tentatif · Hari Ketiga</p>
+    <h2>Ahad, 6 Disember</h2>
+    <div class="solat"><b>Waktu solat JHR02</b><span>Subuh <span class="tm">5.41</span></span><span>Syuruk <span class="tm">6.55</span></span><span>Zohor <span class="tm">12.59</span></span><span>Asar <span class="tm">4.22</span></span></div>
+    <div class="tt">
+      <div class="r hd">Pagi</div>
+      <div class="r solat-r"><div class="t">5.15 pg</div><div class="a"><b>Khidmat Diri · Solat Subuh</b><em>Subuh masuk 5.41</em></div><div><span class="chip neu">Keagamaan</span></div></div>
+      <div class="r"><div class="t">6.30 pg</div><div class="a"><b>Amanah Guru</b><em>45 minit · seperti pagi Hari 3 Sesi 2025</em></div><div><span class="chip neu">Guru</span></div></div>
+      <div class="r"><div class="t">7.15 pg</div><div class="a">Sarapan pagi</div><div><span class="chip neu">Kebajikan</span></div></div>
+      <div class="r key"><div class="t">8.00 pg</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 9: Pengesahan</b><em>1 jam 15 minit · penguji menyemak semula peserta yang belum muktamad; peserta lain berlatih persembahan penutup mengikut kumpulan</em></div><div><span class="chip ok">Teras</span></div></div>
+      <div class="r"><div class="t">9.15 pg</div><div class="a"><b>Gotong-royong · kemas barang · daftar keluar dorm sebelum 12.00</b></div><div><span class="chip neu">Logistik</span></div></div>
+      <div class="r"><div class="t">10.15 pg</div><div class="a"><b>Penguji bermesyuarat memuktamadkan keputusan</b><em>Peserta bersiap pakaian gelanggang penuh · Protokol menyusun dewan dan dulang anugerah</em></div><div><span class="chip neu">Penguji · Protokol</span></div></div>
+      <div class="r hd">Majlis Penutup — Bahagian 11.0</div>
+      <div class="r"><div class="t">11.15 pg</div><div class="a">Peserta dan AJK mengambil tempat di dewan mengikut kumpulan</div><div><span class="chip neu">Protokol</span></div></div>
+      <div class="r"><div class="t">11.20 pg</div><div class="a">Ketibaan tetamu jemputan · 11.25 ketibaan VVIP, diiringi masuk dewan</div><div><span class="chip neu">Protokol</span></div></div>
+      <div class="r key"><div class="t">11.30 pg</div><div class="a"><b>Majlis Penutup</b><em>1 jam 30 minit · lagu · doa · ucapan · penganugerahan bengkung dan sijil · cenderahati · Ikrar Gayung · persembahan penutup</em></div><div><span class="chip ok">Teras</span></div></div>
+      <div class="r solat-r"><div class="t">1.00 ptg</div><div class="a"><b>Sesi bergambar · Solat Zohor · jamuan makan tengah hari</b><em>Zohor masuk 12.59 · meja VVIP dihidang selepas Zohor</em></div><div><span class="chip neu">Keagamaan · Kebajikan · Protokol</span></div></div>
+      <div class="r"><div class="t">2.00 ptg</div><div class="a"><b>Bersurai</b></div><div></div></div>
+      <div class="r"><div class="t">2.30 ptg</div><div class="a">AJK kemas dewan, serah kunci, semak inventori peralatan zon</div><div><span class="chip neu">Logistik</span></div></div>
+    </div>
+    <p class="small" style="margin-top:12px">Jumlah Pemantapan &amp; Penilaian: <strong>14 jam 20 minit</strong> merentasi 9 sesi (2025: 14 jam 45 minit, 8 sesi). Jika Sesi 8 digugurkan, jumlahnya 13 jam 20 minit.</p>
+    <p class="tiny">Sesi 2025 mengadakan Mesyuarat Perwakilan PSSGCSM pada pagi Hari 3 selama 3 jam. Jika Induk mahu mengulanginya, ia menggantikan Sesi 9 dan gotong-royong (8.00 – 11.00 pagi); ruang mesyuarat berasingan perlu disahkan dengan pihak tempat.</p>
+  </div>
+</section>
+
+<!-- 17 PENILAIAN — MAJLIS JURULATIH -->
+<section class="slide" data-part="Penilaian" data-title="Rangka Pemantapan & Penilaian" data-n="9.0">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">9.0</span> Pemantapan &amp; Penilaian <span class="aud">Untuk keputusan Majlis Jurulatih</span></p>
+    <h2>Rangka sembilan sesi dan keputusan yang diminta</h2>
+    <p class="sub">AJK Pengurusan menyediakan masa, tempat dan logistik. Kandungan setiap sesi, penguji dan kriteria adalah hak Majlis Jurulatih. Lajur “Cadangan” hanyalah cadangan untuk dibahaskan.</p>
+    <div class="cols" style="grid-template-columns:1.55fr 1fr">
+      <div class="tw">
+        <table>
+          <thead><tr><th>Sesi</th><th>Masa</th><th class="num">Tempoh</th><th>Cadangan</th><th>Keadaan</th></tr></thead>
+          <tbody>
+            <tr><td class="kod">1</td><td class="t">Jum 3.30 ptg</td><td class="num">0j 50m</td><td>Buka gelanggang, semakan asas</td><td>Siang</td></tr>
+            <tr><td class="kod">2</td><td class="t">Jum 5.00 ptg</td><td class="num">1j 30m</td><td>Permainan senjata mengikut bengkung, bahagian 1</td><td>Siang</td></tr>
+            <tr><td class="kod">3</td><td class="t">Jum 8.45 mlm</td><td class="num">2j 15m</td><td>Penilaian awal individu</td><td>Malam, lampu penuh</td></tr>
+            <tr><td class="kod">4</td><td class="t">Sab 8.00 pg</td><td class="num">2j 30m</td><td>Permainan senjata, bahagian 2</td><td>Siang</td></tr>
+            <tr><td class="kod">5</td><td class="t">Sab 11.00 pg</td><td class="num">2j 00m</td><td>Permainan berpasangan, silang gelanggang</td><td>Siang</td></tr>
+            <tr><td class="kod">6</td><td class="t">Sab 2.30 ptg</td><td class="num">1j 45m</td><td>Penilaian individu, bahagian 2</td><td>Siang</td></tr>
+            <tr><td class="kod">7</td><td class="t">Sab 5.00 ptg</td><td class="num">1j 15m</td><td>Pemantapan disaksikan Guru</td><td>Siang</td></tr>
+            <tr><td class="kod">8</td><td class="t">Sab 8.45 mlm</td><td class="num">1j 00m</td><td>Gelanggang malam — boleh digugurkan</td><td>Cahaya terhad, senjata kayu</td></tr>
+            <tr><td class="kod">9</td><td class="t">Ahad 8.00 pg</td><td class="num">1j 15m</td><td><strong>Pengesahan</strong> — peserta yang belum muktamad</td><td>Siang, peserta segar</td></tr>
+            <tr class="grp"><td></td><td>Jumlah</td><td class="num">14j 20m</td><td colspan="2">2025: 8 sesi, 14j 45m · nisbah 1 penguji : 7 peserta pada 40 peserta</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card adat">
+        <h3>Keputusan diminta <span class="who">selewat-lewatnya 23 Oktober</span></h3>
+        <ol class="steps small" style="margin-bottom:0">
+          <li><span>Kandungan setiap sesi mengikut tahap bengkung M0 hingga PK4</span></li>
+          <li><span>Senarai 6 jurulatih penguji dan pelantikan Ketua Penguji</span></li>
+          <li><span>Borang penilaian, skala markah dan markah lulus</span></li>
+          <li><span>Sama ada Sesi 8 (gelanggang malam) dikekalkan</span></li>
+          <li><span>Format keputusan — lulus, kekal atau ulang — dan pengumumannya di Majlis Penutup</span></li>
+          <li><span>Sama ada Anugerah Peserta Terbaik diadakan, dan kriterianya</span></li>
+          <li><span>Kandungan ulasan Ketua Majlis Jurulatih pada Majlis Penutup (8 minit)</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="note"><b>Yang AJK sediakan untuk penguji:</b> senjata latihan kayu, lampu tapak, papan klip dan borang dicetak, air minum di tapak, satu AJK Kejurulatihan sebagai penghubung, bilik penguji untuk mesyuarat keputusan pagi Hari 3, saguhati RM 50 seorang dan sijil penyertaan. <b>Mandi Minyak dan Gelung Berapi adalah pilihan</b> dan tidak mempengaruhi penilaian.</div>
+  </div>
+</section>
+
+<!-- 18 MAJLIS ADAT -->
+<section class="slide" data-part="Adat" data-title="Majlis Adat: Mandi Minyak dan Gelung Berapi" data-n="10.0">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">10.0</span> Adat pertubuhan <span class="aud">Untuk ketetapan Majlis Adat</span></p>
+    <h2>Apa yang AJK sediakan, apa yang Majlis Adat tetapkan</h2>
+    <p class="sub">AJK hanya mencadangkan susunan logistik dan keselamatan. Tertib adat, bacaan, iringan dan siapa yang memimpin adalah ketetapan Majlis Adat. Kedua-dua aktiviti dijalankan malam Hari 2 selepas Guru dan Waris Amanah tiba, dan selepas Solat Isyak.</p>
+    <div class="cols two">
+      <div class="card">
+        <h3>Lompatan Gelung Berapi <span class="who">Sabtu 10.00 malam · 40 minit</span></h3>
+        <ol class="steps small">
+          <li><span>Taklimat keselamatan 10 minit oleh Ketua Pasukan Api; semakan pakaian kapas, tanggal jam, cincin dan rantai</span></li>
+          <li><span>Peserta pilihan berbaris mengikut kumpulan; peserta yang tidak menyertai berdiri di kawasan penonton, 5 meter dari gelung</span></li>
+          <li><span>Gelung dinyalakan oleh Pasukan Api dengan <strong>minyak tanah</strong> atas isyarat Guru</span></li>
+          <li><span>Lompatan mengikut giliran kumpulan; satu peserta satu masa; Pasukan Api di kedua-dua sisi gelung</span></li>
+          <li><span>Selesai: gelung dipadam, tapak disejukkan dengan pasir, kawasan dikawal 15 minit</span></li>
+        </ol>
+        <p class="tiny" style="margin:0"><strong>Pasukan Api 5 orang:</strong> 2 pemadam ABC, selimut api, 2 baldi air, 1 baldi pasir. Dibatalkan jika angin kuat atau hujan.</p>
+      </div>
+      <div class="card">
+        <h3>Mandi Minyak <span class="who">Sabtu 10.45 malam · 1 jam</span></h3>
+        <ol class="steps small">
+          <li><span>9.00 malam — AJK Kebajikan &amp; Logistik memanaskan minyak masak di kawah atas tungku atau dapur gas di kawasan beralas bersebelahan dewan, jauh daripada laluan orang</span></li>
+          <li><span>Guru atau Waris Amanah menyempurnakan adat mengikut tertib pertubuhan</span></li>
+          <li><span>Peserta pilihan beratur mengikut kumpulan dan dipanggil seorang demi seorang</span></li>
+          <li><span>First Aider bertauliah dan burn kit disediakan <strong>jauh daripada kawah</strong> — air tidak dibawa dekat minyak panas</span></li>
+          <li><span>Selesai: sabun dan air suam untuk mencuci, kain guni untuk mengelap; minyak dibiarkan sejuk hingga pagi dan dibawa balik dalam bekas asal, tidak dituang ke longkang</span></li>
+        </ol>
+        <p class="tiny" style="margin:0"><strong>Bahan:</strong> minyak masak dan bahan Mandi Minyak ditanggung peserta pada RM 50 seorang (baris B2); kain guni, dawai dan minyak tanah Gelung Berapi RM 200 (baris D6). Kawasan dialas; elektrik melalui extension dari dewan, genset AJK hanya jika di tepi pantai.</p>
+      </div>
+    </div>
+    <div class="cols" style="margin-top:14px">
+      <div class="card adat">
+        <h3>Ketetapan diminta daripada Majlis Adat</h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Sama ada adat buka gelanggang dijalankan pada Sesi 1, dan siapa yang memimpin jika Guru belum tiba pada Hari 1</li>
+          <li>Guru atau Waris Amanah yang memimpin Gelung Berapi dan Mandi Minyak</li>
+          <li>Senarai bahan adat khusus yang perlu disediakan, dan siapa yang membawanya</li>
+          <li>Iringan semasa upacara — paluan gendang, zikir beramai-ramai, atau senyap</li>
+          <li>Pakaian peserta semasa upacara adat dan semasa Majlis Penutup</li>
+          <li>Urutan kekananan VVIP untuk pengiringan masuk dewan dan susunan barisan hadapan</li>
+          <li>Adat penerimaan bengkung di Majlis Penutup — cara menerima dan kepada siapa peserta memberi hormat</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Tahlil dan Amanah Guru</h3>
+        <p class="small" style="margin-bottom:6px"><strong>Tahlil</strong> malam Hari 1 selepas makan malam, sebelum Isyak — dikekalkan daripada 2025, dipimpin AJK Keagamaan atau Guru jika hadir.</p>
+        <p class="small" style="margin-bottom:0"><strong>Amanah Guru</strong> dua kali seperti 2025: malam Hari 2 selepas makan malam (30 minit) dan pagi Hari 3 selepas Subuh (45 minit). Tajuk dan penyampai mengikut ketetapan Guru; AJK menyediakan tempat duduk, PA dan air minum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 19 ATUR CARA MAJLIS PENUTUP -->
+<section class="slide" data-part="Majlis Penutup" data-title="Atur cara Majlis Penutup" data-n="11.1">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">11.1</span> Majlis Penutup <span class="aud">Protokol · rujuk Majlis Adat bagi iringan dan kekananan</span></p>
+    <h2>Atur cara, Ahad 11.30 pagi – 1.00 petang</h2>
+    <p class="sub">Urutan mengikut Majlis Penutup Sesi 2025 (12.00 – 2.00 petang), dipadatkan kepada 90 minit dan dimulakan lebih awal supaya Zohor dan jamuan tidak tergesa. Pengacara daripada AJK Pengacaraan; skrip dan senarai penerima disemak Setiausaha pada T−1 minggu.</p>
+    <div class="cols" style="grid-template-columns:1.6fr 1fr">
+      <div class="tt">
+        <div class="r hd">Persiapan</div>
+        <div class="r"><div class="t">11.15 pg</div><div class="a"><b>Peserta dan AJK mengambil tempat</b><em>Masuk mengikut kumpulan, ketua kumpulan di hadapan · semakan PA, fail lagu, dulang bengkung dan sijil mengikut urutan panggilan</em></div><div><span class="chip neu">Protokol · Multimedia</span></div></div>
+        <div class="r"><div class="t">11.20 pg</div><div class="a"><b>Ketibaan tetamu jemputan</b><em>Disambut AJK Protokol di pintu utama, tandatangan buku tetamu, diiringi ke tempat duduk</em></div><div><span class="chip neu">Protokol</span></div></div>
+        <div class="r adat"><div class="t">11.25 pg</div><div class="a"><b>Ketibaan VVIP</b><em>Disambut Penyelaras Program dan Pengerusi Zon · pengacara mengumumkan ketibaan · hadirin berdiri · diiringi melalui laluan tengah ke barisan hadapan · iringan mengikut ketetapan Majlis Adat</em></div><div><span class="chip wait">Protokol · Majlis Adat</span></div></div>
+        <div class="r hd">Majlis</div>
+        <div class="r key"><div class="t">11.30 pg</div><div class="a"><b>Lagu Negaraku · Lagu Bangsa Johor · Lagu Gayung</b><em>Semua berdiri · rakaman melalui PA, fail diuji Hari 1</em></div><div><span class="chip neu">Multimedia</span></div></div>
+        <div class="r"><div class="t">11.35 pg</div><div class="a">Bacaan doa</div><div><span class="chip neu">Keagamaan</span></div></div>
+        <div class="r"><div class="t">11.40 pg</div><div class="a"><b>Ucapan alu-aluan Penyelaras Program</b><em>5 minit</em></div><div><span class="chip neu">Penyelaras</span></div></div>
+        <div class="r"><div class="t">11.45 pg</div><div class="a"><b>Ucapan Ketua Majlis Jurulatih</b><em>8 minit · ulasan keseluruhan Pemantapan &amp; Penilaian</em></div><div><span class="chip neu">Majlis Jurulatih</span></div></div>
+        <div class="r"><div class="t">11.53 pg</div><div class="a"><b>Ucapan perasmian penutup</b><em>12 minit · Pengerusi dan Waris Amanah, atau perasmi jemputan mengikut ketetapan Induk</em></div><div><span class="chip neu">Perasmi</span></div></div>
+        <div class="r key"><div class="t">12.05 tgh</div><div class="a"><b>Penganugerahan bengkung dan sijil</b><em>25 minit · peserta dipanggil mengikut kumpulan · AJK Protokol memegang dulang · jurugambar di hadapan kanan · 2025: 30 minit</em></div><div><span class="chip ok">Teras</span></div></div>
+        <div class="r"><div class="t">12.30 tgh</div><div class="a"><b>Penyampaian cenderahati</b><em>8 minit · kepada VVIP, Guru dan jurulatih penguji · Anugerah Peserta Terbaik di sini jika ditetapkan Majlis Jurulatih</em></div><div><span class="chip neu">Penyelaras</span></div></div>
+        <div class="r"><div class="t">12.38 tgh</div><div class="a"><b>Ikrar Gayung</b><em>4 minit</em></div><div><span class="chip neu">Peserta</span></div></div>
+        <div class="r key"><div class="t">12.42 tgh</div><div class="a"><b>Persembahan penutup</b><em>14 minit · 2 – 3 kumpulan, 3 – 4 minit setiap satu · seni bersenjata mengikut silibus yang dinilai</em></div><div><span class="chip ok">Teras</span></div></div>
+        <div class="r"><div class="t">12.56 tgh</div><div class="a">Ucapan penutup pengacara · sesi bergambar</div><div><span class="chip neu">Pengacaraan</span></div></div>
+        <div class="r solat-r"><div class="t">1.00 ptg</div><div class="a"><b>Solat Zohor · jamuan</b><em>Zohor masuk 12.59 · VVIP diiringi ke surau, kemudian ke meja VVIP · hadirin ke bufet</em></div><div><span class="chip neu">Keagamaan · Protokol</span></div></div>
+      </div>
+      <div>
+        <div class="card">
+          <h3>Muzik dan bunyi</h3>
+          <dl class="kv">
+            <dt>Lagu rasmi</dt><dd>Negaraku, Bangsa Johor, Lagu Gayung — rakaman, urutan tetap, diuji dengan PA dewan pada Hari 1</dd>
+            <dt>Iringan VVIP</dt><dd>Paluan gendang oleh kumpulan terpilih, atau senyap hormat — <strong>ketetapan Majlis Adat</strong></dd>
+            <dt>Penganugerahan</dt><dd>Tiada muzik latar supaya nama penerima jelas didengar</dd>
+            <dt>Persembahan</dt><dd>Iringan gendang jika ada pemain; jika tidak, tanpa iringan</dd>
+            <dt>Jamuan</dt><dd>Tiada muzik; PA untuk pengumuman sahaja</dd>
+          </dl>
+        </div>
+        <div class="card" style="margin-top:14px">
+          <h3>Peserta semasa majlis</h3>
+          <ul class="small" style="margin-bottom:0">
+            <li>Pakaian gelanggang penuh dengan bengkung semasa; bengkung baharu diterima di pentas</li>
+            <li>Duduk mengikut kumpulan, ketua kumpulan di hadapan; berdiri semasa VVIP masuk, lagu dan Ikrar Gayung</li>
+            <li>Apabila dipanggil: berjalan melalui laluan tengah, menerima dengan dua tangan, memberi hormat mengikut adat, kembali melalui laluan sisi</li>
+            <li>Telefon disenyapkan; AJK Multimedia sahaja yang merakam</li>
+          </ul>
+        </div>
+        <div class="card soft" style="margin-top:14px">
+          <h3>Barang di pentas</h3>
+          <p class="small" style="margin-bottom:0">Dulang bengkung dan sijil disusun mengikut urutan panggilan · cenderahati VVIP, Guru dan penguji · teks Ikrar Gayung · mikrofon rostrum dan mikrofon tangan · air minum untuk VVIP.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 20 PELAN DEWAN -->
+<section class="slide" data-part="Majlis Penutup" data-title="Pelan dewan dan susunan kerusi" data-n="11.2">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">11.2</span> Majlis Penutup</p>
+    <h2>Pelan dewan dan susunan kerusi</h2>
+    <p class="sub">Pelan generik untuk dewan segi empat; disesuaikan selepas lawatan tapak T−1 minggu. Prinsipnya tetap: VVIP paling dekat dengan pentas, laluan tengah bebas halangan, peserta mengikut kumpulan supaya panggilan penganugerahan lancar.</p>
+    <div class="plan">
+      <svg viewBox="0 0 880 540" role="img" aria-label="Pelan susunan dewan Majlis Penutup">
+        <!-- dinding -->
+        <rect class="sv-wall" x="12" y="12" width="856" height="516" rx="4"/>
+        <!-- pentas -->
+        <rect class="sv-stage" x="190" y="26" width="500" height="66" rx="4"/>
+        <text class="sv-tb" x="440" y="52" text-anchor="middle">PENTAS</text>
+        <text class="sv-t" x="440" y="70" text-anchor="middle">Backdrop dan banner program · mikrofon rostrum · meja VVIP pentas (jika ucapan duduk)</text>
+        <rect class="sv-seat" x="612" y="58" width="60" height="24" rx="3"/>
+        <text class="sv-t" x="642" y="74" text-anchor="middle" font-size="9.5">Rostrum</text>
+        <!-- meja anugerah -->
+        <rect class="sv-vip" x="30" y="30" width="146" height="56" rx="4"/>
+        <text class="sv-tb" x="103" y="52" text-anchor="middle" font-size="10.5">Meja anugerah</text>
+        <text class="sv-t" x="103" y="68" text-anchor="middle" font-size="9.5">bengkung &amp; sijil ikut urutan panggilan</text>
+        <!-- jurugambar -->
+        <circle class="sv-dotl" cx="712" cy="104" r="5"/>
+        <text class="sv-t" x="722" y="108" font-size="9.5">Jurugambar</text>
+        <!-- barisan VVIP -->
+        <g>
+          <rect class="sv-seatv" x="250" y="118" width="26" height="18" rx="3"/><rect class="sv-seatv" x="286" y="118" width="26" height="18" rx="3"/><rect class="sv-seatv" x="322" y="118" width="26" height="18" rx="3"/><rect class="sv-seatv" x="358" y="118" width="26" height="18" rx="3"/><rect class="sv-seatv" x="394" y="118" width="26" height="18" rx="3"/>
+          <rect class="sv-seatv" x="460" y="118" width="26" height="18" rx="3"/><rect class="sv-seatv" x="496" y="118" width="26" height="18" rx="3"/><rect class="sv-seatv" x="532" y="118" width="26" height="18" rx="3"/><rect class="sv-seatv" x="568" y="118" width="26" height="18" rx="3"/><rect class="sv-seatv" x="604" y="118" width="26" height="18" rx="3"/>
+        </g>
+        <text class="sv-tg" x="420" y="152" text-anchor="end">Barisan VVIP · 6 – 10 kerusi berlengan, kad nama</text>
+        <text class="sv-tg" x="460" y="152" text-anchor="start">kekananan mengikut Majlis Adat</text>
+        <!-- tetamu -->
+        <g>
+          <rect class="sv-seat" x="286" y="166" width="26" height="18" rx="3"/><rect class="sv-seat" x="322" y="166" width="26" height="18" rx="3"/><rect class="sv-seat" x="358" y="166" width="26" height="18" rx="3"/><rect class="sv-seat" x="394" y="166" width="26" height="18" rx="3"/>
+          <rect class="sv-seat" x="460" y="166" width="26" height="18" rx="3"/><rect class="sv-seat" x="496" y="166" width="26" height="18" rx="3"/><rect class="sv-seat" x="532" y="166" width="26" height="18" rx="3"/><rect class="sv-seat" x="568" y="166" width="26" height="18" rx="3"/>
+          <rect class="sv-seat" x="286" y="190" width="26" height="18" rx="3"/><rect class="sv-seat" x="322" y="190" width="26" height="18" rx="3"/><rect class="sv-seat" x="358" y="190" width="26" height="18" rx="3"/><rect class="sv-seat" x="394" y="190" width="26" height="18" rx="3"/>
+          <rect class="sv-seat" x="460" y="190" width="26" height="18" rx="3"/><rect class="sv-seat" x="496" y="190" width="26" height="18" rx="3"/><rect class="sv-seat" x="532" y="190" width="26" height="18" rx="3"/><rect class="sv-seat" x="568" y="190" width="26" height="18" rx="3"/>
+        </g>
+        <text class="sv-t" x="420" y="224" text-anchor="end">Tetamu jemputan, perwakilan zon dan veteran · 16 kerusi</text>
+        <text class="sv-t" x="460" y="224" text-anchor="start">tambah mengikut pengesahan</text>
+        <!-- penguji kiri -->
+        <rect class="sv-zone" x="30" y="112" width="146" height="120" rx="4"/>
+        <g>
+          <rect class="sv-seat" x="62" y="122" width="26" height="18" rx="3"/><rect class="sv-seat" x="118" y="122" width="26" height="18" rx="3"/>
+          <rect class="sv-seat" x="62" y="150" width="26" height="18" rx="3"/><rect class="sv-seat" x="118" y="150" width="26" height="18" rx="3"/>
+          <rect class="sv-seat" x="62" y="178" width="26" height="18" rx="3"/><rect class="sv-seat" x="118" y="178" width="26" height="18" rx="3"/>
+        </g>
+        <text class="sv-tb" x="103" y="222" text-anchor="middle" font-size="10">Jurulatih Penguji · 6</text>
+        <!-- AJK kanan -->
+        <rect class="sv-zone" x="704" y="112" width="146" height="120" rx="4"/>
+        <g>
+          <rect class="sv-seat" x="722" y="120" width="26" height="14" rx="3"/><rect class="sv-seat" x="764" y="120" width="26" height="14" rx="3"/><rect class="sv-seat" x="806" y="120" width="26" height="14" rx="3"/>
+          <rect class="sv-seat" x="722" y="140" width="26" height="14" rx="3"/><rect class="sv-seat" x="764" y="140" width="26" height="14" rx="3"/><rect class="sv-seat" x="806" y="140" width="26" height="14" rx="3"/>
+          <rect class="sv-seat" x="722" y="160" width="26" height="14" rx="3"/><rect class="sv-seat" x="764" y="160" width="26" height="14" rx="3"/><rect class="sv-seat" x="806" y="160" width="26" height="14" rx="3"/>
+          <rect class="sv-seat" x="722" y="180" width="26" height="14" rx="3"/><rect class="sv-seat" x="764" y="180" width="26" height="14" rx="3"/><rect class="sv-seat" x="806" y="180" width="26" height="14" rx="3"/>
+          <rect class="sv-seat" x="743" y="200" width="26" height="14" rx="3"/><rect class="sv-seat" x="785" y="200" width="26" height="14" rx="3"/>
+        </g>
+        <text class="sv-tb" x="777" y="226" text-anchor="middle" font-size="10">AJK · 9</text>
+        <!-- laluan VVIP -->
+        <line class="sv-path" x1="440" y1="516" x2="440" y2="146"/>
+        <polygon points="440,138 434,150 446,150" style="fill:var(--gold)"/>
+        <text class="sv-tg" x="432" y="505" transform="rotate(-90 432 505)" text-anchor="start" font-size="10">Laluan tengah VVIP</text>
+        <!-- kumpulan kiri -->
+        <g>
+          <rect class="sv-p" x="190" y="246" width="70" height="92" rx="4"/><circle class="sv-dotl" cx="225" cy="262" r="6"/><circle class="sv-dot" cx="207" cy="284" r="6"/><circle class="sv-dot" cx="243" cy="284" r="6"/><circle class="sv-dot" cx="207" cy="306" r="6"/><circle class="sv-dot" cx="243" cy="306" r="6"/><text class="sv-t" x="225" y="330" text-anchor="middle" font-size="9.5">Kump. 1</text>
+          <rect class="sv-p" x="270" y="246" width="70" height="92" rx="4"/><circle class="sv-dotl" cx="305" cy="262" r="6"/><circle class="sv-dot" cx="287" cy="284" r="6"/><circle class="sv-dot" cx="323" cy="284" r="6"/><circle class="sv-dot" cx="287" cy="306" r="6"/><circle class="sv-dot" cx="323" cy="306" r="6"/><text class="sv-t" x="305" y="330" text-anchor="middle" font-size="9.5">Kump. 2</text>
+          <rect class="sv-p" x="350" y="246" width="70" height="92" rx="4"/><circle class="sv-dotl" cx="385" cy="262" r="6"/><circle class="sv-dot" cx="367" cy="284" r="6"/><circle class="sv-dot" cx="403" cy="284" r="6"/><circle class="sv-dot" cx="367" cy="306" r="6"/><circle class="sv-dot" cx="403" cy="306" r="6"/><text class="sv-t" x="385" y="330" text-anchor="middle" font-size="9.5">Kump. 3</text>
+        </g>
+        <!-- kumpulan kanan -->
+        <g>
+          <rect class="sv-p" x="460" y="246" width="70" height="92" rx="4"/><circle class="sv-dotl" cx="495" cy="262" r="6"/><circle class="sv-dot" cx="477" cy="284" r="6"/><circle class="sv-dot" cx="513" cy="284" r="6"/><circle class="sv-dot" cx="477" cy="306" r="6"/><circle class="sv-dot" cx="513" cy="306" r="6"/><text class="sv-t" x="495" y="330" text-anchor="middle" font-size="9.5">Kump. 4</text>
+          <rect class="sv-p" x="540" y="246" width="70" height="92" rx="4"/><circle class="sv-dotl" cx="575" cy="262" r="6"/><circle class="sv-dot" cx="557" cy="284" r="6"/><circle class="sv-dot" cx="593" cy="284" r="6"/><circle class="sv-dot" cx="557" cy="306" r="6"/><circle class="sv-dot" cx="593" cy="306" r="6"/><text class="sv-t" x="575" y="330" text-anchor="middle" font-size="9.5">Kump. 5</text>
+          <rect class="sv-p" x="620" y="246" width="70" height="92" rx="4"/><circle class="sv-dotl" cx="655" cy="262" r="6"/><circle class="sv-dot" cx="637" cy="284" r="6"/><circle class="sv-dot" cx="673" cy="284" r="6"/><circle class="sv-dot" cx="637" cy="306" r="6"/><circle class="sv-dot" cx="673" cy="306" r="6"/><text class="sv-t" x="655" y="330" text-anchor="middle" font-size="9.5">Kump. 6</text>
+        </g>
+        <text class="sv-t" x="420" y="356" text-anchor="end">Peserta · 40 · duduk bersila mengikut kumpulan</text>
+        <text class="sv-t" x="460" y="356" text-anchor="start">ketua kumpulan di hadapan (bulatan penuh)</text>
+        <!-- meja VVIP jamuan -->
+        <circle class="sv-vip" cx="103" cy="330" r="34"/>
+        <g class="sv-seatv">
+          <circle cx="103" cy="282" r="6"/><circle cx="131" cy="291" r="6"/><circle cx="149" cy="315" r="6"/><circle cx="149" cy="345" r="6"/><circle cx="131" cy="369" r="6"/>
+          <circle cx="103" cy="378" r="6"/><circle cx="75" cy="369" r="6"/><circle cx="57" cy="345" r="6"/><circle cx="57" cy="315" r="6"/><circle cx="75" cy="291" r="6"/>
+        </g>
+        <text class="sv-tg" x="103" y="400" text-anchor="middle">Meja VVIP jamuan · 6 – 10</text>
+        <text class="sv-t" x="103" y="413" text-anchor="middle" font-size="9.5">hidangan berhidang · 2 AJK melayan</text>
+        <!-- bufet -->
+        <rect class="sv-zone" x="560" y="376" width="200" height="24" rx="3"/>
+        <text class="sv-t" x="660" y="392" text-anchor="middle">Meja bufet peserta, AJK dan tetamu</text>
+        <!-- pendaftaran tetamu -->
+        <rect class="sv-zone" x="30" y="452" width="156" height="52" rx="4"/>
+        <text class="sv-tb" x="108" y="473" text-anchor="middle" font-size="10">Meja pendaftaran tetamu</text>
+        <text class="sv-t" x="108" y="489" text-anchor="middle" font-size="9.5">buku tetamu · tag VVIP · buku program</text>
+        <!-- PA -->
+        <rect class="sv-zone" x="694" y="452" width="156" height="52" rx="4"/>
+        <text class="sv-tb" x="772" y="473" text-anchor="middle" font-size="10">Meja PA &amp; multimedia</text>
+        <text class="sv-t" x="772" y="489" text-anchor="middle" font-size="9.5">fail lagu · mikrofon · komputer riba</text>
+        <!-- pintu utama -->
+        <rect x="396" y="520" width="88" height="18" style="fill:var(--surface)"/>
+        <line x1="396" y1="528" x2="484" y2="528" style="stroke:var(--gold);stroke-width:3"/>
+        <text class="sv-tl" x="440" y="512" text-anchor="middle">Pintu utama</text>
+        <!-- pintu kecemasan -->
+        <line class="sv-exit" x1="12" y1="290" x2="12" y2="330"/>
+        <text class="sv-tl" x="24" y="330" transform="rotate(-90 24 330)" font-size="8.5">Pintu kecemasan</text>
+        <line class="sv-exit" x1="868" y1="290" x2="868" y2="330"/>
+        <text class="sv-tl" x="858" y="290" transform="rotate(90 858 290)" font-size="8.5">Pintu kecemasan</text>
+        <!-- pemadam api -->
+        <rect class="sv-fire" x="20" y="98" width="8" height="8"/><rect class="sv-fire" x="852" y="98" width="8" height="8"/>
+        <rect class="sv-fire" x="20" y="436" width="8" height="8"/><rect class="sv-fire" x="852" y="436" width="8" height="8"/>
+      </svg>
+      <div class="plegend">
+        <span><i style="background:var(--goldsoft);border-color:var(--gold)"></i>VVIP dan meja VVIP</span>
+        <span><i style="background:var(--brandsoft);border-color:var(--brandmid)"></i>Pentas dan peserta</span>
+        <span><i style="background:var(--surface2)"></i>Zon AJK, penguji dan meja perkhidmatan</span>
+        <span><i style="background:#fff"></i>Kerusi</span>
+        <span><i style="background:var(--crit);border-color:var(--crit)"></i>Pemadam api</span>
+        <span><i style="background:var(--good);border-color:var(--good)"></i>Pintu kecemasan</span>
+      </div>
+    </div>
+    <div class="cols" style="margin-top:14px">
+      <div class="card"><h3>Kiraan kerusi</h3><p class="small" style="margin-bottom:0">6 – 10 kerusi berlengan VVIP (sofa set resort) · 16 kerusi tetamu (tambah mengikut pengesahan) · 6 kerusi penguji · 9 kerusi AJK · peserta duduk bersila. Meja: 1 meja anugerah, 1 meja VVIP, 1 meja pendaftaran, 1 meja PA; buffet resort di hadapan dewan. Sofa, rostrum dan mic stand termasuk dalam sewa Dewan Tenggaroh 5.</p></div>
+      <div class="card"><h3>Laluan</h3><p class="small" style="margin-bottom:0">Laluan tengah selebar 1.5 meter dikosongkan sepenuhnya dari pintu utama ke pentas. Penerima anugerah naik melalui laluan tengah dan turun melalui sisi supaya tidak bertembung. Pintu kecemasan dan pemadam api dikenal pasti oleh Biro Keselamatan sebelum majlis.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 PROTOKOL VVIP -->
+<section class="slide" data-part="Majlis Penutup" data-title="Protokol VVIP, jemputan dan meja VVIP" data-n="11.3">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">11.3</span> Majlis Penutup</p>
+    <h2>Protokol VVIP, senarai jemputan dan meja VVIP</h2>
+    <p class="sub">Dua perkara yang paling kerap terlepas pandang dalam majlis pertubuhan: veteran yang tertinggal daripada senarai jemputan, dan meja VVIP yang dihidang sama seperti bufet peserta. Kedua-duanya diselesaikan di sini.</p>
+    <div class="cols">
+      <div class="card">
+        <h3>Senarai jemputan rasmi</h3>
+        <div class="tw" style="border:none">
+          <table style="font-size:12.5px">
+            <thead><tr><th>Kategori</th><th class="num">Anggaran</th><th>Tempat duduk</th></tr></thead>
+            <tbody>
+              <tr><td>Waris Amanah dan Guru Utama</td><td class="num">2 – 4</td><td>Barisan VVIP</td></tr>
+              <tr><td>Pengerusi dan Timbalan Pengerusi PSSGCSM</td><td class="num">2</td><td>Barisan VVIP</td></tr>
+              <tr><td>Ketua Majlis Jurulatih dan Ketua Majlis Adat</td><td class="num">2</td><td>Barisan VVIP</td></tr>
+              <tr><td>Pengerusi Zon Johor Bahru dan Penyelaras Program</td><td class="num">2</td><td>Barisan VVIP</td></tr>
+              <tr><td>Pengerusi zon-zon lain</td><td class="num">4 – 6</td><td>Tetamu</td></tr>
+              <tr><td>Veteran dan tokoh pertubuhan — <strong>senarai disahkan Induk</strong></td><td class="num">6 – 10</td><td>Tetamu</td></tr>
+              <tr><td>Perwakilan zon peserta dan waris</td><td class="num">mengikut pengesahan</td><td>Tetamu</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tiny" style="margin:10px 0 0">Surat jemputan rasmi dikeluarkan Induk atas permohonan zon pada T−4 minggu; pengesahan kehadiran ditutup T−2 minggu. Bajet tidak mengira tetamu tambahan; setiap tetamu yang disahkan ditampung lebihan yuran pada RM 17 seorang (kadar makan tengah hari resort).</p>
+      </div>
+      <div class="card">
+        <h3>Ketibaan dan pengiringan VVIP</h3>
+        <ol class="steps small" style="margin-bottom:0">
+          <li><span><strong>T−1 minggu:</strong> Setiausaha menghubungi pejabat setiap VVIP untuk mengesahkan masa tiba, pemandu dan sebutan gelaran yang betul untuk pengacara</span></li>
+          <li><span><strong>11.10 pagi:</strong> Petak letak kereta VVIP ditanda dan dikawal seorang AJK; pemandu dan pengiring dibawa ke bufet AJK</span></li>
+          <li><span><strong>11.25 pagi:</strong> Penyelaras Program dan Pengerusi Zon menyambut di pintu utama; AJK Protokol menyerahkan buku program dan tag</span></li>
+          <li><span>Pengacara mengumumkan ketibaan; hadirin berdiri; VVIP diiringi Penyelaras melalui laluan tengah mengikut <strong>urutan kekananan yang ditetapkan Majlis Adat</strong> — yang paling kanan masuk terakhir dan duduk di tengah barisan</span></li>
+          <li><span>Selepas majlis: VVIP diiringi ke surau untuk Zohor, kemudian ke meja VVIP sebelum hadirin bergerak ke bufet; ketika berangkat pulang, dihantar ke kenderaan oleh Penyelaras</span></li>
+        </ol>
+      </div>
+      <div class="card adat">
+        <h3>Meja VVIP jamuan <span class="who">Tiada kos tambahan</span></h3>
+        <dl class="kv">
+          <dt>Bilangan</dt><dd>1 meja, 6 VVIP yang menginap (Guru, Waris Amanah, Pengerusi) ditambah Ketua Majlis Jurulatih, Ketua Majlis Adat, Pengerusi Zon dan Penyelaras sebagai tuan rumah jika tidak termasuk dalam 6</dd>
+          <dt>Hidangan</dt><dd>Daripada buffet resort yang sama, <strong>dihidang ke meja</strong> oleh 2 AJK Protokol supaya VVIP tidak beratur; minta resort sediakan pinggan berhidang dan minuman panas di meja</dd>
+          <dt>Persiapan meja</dt><dd>Alas meja, kad nama mengikut kekananan, air mineral berbotol, tisu; disusun sebelum 11.00 pagi</dd>
+          <dt>Perkhidmatan</dt><dd>2 AJK Protokol melayan; hidangan dikeluarkan sebaik VVIP duduk, bukan lebih awal</dd>
+          <dt>Kos</dt><dd>6 VVIP telah dikira dalam 61 hidangan (baris C4). Tetamu tambahan majlis penutup RM 17 seorang, dimaklumkan kepada resort selepas pengesahan 20 November</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 22 PRINSIP BAJET -->
+<section class="slide" data-part="Bajet" data-title="Prinsip bajet" data-n="12.1">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">12.1</span> Anggaran perbelanjaan</p>
+    <h2>Tiga tanggungan, bukan satu senarai bercampur</h2>
+    <p class="sub">Setiap ringgit dalam bajet ini ada pemiliknya. Peserta menanggung kos peserta; Induk menanggung orang yang tidak membayar; bengkung dan Mandi Minyak disalurkan terus. Peralatan yang sudah dimiliki pertubuhan atau disediakan resort tidak dibeli semula.</p>
+    <div class="cols">
+      <div class="card pick">
+        <h3>Ditanggung peserta · RM 380 seorang</h3>
+        <ul class="small" style="margin-bottom:0"><li>Dorm 2 malam dan 9 hidangan buffet resort</li><li>Sewa dewan 2 hari</li><li>Sijil, lanyard, buku program, banner, air minum sesi, bahan Gelung Berapi</li><li>Bengkung RM 80 dan Mandi Minyak RM 50 — disalurkan terus</li></ul>
+      </div>
+      <div class="card adat">
+        <h3>Ditanggung Induk · RM 4,479</h3>
+        <ul class="small" style="margin-bottom:0"><li>Dorm dan 9 hidangan untuk 15 AJK dan penguji</li><li>2 bilik Superior Deluxe dan 9 hidangan untuk 6 VVIP</li><li>Saguhati 6 jurulatih penguji, RM 50 seorang</li></ul>
+      </div>
+      <div class="card">
+        <h3>Disediakan resort · tiada kos</h3>
+        <ul class="small" style="margin-bottom:0"><li>PA dan 2 mikrofon wireless, projektor dan skrin</li><li>Set kerusi majlis penutup: sofa, rostrum, mic stand</li><li>Meja dan kerusi dewan, barikad padang</li><li>Surau resort</li></ul>
+      </div>
+      <div class="card">
+        <h3>Disediakan Zon dan AJK · tiada kos</h3>
+        <ul class="small" style="margin-bottom:0"><li>Senjata latihan kayu, kawah, tungku, dapur gas, gelung besi</li><li>Pemadam api dan selimut api — tarikh servis disemak</li><li>Peti kecemasan dan burn kit Zon</li><li>Genset, extension, lampu suluh dan bateri — dibawa AJK</li><li>Kenderaan AJK; minyak tidak dibajetkan</li></ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top:14px">Status setiap baris: <span class="chip ok">Sebut harga</span> kadar bertulis daripada resort · <span class="chip ok">Kadar tetap</span> kadar pertubuhan · <span class="chip neu">Anggaran</span> harga pasaran, boleh naik atau turun apabila dibeli.</p>
+  </div>
+</section>
+
+<!-- 23 JADUAL BAJET -->
+<section class="slide" data-part="Bajet" data-title="Jadual anggaran perbelanjaan" data-n="12.2">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">12.2</span> Anggaran perbelanjaan</p>
+    <h2>Jadual anggaran — RM 19,464</h2>
+    <p class="sub">Semua angka dalam Ringgit Malaysia. Bahagian A dan C menggunakan kadar sebut harga resort; Bahagian B kadar pertubuhan; Bahagian D anggaran pasaran.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th>Kod</th><th>Butiran</th><th class="num">Kuantiti</th><th class="num">Kadar</th><th class="num">Jumlah</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td class="kod">A</td><td>Kos peserta — 40 orang</td><td class="num"></td><td class="num"></td><td class="num">8,360</td><td></td></tr>
+          <tr><td class="kod">A1</td><td>Dorm 16 katil, peserta lelaki — 2 unit × 2 malam</td><td class="num">4</td><td class="num">500.00</td><td class="num">2,000</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr><td class="kod">A2</td><td>Dorm 8 katil, peserta wanita — 1 unit × 2 malam</td><td class="num">2</td><td class="num">300.00</td><td class="num">600</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr><td class="kod">A3</td><td>Makanan 9 hidangan, Hari 1 tengah hari hingga Hari 3 tengah hari</td><td class="num">40</td><td class="num">119.00</td><td class="num">4,760</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr><td class="kod">A4</td><td>Dewan Tenggaroh 5 dengan PA dan projektor — 2 hari</td><td class="num">2</td><td class="num">500.00</td><td class="num">1,000</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr class="grp"><td class="kod">B</td><td>Kos wajib peserta — disalurkan terus</td><td class="num"></td><td class="num"></td><td class="num">5,200</td><td></td></tr>
+          <tr><td class="kod">B1</td><td>Bengkung tahap seterusnya</td><td class="num">40</td><td class="num">80.00</td><td class="num">3,200</td><td><span class="chip ok">Kadar tetap</span></td></tr>
+          <tr><td class="kod">B2</td><td>Mandi Minyak — minyak dan bahan</td><td class="num">40</td><td class="num">50.00</td><td class="num">2,000</td><td><span class="chip ok">Kadar tetap</span></td></tr>
+          <tr class="grp"><td class="kod">C</td><td>Tanggungan Induk — AJK, penguji dan VVIP</td><td class="num"></td><td class="num"></td><td class="num">4,479</td><td></td></tr>
+          <tr><td class="kod">C1</td><td>Dorm 16 katil, AJK dan penguji — 1 unit × 2 malam</td><td class="num">2</td><td class="num">500.00</td><td class="num">1,000</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr><td class="kod">C2</td><td>Makanan 9 hidangan, 15 AJK dan penguji</td><td class="num">15</td><td class="num">119.00</td><td class="num">1,785</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr><td class="kod">C3</td><td>Bilik Superior Deluxe, VVIP — 2 bilik × 2 malam</td><td class="num">4</td><td class="num">170.00</td><td class="num">680</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr><td class="kod">C4</td><td>Makanan 9 hidangan, 6 VVIP</td><td class="num">6</td><td class="num">119.00</td><td class="num">714</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr><td class="kod">C5</td><td>Saguhati jurulatih penguji</td><td class="num">6</td><td class="num">50.00</td><td class="num">300</td><td><span class="chip ok">Kadar tetap</span></td></tr>
+          <tr class="grp"><td class="kod">D</td><td>Keperluan program</td><td class="num"></td><td class="num"></td><td class="num">1,425</td><td></td></tr>
+          <tr><td class="kod">D1</td><td>Sijil penyertaan — 40 peserta dan 6 penguji</td><td class="num">46</td><td class="num">3.00</td><td class="num">140</td><td><span class="chip neu">Anggaran</span></td></tr>
+          <tr><td class="kod">D2</td><td>Cenderahati VVIP dan jurulatih penguji</td><td class="num">12</td><td class="num">40.00</td><td class="num">480</td><td><span class="chip neu">Anggaran</span></td></tr>
+          <tr><td class="kod">D3</td><td>Lanyard dan tag nama — semua kehadiran</td><td class="num">61</td><td class="num">3.00</td><td class="num">185</td><td><span class="chip neu">Anggaran</span></td></tr>
+          <tr><td class="kod">D4</td><td>Banner backdrop — saiz diukur di dewan</td><td class="num">1</td><td class="num">120.00</td><td class="num">120</td><td><span class="chip neu">Anggaran</span></td></tr>
+          <tr><td class="kod">D5</td><td>Buku program, borang dan alat tulis</td><td class="num">1</td><td class="num">150.00</td><td class="num">150</td><td><span class="chip neu">Anggaran</span></td></tr>
+          <tr><td class="kod">D6</td><td>Bahan Lompatan Gelung Berapi — kain guni, dawai, minyak tanah (jika dibenarkan resort)</td><td class="num">1</td><td class="num">200.00</td><td class="num">200</td><td><span class="chip neu">Anggaran</span></td></tr>
+          <tr><td class="kod">D7</td><td>Air mineral tambahan untuk sesi latihan</td><td class="num">1</td><td class="num">150.00</td><td class="num">150</td><td><span class="chip neu">Anggaran</span></td></tr>
+          <tr class="tot"><td class="kod"></td><td>Jumlah keseluruhan</td><td class="num"></td><td class="num"></td><td class="num">19,464</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tiny" style="margin-top:10px">Tidak dikira: deposit keselamatan resort RM 50 seunit (RM 300 tunai, dikembalikan), pengangkutan peserta (zon), minyak kenderaan AJK, peti kecemasan dan genset (sedia ada Zon). Draf V3 berjumlah RM 10,230 untuk 50 orang tanpa bengkung dan Mandi Minyak; setara V4 tanpa Bahagian B ialah RM 14,264 untuk 61 orang.</p>
+  </div>
+</section>
+
+<!-- 24 KEPALA HIDANGAN -->
+<section class="slide" data-part="Bajet" data-title="Kepala hidangan mengikut tentatif" data-n="12.3">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">12.3</span> Anggaran perbelanjaan</p>
+    <h2>Sembilan hidangan, 61 kepala setiap satu</h2>
+    <p class="sub">Resort mengenakan kadar sehidangan seorang, jadi bilangan kepala setiap hidangan boleh dilaraskan hingga tarikh jaminan. Kertas kerja ini mengira semua 61 orang hadir dari Hari 1 tengah hari hingga Hari 3 tengah hari. Makan tengah hari Hari 1 dihidang selepas ketibaan.</p>
+    <div class="tw">
+      <table>
+        <thead><tr><th class="num">Bil</th><th>Hidangan</th><th>Masa</th><th class="num">Kadar</th><th class="num">Peserta</th><th class="num">AJK &amp; penguji</th><th class="num">VVIP</th><th class="num">Kepala</th><th class="num">Jumlah</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>Makan tengah hari</td><td class="t">Jum 2.00 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
+          <tr><td class="num">2</td><td>Makan malam</td><td class="t">Jum 6.30 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
+          <tr><td class="num">3</td><td>Supper</td><td class="t">Jum 11.00 mlm</td><td class="num">7.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">427</td></tr>
+          <tr><td class="num">4</td><td>Sarapan pagi</td><td class="t">Sab 7.15 pg</td><td class="num">10.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">610</td></tr>
+          <tr><td class="num">5</td><td>Makan tengah hari</td><td class="t">Sab 1.15 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
+          <tr><td class="num">6</td><td>Makan malam</td><td class="t">Sab 6.30 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
+          <tr><td class="num">7</td><td>Supper</td><td class="t">Sab 11.45 mlm</td><td class="num">7.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">427</td></tr>
+          <tr><td class="num">8</td><td>Sarapan pagi</td><td class="t">Ahad 7.15 pg</td><td class="num">10.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">610</td></tr>
+          <tr><td class="num">9</td><td>Jamuan Majlis Penutup</td><td class="t">Ahad 1.00 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
+          <tr class="grp"><td></td><td colspan="3">Jumlah — RM 119 seorang</td><td class="num">4,760</td><td class="num">1,785</td><td class="num">714</td><td class="num">549</td><td class="num">7,259</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cols" style="margin-top:14px">
+      <div class="card soft"><h3>Ruang untuk jimat</h3><p class="small" style="margin-bottom:0">Dua supper (RM 14) dan makan tengah hari Hari 1 (RM 17) boleh digugurkan jika peserta tiba selepas Zohor — menjimatkan RM 31 seorang, RM 1,891 untuk 61 orang. Bajet ini mengekalkan kesemuanya supaya angka yang dibentangkan ialah angka maksimum.</p></div>
+      <div class="card"><h3>Tetamu majlis penutup</h3><p class="small" style="margin-bottom:0">Perwakilan zon, veteran dan waris yang hadir majlis penutup tidak dikira dalam 61. Setiap tetamu yang disahkan sebelum 20 November dimaklumkan kepada resort pada kadar RM 17 dan ditanggung lebihan yuran; tanpa pengesahan, hidangan tidak disediakan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 25 SUMBER DAN SENSITIVITI -->
+<section class="slide" data-part="Bajet" data-title="Sumber pendapatan dan sensitiviti bilangan peserta" data-n="12.4">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">12.4</span> Anggaran perbelanjaan</p>
+    <h2>Sumber pendapatan dan berapa peserta yang diperlukan</h2>
+    <p class="sub">Pada 40 peserta, pendapatan RM 19,679 melawan kos RM 19,464 — lebihan RM 215. Dorm, dewan dan tanggungan Induk ialah kos tetap; hanya makanan peserta yang turun apabila peserta berkurang.</p>
+    <div class="cols two">
+      <figure style="margin:0">
+        <figcaption>Sumber pendapatan · 40 peserta</figcaption>
+        <p class="fignote">Jumlah RM 19,679 berbanding kos RM 19,464.</p>
+        <div class="rows">
+          <div class="row"><div class="rl">Yuran program<br><span class="tiny">40 × RM 250</span></div><div class="track" title="RM 10,000"><div class="fill good" style="width:100%"><span>10,000</span></div></div></div>
+          <div class="row"><div class="rl">Bengkung &amp; Mandi Minyak<br><span class="tiny">40 × RM 130 · salur terus</span></div><div class="track" title="RM 5,200"><div class="fill" style="width:52%"><span>5,200</span></div></div></div>
+          <div class="row"><div class="rl">Peruntukan Induk<br><span class="tiny">AJK, penguji, VVIP</span></div><div class="track" title="RM 4,479"><div class="fill" style="width:44.8%"><span>4,479</span></div></div></div>
+        </div>
+        <div class="legend">
+          <span><i style="background:var(--good)"></i>Menampung Bahagian A dan D</span>
+          <span><i style="background:var(--bar)"></i>Menampung Bahagian B dan C masing-masing</span>
+        </div>
+      </figure>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Peserta daftar</th><th class="num">Yuran program</th><th class="num">Kos A + D</th><th class="num">Baki</th></tr></thead>
+          <tbody>
+            <tr><td>40 — penuh</td><td class="num">10,000</td><td class="num">9,785</td><td class="num" style="color:var(--good)">+215</td></tr>
+            <tr><td>38 — titik seimbang</td><td class="num">9,500</td><td class="num">9,547</td><td class="num">−47</td></tr>
+            <tr><td>35</td><td class="num">8,750</td><td class="num">9,190</td><td class="num" style="color:var(--crit)">−440</td></tr>
+            <tr><td>30</td><td class="num">7,500</td><td class="num">8,595</td><td class="num" style="color:var(--crit)">−1,095</td></tr>
+            <tr><td>25</td><td class="num">6,250</td><td class="num">8,000</td><td class="num" style="color:var(--crit)">−1,750</td></tr>
+          </tbody>
+        </table>
+        <p class="tiny" style="margin:10px 0 0">Kos A + D = dorm dan dewan RM 3,600 (tetap) + makanan RM 119 seorang + keperluan program RM 1,425 (tetap). Bahagian B dan C tidak berubah dengan bilangan peserta.</p>
+      </div>
+    </div>
+    <div class="note" style="margin-top:14px"><b>Jika peserta kurang daripada 38</b>, AJK Pengurusan mencadangkan langkah mengikut urutan: (1) gugurkan supper dan makan tengah hari Hari 1 — jimat RM 31 seorang untuk semua 61 orang, RM 1,891; (2) jika peserta lelaki 32 ke bawah termasuk AJK dan penguji, kurangkan satu dorm — jimat RM 1,000; (3) barulah naikkan yuran atau mohon tambahan Induk. Keputusan dibuat pada T−8 minggu sebelum bayaran progresif.</div>
+  </div>
+</section>
+
+<!-- 26 PERBANDINGAN -->
+<section class="slide" data-part="Bajet" data-title="Perbandingan dengan Sesi 2025" data-n="12.5">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">12.5</span> Anggaran perbelanjaan</p>
+    <h2>Berbanding Sesi 2025</h2>
+    <p class="sub">Angka 2026 di bawah tidak termasuk bengkung dan Mandi Minyak (RM 5,200) supaya setara dengan 2025, yang juga tidak memasukkannya. Lima belas orang lebih ramai, kos sekepala naik RM 28 kerana dewan berasingan dan hidangan resort yang lebih penuh (supper, buffet), dan pantai.</p>
+    <div class="cols two">
+      <figure style="margin:0">
+        <figcaption>Jumlah kos program (tanpa bengkung dan Mandi Minyak)</figcaption>
+        <p class="fignote">Sesi 2025 melibatkan 46 orang; Sesi 2026 melibatkan 61 orang.</p>
+        <div class="rows">
+          <div class="row"><div class="rl">Sesi 2025<br><span class="tiny">46 orang · RM 206 sekepala</span></div><div class="track" title="RM 9,480"><div class="fill" style="width:66.5%"><span>9,480</span></div></div></div>
+          <div class="row"><div class="rl">Draf V3 2026<br><span class="tiny">50 orang · RM 205 sekepala</span></div><div class="track" title="RM 10,230"><div class="fill" style="width:71.7%"><span>10,230</span></div></div></div>
+          <div class="row"><div class="rl">Draf V4 2026<br><span class="tiny">61 orang · RM 234 sekepala</span></div><div class="track" title="RM 14,264"><div class="fill good" style="width:100%"><span>14,264</span></div></div></div>
+        </div>
+      </figure>
+      <figure style="margin:0">
+        <figcaption>Permohonan peruntukan Induk</figcaption>
+        <p class="fignote">Siling yang dimaklumkan sebelum ini ialah RM 3,000; V4 memohon RM 4,479 dengan justifikasi di bawah.</p>
+        <div class="chartwrap">
+          <div class="rows">
+            <div class="row"><div class="rl">Sesi 2025</div><div class="track" title="RM 3,000"><div class="fill" style="width:67%"><span>3,000</span></div></div></div>
+            <div class="row"><div class="rl">Draf V3 2026</div><div class="track" title="RM 2,730"><div class="fill" style="width:61%"><span>2,730</span></div></div></div>
+            <div class="row"><div class="rl">Draf V4 2026</div><div class="track" title="RM 4,479 — melepasi siling RM 3,000 sebanyak RM 1,479"><div class="fill crit" style="width:100%"><span>4,479</span></div>
+              <div class="thresh" style="left:67%"></div><div class="threshlab" style="left:67%">Siling RM 3,000</div></div></div>
+          </div>
+        </div>
+        <div class="legend">
+          <span><i style="background:var(--bar)"></i>Dalam siling</span>
+          <span><i style="background:var(--crit)"></i>Melepasi siling</span>
+        </div>
+      </figure>
+    </div>
+    <div class="card adat" style="margin-top:14px">
+      <h3>Justifikasi permohonan RM 4,479</h3>
+      <p class="small" style="margin-bottom:0">Dalam Sesi 2025 dan Draf V3, peruntukan Induk menampung sebahagian kos peserta. Dalam V4, peserta menanggung kos mereka sepenuhnya dan Induk hanya menanggung <strong>orang yang hadir atas urusan pertubuhan</strong>: 15 AJK dan penguji (RM 2,785), 6 VVIP (RM 1,394) dan saguhati penguji (RM 300). Jika Induk mengekalkan siling RM 3,000, baki RM 1,479 perlu ditampung dengan menggugurkan supper dan makan tengah hari Hari 1 (RM 1,891) — Bahagian 12.3.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 27 RISIKO -->
+<section class="slide" data-part="Keputusan" data-title="Pengurusan risiko dan keselamatan" data-n="13.0">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">13.0</span> Pengurusan risiko</p>
+    <h2>Risiko yang dikenal pasti dan langkah kawalan</h2>
+    <div class="tw">
+      <table>
+        <thead><tr><th style="width:22%">Risiko</th><th>Langkah kawalan</th><th style="width:16%">Pemilik</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Hujan monsun Disember</strong></td><td>Tanjung Leman di pantai timur — kemuncak Monsun Timur Laut. Dewan Tenggaroh 5 berhawa dingin sebagai pelan B untuk semua sesi; semak ramalan MetMalaysia pada T−2 minggu dan setiap pagi; pantai dan Gelung Berapi dibatalkan jika hujan, ombak atau angin kuat</td><td>Kem Komandan</td></tr>
+          <tr><td><strong>Keletihan peserta dewasa</strong></td><td>Sesi terpanjang 2 jam 30 minit; rehat Zohor 1 jam 30 minit; waktu senyap 12.00 – 5.00 pagi dijaga AJK; tiada aktiviti lasak di luar gelanggang; Sesi 8 boleh digugurkan oleh Majlis Jurulatih</td><td>Kem Komandan · Penguji</td></tr>
+          <tr><td><strong>Mandi Minyak</strong></td><td>Dipimpin Guru atau Waris Amanah sahaja; First Aider bertauliah dan burn kit disediakan <strong>jauh daripada kawah</strong> — air tidak dibawa dekat minyak panas kerana menyebabkan semburan; peserta menanggalkan jam, cincin dan rantai; kawasan kawah dialas, dipagar tali dan dikawal dari 9.00 malam; extension dan genset AJK disemak sebelum digunakan</td><td>Disiplin &amp; Keselamatan</td></tr>
+          <tr><td><strong>Lompatan Gelung Berapi</strong></td><td>Tapak lembap atau pasir; pakaian kapas sahaja; <strong>minyak tanah, bukan petrol</strong>; Pasukan Api 5 orang dengan 2 pemadam ABC, selimut api, baldi air dan pasir; jarak penonton 5 meter</td><td>Disiplin &amp; Keselamatan</td></tr>
+          <tr><td><strong>Kesihatan peserta 40 tahun ke atas</strong></td><td>Borang kesihatan wajib dan disemak First Aider pada pendaftaran; kenderaan sokongan dan nombor klinik terdekat di Bilik Gerakan; peserta boleh menarik diri daripada mana-mana sesi tanpa penalti</td><td>Keselamatan · Pendaftaran</td></tr>
+          <tr><td><strong>Kecederaan senjata</strong></td><td>Senjata latihan kayu untuk Sesi 8; penguji mengawal jarak; First Aider hadir di setiap sesi; sesi malam di dalam dewan kerana padang kurang lampu</td><td>Penguji · Logistik</td></tr>
+          <tr><td><strong>Makanan</strong></td><td>Buffet resort; makanan luar tidak dibenarkan; kepala hidangan dijamin disahkan Kebajikan sebelum setiap hidangan; air minum mencukupi di setiap tapak sesi</td><td>Kebajikan</td></tr>
+          <tr><td><strong>Majlis Penutup tergendala</strong></td><td>VVIP lewat: penampan dalam atur cara dan skrip alternatif pengacara; PA rosak: pembesar suara mudah alih zon; fail lagu pada dua peranti; senarai penerima dicetak dua salinan</td><td>Pengacaraan · Multimedia</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card flag" style="margin-top:14px">
+      <h3>Perlindungan insurans</h3>
+      <p class="small" style="margin-bottom:0">Takaful kemalangan diri berkumpulan <strong>tidak dimasukkan</strong> dalam anggaran ini, sama seperti 2025; peserta menandatangani borang akuan risiko dan borang kesihatan disemak First Aider pada pendaftaran.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 28 BELUM SELESAI -->
+<section class="slide" data-part="Keputusan" data-title="Perkara belum selesai" data-n="14.0">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">14.0</span> Perkara belum selesai</p>
+    <h2>Dua puluh enam perkara, lima pemilik</h2>
+    <p class="sub">Tempat sudah disahkan; yang tinggal ialah butiran dengan resort, keputusan Majlis Jurulatih dan Majlis Adat, dan pengesahan kewangan. Sasaran: bahagian A dan E ditutup sebelum deposit (25 September), selebihnya pada T−6 minggu (23 Oktober).</p>
+    <div class="cols" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      <div class="card flag">
+        <h3>A · Resort <span class="who">7</span></h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Minimum pax yang terpakai: 50 atau 30</li>
+          <li>Pecahan bertulis kadar pakej seorang</li>
+          <li>Dewan dikira 2 hari atau 3</li>
+          <li>Mandi Minyak RM 50 — caj resort atau bahan</li>
+          <li>Kebenaran bertulis Lompatan Gelung Berapi</li>
+          <li>Tarikh surat sebut harga dibetulkan ke 2026</li>
+          <li>Bilik Gerakan 2 – 3 katil, parkir tetamu, saiz backdrop</li>
+        </ul>
+        <p class="tiny" style="margin:8px 0 0">Muhammad Akid Norizan · <span class="mono">011-5668 2651</span></p>
+      </div>
+      <div class="card adat">
+        <h3>B · Majlis Jurulatih <span class="who">6</span></h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Kandungan Sesi 1 – 9 mengikut tahap bengkung</li>
+          <li>Senarai 6 jurulatih penguji dan Ketua Penguji</li>
+          <li>Borang penilaian, skala dan markah lulus</li>
+          <li>Sama ada Sesi 8 dikekalkan</li>
+          <li>Format keputusan dan pengumuman di Majlis Penutup</li>
+          <li>Anugerah Peserta Terbaik — ada atau tiada</li>
+        </ul>
+      </div>
+      <div class="card adat">
+        <h3>C · Majlis Adat <span class="who">6</span></h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Adat buka gelanggang pada Sesi 1 dan siapa memimpin</li>
+          <li>Guru yang memimpin Gelung Berapi dan Mandi Minyak</li>
+          <li>Bahan adat khusus dan siapa membawanya</li>
+          <li>Iringan upacara dan iringan masuk VVIP</li>
+          <li>Urutan kekananan 6 VVIP</li>
+          <li>Adat penerimaan bengkung di pentas</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>D · Pengurusan <span class="who">4</span></h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Nama 9 AJK dan pelantikan Kem Komandan</li>
+          <li>Perasmi penutup dan senarai jemputan veteran — disahkan Induk</li>
+          <li>Pengacara majlis, fail lagu dan skrip</li>
+          <li>Kawah, gelung, genset, pemadam api — pemilik dan tarikh servis</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>E · Kewangan <span class="who">3</span></h3>
+        <ul class="small" style="margin-bottom:0">
+          <li>Kelulusan Induk RM 4,479, atau siling RM 3,000 dengan hidangan dipangkas</li>
+          <li>Pengesahan yuran RM 380 dan sama ada Mandi Minyak wajib untuk semua peserta</li>
+          <li>Sumber tunai deposit 50% sebelum kutipan yuran mencukupi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 29 PERMOHONAN -->
+<section class="slide" data-part="Keputusan" data-title="Permohonan dan penutup" data-n="15.0">
+  <div class="inner">
+    <p class="eyebrow"><span class="n">15.0</span> Permohonan dan penutup</p>
+    <h2>Permohonan kepada Induk, Majlis Jurulatih dan Majlis Adat</h2>
+    <div class="cols" style="grid-template-columns:1.3fr 1fr">
+      <div>
+        <ol class="steps" style="margin:0 0 14px; font-size:14px">
+          <li><span>Kelulusan untuk melaksanakan Perkampungan Perdana Panglima Sesi 2026 pada 4 – 6 Disember 2026 di FELDA Residence Tanjung Leman mengikut kertas kerja ini.</span></li>
+          <li><span>Peruntukan Induk sebanyak <strong class="mono">RM 4,479</strong> bagi menanggung 15 AJK dan penguji, 6 VVIP dan saguhati penguji; atau <strong class="mono">RM 3,000</strong> dengan supper dan makan tengah hari Hari 1 digugurkan.</span></li>
+          <li><span>Pengesahan yuran peserta <strong class="mono">RM 380</strong> (RM 250 program, RM 80 bengkung, RM 50 Mandi Minyak) dan kapasiti maksimum 40 peserta.</span></li>
+          <li><span>Surat panggilan rasmi kepada semua zon dan negeri, dengan makluman pengangkutan diuruskan zon dan pakaian kapas diwajibkan bagi malam adat.</span></li>
+          <li><span>Keputusan Majlis Jurulatih mengenai silibus, penguji dan borang penilaian (Bahagian 9.0) selewat-lewatnya <strong>23 Oktober 2026</strong>.</span></li>
+          <li><span>Ketetapan Majlis Adat mengenai perkara di Bahagian 10.0 dan kekananan VVIP pada tarikh yang sama.</span></li>
+          <li><span>Perasmi penutup dan senarai jemputan rasmi Majlis Penutup, termasuk veteran pertubuhan, disahkan Induk sebelum surat jemputan dikeluarkan pada 6 November.</span></li>
+        </ol>
+      </div>
+      <div class="card pick">
+        <h3>Risiko yang perlu diketahui Induk</h3>
+        <p class="small">Bajet seimbang pada <strong>38 peserta ke atas</strong>. Dorm, dewan dan tanggungan Induk ialah kos tetap; setiap peserta yang tidak daftar mengurangkan pendapatan RM 250 tetapi hanya menjimatkan RM 119 makanan — lubang bersih RM 131 seorang.</p>
+        <p class="small" style="margin-bottom:0">Pada 30 peserta, kekurangan ialah RM 1,095 dan ditampung dengan menggugurkan supper dan makan tengah hari Hari 1. Deposit 50% kepada resort tidak dikembalikan, jadi bilangan peserta mesti muktamad sebelum bayaran progresif pada 13 November.</p>
+      </div>
+    </div>
+    <p class="small" style="margin-top:16px;padding-top:14px;border-top:1px solid var(--line)">Semoga program ini mendapat kerjasama semua pihak agar berjalan lancar dan jayanya, serta mengukuhkan lagi hubungan silaturahim antara warga Silat Seni Gayung Cula Sakti Malaysia yang terlibat.</p>
+    <div class="covermeta" style="margin-top:14px">
+      <span>Disediakan oleh <b>Penyelaras Program, AJK Pengurusan Zon Johor Bahru</b></span>
+      <span>Untuk disahkan oleh <b>Pengerusi PSSGCSM</b></span>
+      <span>Draf V4 · <b>10 September 2026</b></span>
+    </div>
+  </div>
+</section>
+
+
+</body></html>
