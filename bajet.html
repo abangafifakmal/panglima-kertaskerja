@@ -112,6 +112,15 @@ td.dim{color:var(--ink3)}
 .txt{fill:var(--ink3);font-size:10.5px;font-family:"IBM Plex Mono",ui-monospace,monospace}
 .txtb{fill:var(--ink);font-size:11px;font-weight:600;font-family:Archivo,sans-serif}
 
+
+/* resit */
+.rbar{display:flex;height:60px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.rbar .seg{display:flex;flex-direction:column;justify-content:center;padding:0 10px;color:#fff;min-width:0;overflow:hidden;transition:width .25s}
+.rbar .seg b{font-family:Bitter,Georgia,serif;font-size:19px;line-height:1;white-space:nowrap}
+.rbar .seg span{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.9;margin-top:4px;white-space:nowrap}
+.rs1{background:#3B6E5A}.rs2{background:#7D6220}.rs3{background:#5A7FA6}.rs4{background:#8A5A9E}.rs5{background:#9AA79D}.rs6{background:var(--crit)}
+.rnote{font-size:12px;color:var(--ink2);margin:8px 0 0}
+
 /* present mode */
 .present .grid{grid-template-columns:1fr}
 .present #inputs{display:none}
@@ -131,11 +140,11 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     <div>
       <p class="org">PSSGCSM Zon Johor Bahru · Perkampungan Perdana Panglima 2026</p>
       <h1>Kalkulator Bajet</h1>
-      <p class="sub">Ubah bilangan peserta, AJK, penguji dan VVIP — dorm, makanan, jumlah kos, permohonan Induk dan titik seimbang dikira semula serta-merta. Kadar tempat mengikut sebut harga FELDA Residence Tanjung Leman, 10 September 2026.</p>
+      <p class="sub">Ubah bilangan peserta, AJK, penguji dan VVIP — dorm, makanan, jumlah kos, permohonan Induk dan titik seimbang dikira semula serta-merta. Kadar tempat mengikut sebut harga FELDA Residence Tanjung Leman, 10 September 2026. Tetapan asal ialah Draf V5: 6 hidangan, yuran RM 220, bengkung dikutip berasingan.</p>
     </div>
     <div class="acts">
       <a class="btn" href="index.html" style="text-decoration:none">← Kertas kerja</a>
-      <button class="btn" id="btnReset" type="button">Set semula V4</button>
+      <button class="btn" id="btnReset" type="button">Set semula V5</button>
       <button class="btn" id="btnCopy" type="button">Salin pautan senario</button>
       <button class="btn primary" id="btnPresent" type="button">Mod bentang</button>
     </div>
@@ -184,7 +193,7 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
         <h2>Yuran &amp; sumber</h2>
         <div class="stack">
           <div class="ctl"><label for="fee">Yuran program<small>seorang peserta</small></label><input type="number" id="fee" min="0" step="5"></div>
-          <div class="ctl"><label for="belt">Bengkung<small>disalurkan terus</small></label><input type="number" id="belt" min="0" step="5"></div>
+          <div class="ctl"><label for="belt">Bengkung<small>0 = dikutip berasingan selepas keputusan (RM 80)</small></label><input type="number" id="belt" min="0" step="5"></div>
           <div class="ctl"><label for="oil">Mandi Minyak<small>disalurkan terus</small></label><input type="number" id="oil" min="0" step="5"></div>
           <div class="sep"></div>
           <div class="ctl"><label for="induk">Peruntukan Induk<small>kosongkan = ikut kos AJK, penguji &amp; VVIP</small></label><input type="number" id="induk" min="0" step="50" placeholder="auto"></div>
@@ -226,6 +235,10 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
         <div class="tile" id="t_bal"><div class="lab">Baki</div><div class="val"><small>RM</small><span id="k_bal">—</span></div><div class="note" id="k_baln"></div></div>
       </div>
 
+      <h2 class="sh">Resit seorang peserta</h2>
+      <div class="rbar" id="resit"></div>
+      <p class="rnote" id="resitn"></p>
+
       <h2 class="sh">Penginapan</h2>
       <div class="dorms" id="dorms"></div>
       <div class="leg"><span><i style="background:var(--brandmid)"></i>Peserta lelaki</span><span><i style="background:var(--gold)"></i>Peserta wanita</span><span><i style="background:#5A7FA6"></i>AJK &amp; penguji</span><span><i style="background:#8A5A9E"></i>VVIP</span><span><i style="background:var(--surface3)"></i>Katil kosong</span></div>
@@ -251,8 +264,8 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
 <script>
 (function(){
   var D = {pl:32,pp:8,ajk:9,pg:6,ajkp:0,share:0,vv:6,vvper:3,vvtype:170,
-    m_l1:1,m_d1:1,m_s1:1,m_b2:1,m_l2:1,m_d2:1,m_s2:1,m_b3:1,m_l3:1,dh:2,mlm:2,
-    fee:250,belt:80,oil:50,induk:'',
+    m_l1:0,m_d1:1,m_s1:0,m_b2:1,m_l2:1,m_d2:1,m_s2:0,m_b3:1,m_l3:1,dh:2,mlm:2,
+    fee:220,belt:0,oil:50,induk:'',
     r16:500,r8:300,rdew:500,rb:10,rl:17,rs:7,sag:50,sij:3,cen:40,lan:3,ban:120,buk:150,air:150,gel:1,gelr:200};
   var S = {};
   var $ = function(id){return document.getElementById(id)};
@@ -263,11 +276,11 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     try{
       var q = new URLSearchParams(location.search);
       if([...q.keys()].length){ q.forEach(function(v,k){ if(k in D) o[k]= (k==='induk'? v : (isNaN(+v)?v:+v)); }); }
-      else { var ls = localStorage.getItem('panglima-bajet'); if(ls){ Object.assign(o, JSON.parse(ls)); } }
+      else { var ls = localStorage.getItem('panglima-bajet-v5'); if(ls){ Object.assign(o, JSON.parse(ls)); } }
     }catch(e){}
     S = o;
   }
-  function save(){ try{ localStorage.setItem('panglima-bajet', JSON.stringify(S)); }catch(e){} }
+  function save(){ try{ localStorage.setItem('panglima-bajet-v5', JSON.stringify(S)); }catch(e){} }
 
   function bind(){
     Object.keys(D).forEach(function(k){
@@ -413,6 +426,19 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     $('k_baln').textContent= r.bal>=0 ? 'lebihan · yuran titik seimbang RM '+fmt(r.breakEvenFee) : 'kekurangan · yuran perlu RM '+fmt(r.breakEvenFee)+' atau tambah '+fmt(Math.abs(r.bal))+' dari Induk';
     $('shareNote').textContent = s.share ? 'jimat dorm' : '';
     $('sagLab').textContent=s.sag; $('dewLab').textContent=s.rdew; $('gelLab').textContent=s.gelr;
+
+    // resit seorang peserta
+    (function(){
+      var n=Math.max(1,r.peserta);
+      var parts=[['Tidur',r.dormPeserta/n,'rs1'],['Makan',r.mealPP,'rs2'],['Dewan',r.dewan/n,'rs3'],['Barang',r.D/n,'rs4']];
+      var used=parts.reduce(function(a,p){return a+p[1]},0); var pen=s.fee-used;
+      if(pen>=0) parts.push(['Penampan',pen,'rs5']); else parts.push(['Kurang',-pen,'rs6']);
+      var tot=parts.reduce(function(a,p){return a+p[1]},0)||1, h='';
+      parts.forEach(function(p){ var w=p[1]/tot*100; if(p[1]<=0) return; h+='<div class="seg '+p[2]+'" style="width:'+w.toFixed(1)+'%" title="'+p[0]+' RM '+fmt(p[1])+'"><b>'+fmt(p[1])+'</b>'+(w>9?'<span>'+p[0]+'</span>':'')+'</div>'; });
+      $('resit').innerHTML=h;
+      $('resitn').textContent='Yuran program RM '+fmt(s.fee)+' = tidur RM '+fmt(r.dormPeserta/n)+' + makan RM '+fmt(r.mealPP)+' ('+r.nMeals+' hidangan) + dewan RM '+fmt(r.dewan/n)+' + barang RM '+fmt(r.D/n)+(pen>=0?' + penampan RM '+fmt(pen):' — kekurangan RM '+fmt(-pen)+' seorang')+'. Dikutip berasingan: Mandi Minyak RM '+fmt(s.oil)+(s.belt>0?', bengkung RM '+fmt(s.belt):'; bengkung RM 80 selepas keputusan')+'.';
+    })();
+
     $('dorms').innerHTML=dormCards(r);
 
     var mealTxt=r.nMeals+' hidangan × RM '+fmt(r.mealPP);

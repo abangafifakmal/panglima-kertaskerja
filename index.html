@@ -294,6 +294,19 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
 .ph figcaption b{display:block;color:var(--ink);font-size:12.75px;margin-bottom:1px}
 @media print{.ph img{aspect-ratio:auto}}
 
+
+/* ---------- resit peserta ---------- */
+.resit{display:flex;flex-direction:column;gap:10px}
+.rbar{display:flex;height:64px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.rbar .seg{display:flex;flex-direction:column;justify-content:center;padding:0 10px;color:#fff;min-width:0;overflow:hidden}
+.rbar .seg b{font-family:Bitter,Georgia,serif;font-size:20px;line-height:1;letter-spacing:-.01em;white-space:nowrap}
+.rbar .seg span{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;opacity:.9;margin-top:4px;white-space:nowrap}
+.s1{background:#3B6E5A}.s2{background:#7D6220}.s3{background:#5A7FA6}.s4{background:#8A5A9E}.s5{background:#9AA79D}
+.rbar.r25{height:38px;background:var(--surface2);border-style:dashed}
+.rbar.r25 .seg{background:var(--surface3);color:var(--ink2);flex-direction:row;gap:10px;align-items:center}
+.rbar.r25 .seg b{font-size:14px;color:var(--ink)}.rbar.r25 .seg span{margin:0;text-transform:none;letter-spacing:0;font-size:12px;opacity:1}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+
 /* ---------- kandungan (overview) ---------- */
 .ov{position:fixed; inset:0; z-index:60; background:var(--bg); overflow-y:auto; padding:64px 24px 40px}
 .ov[hidden]{display:none!important}
@@ -354,7 +367,7 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
 </style>
 
 <header class="bar">
-  <span class="mark">PANGLIMA 2026 <small>Kertas Kerja · Draf V4</small></span>
+  <span class="mark">PANGLIMA 2026 <small>Kertas Kerja · Draf V5</small></span>
   <span class="part" id="part">Program</span>
   <span class="spacer"></span>
   <span class="count"><span id="cur">1</span> / <span id="tot">33</span></span>
@@ -372,13 +385,13 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
     <p class="org">Pertubuhan Silat Seni Gayung Cula Sakti Malaysia</p>
     <p class="zone">Zon Johor Bahru</p>
     <h1>Kertas Kerja<br>Perkampungan Perdana Panglima</h1>
-    <p class="sub">Sesi 2026 · Draf V4 — disusun semula selepas lawatan tapak dan sebut harga rasmi FELDA Residence Tanjung Leman. Untuk perbincangan AJK Pengurusan sebelum dikemukakan kepada Induk, Majlis Jurulatih dan Majlis Adat.</p>
+    <p class="sub">Sesi 2026 · Draf V5 — yuran disemak semula selepas maklum balas AJK: enam hidangan, bengkung dikutip berasingan. Untuk perbincangan AJK Pengurusan sebelum dikemukakan kepada Induk, Majlis Jurulatih dan Majlis Adat.</p>
     <dl class="coverfacts">
       <div><dt>Tarikh</dt><dd>4 – 6 Disember 2026</dd></div>
       <div><dt>Tempat</dt><dd>FELDA Residence Tanjung Leman, Mersing</dd></div>
       <div><dt>Kehadiran</dt><dd>61 orang</dd></div>
-      <div><dt>Yuran peserta</dt><dd class="mono">RM 380 semua sekali</dd></div>
-      <div><dt>Mohon Induk</dt><dd class="mono">RM 4,479</dd></div>
+      <div><dt>Yuran program</dt><dd class="mono">RM 220 · 2025: RM 210</dd></div>
+      <div><dt>Mohon Induk</dt><dd class="mono">RM 3,828</dd></div>
     </dl>
     <div class="covermeta">
       <span>Disediakan oleh <b>AJK Pengurusan Zon Johor Bahru</b></span>
@@ -397,19 +410,19 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
     <p class="sub">Kos tempat dan makanan diambil terus daripada sebut harga FELDA Residence Tanjung Leman bertarikh 10 September 2026 (rujukan 0120-2026/FRTL/Q). Baris lain kekal anggaran sehingga dibeli.</p>
     <div class="tiles">
       <div class="tile"><div class="lab">Kehadiran</div><div class="val">61</div><div class="note">40 peserta · 15 AJK &amp; penguji · 6 VVIP</div></div>
-      <div class="tile"><div class="lab">Jumlah kos</div><div class="val"><small>RM</small>19,460</div><div class="note">termasuk RM 5,200 bengkung &amp; Mandi Minyak</div></div>
-      <div class="tile"><div class="lab">Kos tempat seorang</div><div class="val"><small>RM</small>209</div><div class="note">dorm 2 malam · 9 hidangan · dewan</div></div>
-      <div class="tile"><div class="lab">Yuran peserta</div><div class="val"><small>RM</small>380</div><div class="note">RM 250 program + RM 80 bengkung + RM 50 Mandi Minyak</div></div>
-      <div class="tile hi"><div class="lab">Mohon Induk</div><div class="val"><small>RM</small>4,479</div><div class="note">AJK, penguji dan VVIP sahaja</div></div>
+      <div class="tile"><div class="lab">Jumlah kos</div><div class="val"><small>RM</small>14,369</div><div class="note">termasuk RM 2,000 bahan Mandi Minyak</div></div>
+      <div class="tile"><div class="lab">Kos tempat seorang</div><div class="val"><small>RM</small>178</div><div class="note">dorm 2 malam · 6 hidangan · dewan</div></div>
+      <div class="tile"><div class="lab">Yuran program</div><div class="val"><small>RM</small>220</div><div class="note">2025: RM 210 · + RM 50 Mandi Minyak</div></div>
+      <div class="tile hi"><div class="lab">Mohon Induk</div><div class="val"><small>RM</small>3,828</div><div class="note">AJK, penguji dan VVIP sahaja</div></div>
       <div class="tile"><div class="lab">Pemantapan &amp; Penilaian</div><div class="val">14<small>j</small>20<small>m</small></div><div class="note">9 sesi · Sesi 2025: 8 sesi, 14j 45m</div></div>
     </div>
     <div class="cols">
       <div class="card pick">
-        <h3>Model kewangan V4 — siapa tanggung apa</h3>
+        <h3>Model kewangan — siapa tanggung apa</h3>
         <ul class="small" style="margin-bottom:0">
-          <li><strong>Peserta</strong> menanggung kos peserta sepenuhnya: dorm, makanan, dewan dan keperluan program (RM 250), serta bengkung dan Mandi Minyak (RM 130)</li>
-          <li><strong>Induk</strong> menanggung orang yang tidak membayar: 15 AJK dan penguji, 6 VVIP, dan saguhati penguji — <strong class="mono">RM 4,479</strong></li>
-          <li>Tiada tier, tiada luar jangka berasingan — lebihan yuran RM 219 menjadi penampan</li>
+          <li><strong>Peserta</strong> menanggung kos peserta sendiri: dorm, 6 hidangan, dewan dan barang peserta — <strong class="mono">RM 220</strong>; Mandi Minyak RM 50 dikutip bersama</li>
+          <li><strong>Bengkung RM 80</strong> dikutip berasingan selepas keputusan penilaian, seperti Sesi 2025 — bukan sebahagian yuran</li>
+          <li><strong>Induk</strong> menanggung orang yang tidak membayar: 15 AJK dan penguji, 6 VVIP, saguhati penguji — <strong class="mono">RM 3,828</strong></li>
         </ul>
       </div>
       <div class="card flag">
@@ -418,18 +431,18 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
           <li>Empat soalan kepada pihak resort sebelum deposit — Bahagian 7.2</li>
           <li>Kebenaran bertulis Lompatan Gelung Berapi di premis resort</li>
           <li>Silibus, senarai penguji dan kriteria penilaian — Majlis Jurulatih</li>
-          <li>Bilangan peserta: bajet hanya seimbang pada 38 peserta ke atas — Bahagian 12.6</li>
+          <li>Bilangan peserta: bajet seimbang pada 38 peserta ke atas — Bahagian 12.6</li>
         </ul>
         <p class="tiny" style="margin:8px 0 0">Senarai penuh ada di Bahagian 14.0.</p>
       </div>
       <div class="card adat">
-        <h3>Perubahan daripada Draf V3</h3>
+        <h3>Perubahan daripada Draf V4</h3>
         <ul class="small" style="margin-bottom:0">
-          <li>Tempat disahkan: FELDA Residence Tanjung Leman — pakej dorm, makan buffet dan dewan berhawa dingin dengan PA</li>
-          <li>Kapasiti peserta dinaikkan kepada 40 (32 lelaki, 8 wanita) mengikut saiz dorm</li>
-          <li>Bengkung RM 80 dan Mandi Minyak RM 50 dimasukkan sebagai kos wajib peserta</li>
-          <li>AJK dan penguji digabungkan sebagai satu kumpulan 15 orang; VVIP 6 orang dalam 2 bilik</li>
-          <li>Peti kecemasan, genset, extension dan minyak kenderaan dikeluarkan daripada bajet — disediakan Zon dan AJK</li>
+          <li>Maklum balas AJK: RM 380 dilihat mahal. Punca dikenal pasti — makanan buffet resort dan cara yuran dibentang, bukan dorm</li>
+          <li>Hidangan dikurangkan 9 → 6: makan tengah hari Hari 1 (peserta makan di zon selepas Jumaat) dan dua supper digugurkan — RM 119 → RM 88</li>
+          <li>Bengkung RM 80 dikeluarkan daripada yuran; dikutip selepas keputusan seperti 2025</li>
+          <li>Yuran program RM 250 → <strong>RM 220</strong>; peserta bayar RM 270 semua sekali (RM 220 + RM 50)</li>
+          <li>Permohonan Induk turun RM 4,479 → RM 3,828 kerana hidangan AJK dan VVIP turut berkurang</li>
         </ul>
       </div>
     </div>
@@ -483,7 +496,7 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
           <tr><td><strong>Kumpulan</strong></td><td>Pembahagian kumpulan pada taklimat Hari 1</td><td>Dikekalkan; persembahan penutup dibuat mengikut kumpulan</td></tr>
           <tr><td><strong>Majlis Penutup</strong></td><td>12.00 – 2.00 petang; perasmi Pengarah Eksekutif resort</td><td>11.30 pagi – 1.00 petang; perasmi mengikut ketetapan Induk</td></tr>
           <tr><td><strong>Hari 3 pagi</strong></td><td>Mesyuarat Perwakilan PSSGCSM (3 jam)</td><td>Sesi 9 pengesahan penilaian; slot mesyuarat boleh dibuka jika Induk mahu</td></tr>
-          <tr><td><strong>Model kos</strong></td><td>Pakej resort RM 172 × 46 termasuk makan; jumlah RM 9,480; Induk RM 3,000; yuran RM 210</td><td>Pakej resort seunit dan sehidangan (FELDA Tanjung Leman); jumlah RM 14,260 tanpa bengkung; Induk RM 4,479 untuk AJK, penguji dan VVIP; yuran RM 250 + RM 130 bengkung dan Mandi Minyak</td></tr>
+          <tr><td><strong>Model kos</strong></td><td>Pakej resort RM 172 × 46 termasuk makan; jumlah RM 9,480; Induk RM 3,000; yuran RM 210</td><td>Pakej resort seunit dan sehidangan (FELDA Tanjung Leman); jumlah RM 12,369 tanpa Mandi Minyak dan bengkung; Induk RM 3,828 untuk AJK, penguji dan VVIP; yuran RM 220 + RM 50 Mandi Minyak; bengkung dikutip berasingan</td></tr>
         </tbody>
       </table>
     </div>
@@ -543,18 +556,18 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
     <p class="sub">Terbuka kepada ahli PSSGCSM dari semua zon dan negeri yang memegang atau bakal memegang bengkung Pra Pelangi Merah hingga Pelangi Kuning Cula 4, dan disahkan layak oleh jurulatih gelanggang masing-masing. Kapasiti maksimum 40 orang mengikut katil dorm.</p>
     <div class="cols">
       <div class="card pick">
-        <h3>Yuran RM 380 seorang</h3>
+        <h3>Peserta bayar RM 270</h3>
         <div class="tw" style="border:none">
           <table style="font-size:12.5px">
             <tbody>
-              <tr><td>Yuran program — dorm 2 malam, 9 hidangan, dewan, sijil, lanyard, buku program</td><td class="num">250</td></tr>
-              <tr><td>Bengkung tahap seterusnya</td><td class="num">80</td></tr>
-              <tr><td>Mandi Minyak — minyak dan bahan</td><td class="num">50</td></tr>
-              <tr class="tot"><td>Jumlah</td><td class="num">380</td></tr>
+              <tr><td>Yuran program — dorm 2 malam, 6 hidangan, dewan, sijil, lanyard, buku program</td><td class="num">220</td></tr>
+              <tr><td>Mandi Minyak — minyak dan bahan adat</td><td class="num">50</td></tr>
+              <tr class="tot"><td>Dibayar semasa pendaftaran</td><td class="num">270</td></tr>
+              <tr><td class="tiny">Bengkung tahap seterusnya — dikutip selepas keputusan penilaian, seperti 2025</td><td class="num tiny">80</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="tiny" style="margin:10px 0 0">Bengkung dan Mandi Minyak ialah kos wajib program dan disalurkan terus mengikut kadar pertubuhan; ia bukan pendapatan program. Pengangkutan ke Tanjung Leman diuruskan zon masing-masing dan tidak termasuk.</p>
+        <p class="tiny" style="margin:10px 0 0">Yuran program 2025 ialah RM 210. Pecahan penuh RM 220 di Bahagian 12.1. Pengangkutan ke Tanjung Leman diuruskan zon masing-masing dan tidak termasuk.</p>
       </div>
       <div class="card">
         <h3>Syarat</h3>
@@ -563,6 +576,7 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
           <li>Mengisi borang pendaftaran, borang kesihatan dan akuan risiko</li>
           <li>Peserta 40 tahun ke atas atau mempunyai sejarah kesihatan wajib mengisytiharkan keadaan kesihatan; penyertaan fizikal dalam Mandi Minyak tertakluk kepada pengesahan First Aider</li>
           <li>Menyatakan pilihan penyertaan Lompatan Gelung Berapi semasa pendaftaran — pilihan dan tidak mempengaruhi penilaian</li>
+          <li>Makan tengah hari Hari 1 di zon masing-masing sebelum bertolak; hidangan pertama di resort ialah makan malam Jumaat</li>
           <li>Membawa pakaian gelanggang penuh dengan bengkung untuk Majlis Penutup, dan <strong>pakaian kapas sahaja</strong> untuk malam adat</li>
         </ul>
       </div>
@@ -571,7 +585,8 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
         <dl class="kv">
           <dt>Buka</dt><dd>Selepas kelulusan Induk (sasaran 25 September)</dd>
           <dt>Tutup</dt><dd>9 Oktober 2026 (T−8 minggu)</dd>
-          <dt>Bayaran</dt><dd>RM 380 seorang kepada akaun zon, sebelum tarikh tutup; boleh dua ansuran</dd>
+          <dt>Bayaran</dt><dd>RM 270 seorang kepada akaun zon, sebelum tarikh tutup; boleh dua ansuran</dd>
+          <dt>Bengkung</dt><dd>RM 80 dikutip selepas keputusan, sebelum Majlis Penutup</dd>
           <dt>Kumpulan</dt><dd>Diumumkan pada taklimat Hari 1, seperti 2025</dd>
         </dl>
         <p class="tiny" style="margin-top:10px">Deposit 50% kepada resort dibayar sebaik kelulusan Induk — sebut harga tidak menyimpan tarikh. Pendaftaran ditutup awal supaya bilangan sebenar diketahui sebelum bayaran progresif 80% pada T−3 minggu.</p>
@@ -581,7 +596,7 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
       <div class="card flag">
         <h3>Polisi yuran — dinyatakan dalam borang pendaftaran</h3>
         <ul class="small" style="margin-bottom:0">
-          <li><strong>Tiada bayaran balik.</strong> Yuran RM 380 yang telah dibayar tidak dikembalikan bagi peserta yang tidak hadir, kerana resort mengenakan caj mengikut bilangan yang dijamin dan bengkung dipesan mengikut senarai.</li>
+          <li><strong>Tiada bayaran balik.</strong> Yuran RM 270 yang telah dibayar tidak dikembalikan bagi peserta yang tidak hadir, kerana resort mengenakan caj mengikut bilangan yang dijamin.</li>
           <li><strong>Kadar sama untuk semua zon dan negeri.</strong> Semua kos dikira di tempat program; pengangkutan ke Tanjung Leman ditanggung peserta atau zon masing-masing, dari mana sekalipun.</li>
           <li><strong>Bayaran penuh sebelum 9 Oktober.</strong> Tempat hanya dikira sah selepas bayaran penuh diterima; boleh dua ansuran tetapi ansuran akhir sebelum tarikh tutup.</li>
         </ul>
@@ -639,7 +654,7 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
         <div class="box lead"><div class="role">Penyelaras Program</div><div class="name">— nama —</div><div class="desc">Bertanggungjawab kepada Induk; menandatangani kertas kerja, surat dan tempahan resort; ucapan alu-aluan</div></div>
         <div class="box kk"><div class="role">Kem Komandan</div><div class="name">— nama —</div><div class="desc">Mengawal perjalanan tentatif di tapak sepanjang 3 hari; titik rujukan tunggal pihak resort · Bahagian 6.2</div></div>
         <div class="box"><div class="role">Setiausaha</div><div class="name">— nama —</div><div class="desc">Surat, minit, senarai jemputan, senarai penerima sijil dan bengkung, laporan akhir</div></div>
-        <div class="box"><div class="role">Bendahari</div><div class="name">— nama —</div><div class="desc">Kutipan yuran RM 380, bayaran deposit dan baki resort, resit, laporan kewangan kepada Induk</div></div>
+        <div class="box"><div class="role">Bendahari</div><div class="name">— nama —</div><div class="desc">Kutipan yuran RM 270 dan bengkung RM 80, bayaran deposit dan baki resort, resit, laporan kewangan kepada Induk</div></div>
       </div>
       <div class="orgline"></div>
       <p class="orglab">AJK · 5</p>
@@ -656,7 +671,7 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
         <div class="box adv"><div class="role">Ketua Penguji + 5 penguji</div><div class="name">Pemegang bengkung kuning dan hitam pelangi</div><div class="desc">Hanya melatih dan menilai; tidak dibebankan tugas AJK. Saguhati RM 50 seorang dan sijil penyertaan.</div></div>
       </div>
     </div>
-    <div class="note"><b>Prinsip:</b> AJK tidak menerima saguhati. Seorang AJK boleh memegang lebih daripada satu bidang; jika Zon dapat menyediakan lebih daripada 9 AJK, tempat tambahan tertakluk kepada katil dorm yang berbaki (1 katil) atau ditanggung sendiri pada kadar RM 119 makanan seorang.</div>
+    <div class="note"><b>Prinsip:</b> AJK tidak menerima saguhati. Seorang AJK boleh memegang lebih daripada satu bidang; jika Zon dapat menyediakan lebih daripada 9 AJK, tempat tambahan tertakluk kepada katil dorm yang berbaki (1 katil) atau ditanggung sendiri pada kadar RM 88 makanan seorang.</div>
   </div>
 </section>
 
@@ -791,7 +806,7 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
         <h3>Kenapa tempat ini</h3>
         <ul class="small" style="margin-bottom:0">
           <li>Pantai berpasir di hadapan resort dengan latar pokok — suasana yang diminta pertubuhan sejak awal</li>
-          <li>Kadar dorm seunit, bukan sebilik: 40 peserta muat dalam 3 unit, RM 209 sekepala termasuk makan dan dewan — setara dengan Savanna Hill 2025 (RM 172 tanpa dewan)</li>
+          <li>Kadar dorm seunit, bukan sebilik: 40 peserta muat dalam 3 unit, RM 178 sekepala termasuk 6 hidangan dan dewan — setara dengan Savanna Hill 2025 (RM 172 tanpa dewan)</li>
           <li>Dewan tertutup berhawa dingin dengan PA sedia ada menyelesaikan risiko monsun Disember dan kekurangan lampu padang</li>
           <li>Set kerusi majlis penutup (sofa, rostrum, mic stand) termasuk dalam sewa dewan</li>
         </ul>
@@ -928,7 +943,7 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
       <div class="r"><div class="t">10.00 pg</div><div class="a"><b>Advance party AJK</b><em>Terima dewan, susun Bilik Gerakan, ukur backdrop, uji PA dan projektor, tanda tapak Mandi Minyak dan Gelung Berapi</em></div><div><span class="chip neu">Kem Komandan</span></div></div>
       <div class="r hd">Tengah hari dan petang</div>
       <div class="r solat-r"><div class="t">12.58 tgh</div><div class="a"><b>Solat Jumaat di zon masing-masing</b><em>Peserta bertolak ke Tanjung Leman selepas Jumaat; pergerakan diuruskan zon</em></div><div><span class="chip neu">Perhubungan Zon</span></div></div>
-      <div class="r"><div class="t">2.00 ptg</div><div class="a"><b>Ketibaan, pendaftaran dan makan tengah hari</b><em>Lanyard, semakan borang kesihatan, agihan dorm · buffet di hadapan dewan · kunci dorm dari 3.00 petang</em></div><div><span class="chip neu">Pendaftaran · Kebajikan</span></div></div>
+      <div class="r"><div class="t">2.00 ptg</div><div class="a"><b>Ketibaan dan pendaftaran</b><em>Peserta makan tengah hari di zon sebelum bertolak · lanyard, semakan borang kesihatan, agihan dorm · kunci dorm dari 3.00 petang</em></div><div><span class="chip neu">Pendaftaran</span></div></div>
       <div class="r"><div class="t">2.45 ptg</div><div class="a"><b>Taklimat peserta dan pembahagian kumpulan</b><em>Peraturan resort, keselamatan, waktu senyap, pilihan Gelung Berapi</em></div><div><span class="chip neu">Penyelaras · Kem Komandan</span></div></div>
       <div class="r key"><div class="t">3.30 ptg</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 1</b><em>50 minit · padang sebelah dewan · dimulakan dengan adat buka gelanggang jika ditetapkan Majlis Adat</em></div><div><span class="chip ok">Teras</span></div></div>
       <div class="r solat-r"><div class="t">4.25 ptg</div><div class="a"><b>Solat Asar · minum petang</b><em>Asar masuk 4.21</em></div><div><span class="chip neu">Keagamaan · Kebajikan</span></div></div>
@@ -936,7 +951,7 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
       <div class="r hd">Malam</div>
       <div class="r solat-r"><div class="t">6.30 ptg</div><div class="a"><b>Khidmat Diri · makan malam · Solat Maghrib · Tahlil · Solat Isyak</b><em>Makan malam buffet 6.30 · Maghrib masuk 6.57, Isyak 8.11 · Tahlil selepas Maghrib, seperti 2025</em></div><div><span class="chip neu">Keagamaan</span></div></div>
       <div class="r key"><div class="t">8.45 mlm</div><div class="a"><b>Pemantapan &amp; Penilaian — Sesi 3</b><em>2 jam 15 minit · di dalam dewan (padang kurang lampu)</em></div><div><span class="chip ok">Teras</span></div></div>
-      <div class="r"><div class="t">11.00 mlm</div><div class="a">Supper · Aktiviti Bebas</div><div><span class="chip neu">Kebajikan</span></div></div>
+      <div class="r"><div class="t">11.00 mlm</div><div class="a">Minuman sendiri · Aktiviti Bebas</div><div><span class="chip neu">Kebajikan</span></div></div>
       <div class="r"><div class="t">11.45 mlm</div><div class="a">Waktu senyap hingga 5.00 pagi · debrief AJK 15 minit · AJK bergilir berjaga</div><div><span class="chip neu">Kem Komandan</span></div></div>
     </div>
     <p class="tiny" style="margin-top:12px">Pemantapan &amp; Penilaian Hari 1: 4 jam 35 minit (2025: 5 jam). Waktu tidur peserta kira-kira 5 jam 30 minit.</p>
@@ -968,7 +983,7 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
       <div class="r"><div class="t">9.45 mlm</div><div class="a"><b>Raptai ringkas Majlis Penutup</b><em>15 minit · susunan masuk dewan dan urutan penganugerahan, seperti 2025</em></div><div><span class="chip neu">Pengacaraan</span></div></div>
       <div class="r adat"><div class="t">10.00 mlm</div><div class="a"><b>Lompatan Gelung Berapi</b><em>40 minit · tertakluk kebenaran bertulis resort · pakaian kapas · Pasukan Api bersedia · Bahagian 10.0</em></div><div><span class="chip wait">Pilihan · Majlis Adat</span></div></div>
       <div class="r adat"><div class="t">10.45 mlm</div><div class="a"><b>Mandi Minyak</b><em>1 jam · dipimpin Guru atau Waris Amanah · kawasan beralas bersebelahan dewan, elektrik melalui extension · kawah dipanaskan dari 9.00 malam · Bahagian 10.0</em></div><div><span class="chip wait">Pilihan · Majlis Adat</span></div></div>
-      <div class="r"><div class="t">11.45 mlm</div><div class="a">Supper · waktu senyap 12.00 · debrief AJK</div><div><span class="chip neu">Kem Komandan</span></div></div>
+      <div class="r"><div class="t">11.45 mlm</div><div class="a">Minuman sendiri · waktu senyap 12.00 · debrief AJK</div><div><span class="chip neu">Kem Komandan</span></div></div>
     </div>
     <p class="tiny" style="margin-top:12px">Pemantapan &amp; Penilaian Hari 2: 8 jam 30 minit (2025: 9 jam 45 minit). Waktu tidur peserta kira-kira 5 jam 15 minit — sama seperti 2025, dengan malam adat menggantikan sebahagian Sesi 8.</p>
   </div>
@@ -1320,43 +1335,47 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
 </section>
 
 <!-- 22a KOS SEBENAR PESERTA -->
-<section class="slide" data-part="Bajet" data-title="Kos sebenar seorang peserta" data-n="12.1">
+<section class="slide" data-part="Bajet" data-title="Resit seorang peserta" data-n="12.1">
   <div class="inner">
     <p class="eyebrow"><span class="n">12.1</span> Anggaran perbelanjaan</p>
-    <h2>Kos sebenar seorang peserta — sebelum kos orang lain</h2>
-    <p class="sub">Yuran ditetapkan daripada kos, bukan sebaliknya. Jadual ini menunjukkan apa yang seorang peserta sebenarnya guna pada kadar sebut harga resort dan kadar pertubuhan, dibahagi 40 peserta. Kos AJK, penguji dan VVIP tidak termasuk di sini — ia ditanggung Induk (Bahagian 12.3).</p>
-    <div class="cols" style="grid-template-columns:1.4fr 1fr">
+    <h2>RM 220 — apa yang seorang peserta dapat</h2>
+    <p class="sub">Yuran ditetapkan daripada kos, bukan sebaliknya. Setiap ringgit di bawah ialah kos yang peserta sendiri guna, pada kadar sebut harga resort, dibahagi 40. Kos AJK, penguji dan VVIP tidak ada di sini — Induk yang tanggung.</p>
+    <div class="resit">
+      <div class="rbar">
+        <div class="seg s1" style="width:29.5%"><b>65</b><span>tidur</span></div>
+        <div class="seg s2" style="width:40%"><b>88</b><span>makan</span></div>
+        <div class="seg s3" style="width:11.4%"><b>25</b><span>dewan</span></div>
+        <div class="seg s4" style="width:16.4%"><b>36</b><span>barang</span></div>
+        <div class="seg s5" style="width:2.7%"><b>6</b></div>
+      </div>
+      <div class="rbar r25"><div class="seg" style="width:95.5%"><b>RM 210</b><span>yuran 2025 — Savanna Hill, pakej kem</span></div></div>
+    </div>
+    <div class="cols" style="grid-template-columns:1.4fr 1fr;margin-top:14px">
       <div class="tw">
         <table>
-          <thead><tr><th>Kos yang peserta guna sendiri</th><th>Kiraan</th><th class="num">Seorang</th></tr></thead>
+          <thead><tr><th>Apa</th><th>Kiraan</th><th class="num">Seorang</th></tr></thead>
           <tbody>
-            <tr><td>Penginapan dorm, 2 malam</td><td class="tiny">2 dorm 16 katil + 1 dorm 8 katil = RM 2,600 ÷ 40</td><td class="num">65</td></tr>
-            <tr><td>Makanan, 9 hidangan buffet resort</td><td class="tiny">17 + 17 + 7 + 10 + 17 + 17 + 7 + 10 + 17</td><td class="num">119</td></tr>
-            <tr><td>Dewan Tenggaroh 5, 2 hari</td><td class="tiny">RM 1,000 ÷ 40</td><td class="num">25</td></tr>
-            <tr class="grp"><td colspan="2">Kos tempat seorang (Bahagian A)</td><td class="num">209</td></tr>
-            <tr><td>Bengkung tahap seterusnya</td><td class="tiny">kadar pertubuhan</td><td class="num">80</td></tr>
-            <tr><td>Mandi Minyak — minyak dan bahan</td><td class="tiny">kadar pertubuhan</td><td class="num">50</td></tr>
-            <tr class="grp"><td colspan="2">Kos asas seorang peserta (A + B)</td><td class="num">339</td></tr>
-            <tr><td>Keperluan program — sijil, lanyard, buku program, banner, air, bahan Gelung Berapi</td><td class="tiny">RM 1,421 ÷ 40 (Bahagian D)</td><td class="num">36</td></tr>
-            <tr class="tot"><td colspan="2">Kos sebenar seorang peserta (A + B + D)</td><td class="num">375</td></tr>
+            <tr><td><i class="dot s1"></i><strong>Tidur 2 malam</strong> — dorm 16 katil, kipas, tandas berkongsi</td><td class="tiny">2 dorm 16 katil + 1 dorm 8 katil = RM 2,600 ÷ 40 · RM 32 semalam</td><td class="num">65</td></tr>
+            <tr><td><i class="dot s2"></i><strong>Makan 6 hidangan</strong> buffet resort</td><td class="tiny">Jumaat malam · Sabtu sarapan, tengah hari, malam · Ahad sarapan, jamuan penutup</td><td class="num">88</td></tr>
+            <tr><td><i class="dot s3"></i><strong>Dewan berhawa dingin</strong> 2 hari, PA dan projektor</td><td class="tiny">RM 1,000 ÷ 40 — sesi malam, pelan hujan, Majlis Penutup</td><td class="num">25</td></tr>
+            <tr><td><i class="dot s4"></i><strong>Barang peserta</strong></td><td class="tiny">sijil, lanyard, buku program, banner, air, bahan gelung — RM 1,421 ÷ 40</td><td class="num">36</td></tr>
+            <tr><td><i class="dot s5"></i><strong>Penampan</strong></td><td class="tiny">pusingan ke atas · RM 259 untuk 40 peserta</td><td class="num">6</td></tr>
+            <tr class="tot"><td colspan="2">Yuran program</td><td class="num">220</td></tr>
           </tbody>
         </table>
       </div>
       <div>
         <div class="card pick">
-          <h3>Bagaimana RM 380 ditetapkan</h3>
+          <h3>Dikutip berasingan</h3>
           <dl class="kv">
-            <dt>Kos sebenar</dt><dd class="mono">RM 209 + 36 = RM 245 program</dd>
-            <dt>Dibundarkan</dt><dd class="mono">RM 250 program</dd>
-            <dt>Salur terus</dt><dd class="mono">+ RM 80 bengkung + RM 50 Mandi Minyak</dd>
-            <dt>Peserta bayar</dt><dd class="mono"><strong>RM 380</strong></dd>
-            <dt>Penampan</dt><dd>RM 5 seorang · RM 219 untuk 40 peserta</dd>
+            <dt>Mandi Minyak</dt><dd><span class="mono">RM 50</span> — bahan adat, semasa pendaftaran</dd>
+            <dt>Bengkung</dt><dd><span class="mono">RM 80</span> — selepas keputusan, seperti 2025</dd>
           </dl>
-          <p class="tiny" style="margin:10px 0 0">Yuran program RM 250 ialah kos sebenar RM 245 dibundarkan ke atas. Tiada keuntungan dan tiada subsidi silang — peserta tidak membayar untuk AJK, penguji atau VVIP.</p>
+          <p class="tiny" style="margin:10px 0 0">Peserta bayar <strong>RM 270</strong> semasa pendaftaran. Bengkung tidak dikira dalam bajet program — ia kadar Induk yang disalurkan terus.</p>
         </div>
         <div class="card soft" style="margin-top:14px">
-          <h3>Yang peserta tidak bayar</h3>
-          <p class="small" style="margin-bottom:0">Dorm dan makanan 15 AJK dan penguji, bilik dan makanan 6 VVIP, saguhati penguji — <strong class="mono">RM 4,479</strong>, dipohon daripada Induk (Bahagian 12.3). Pengangkutan ke Tanjung Leman diuruskan zon masing-masing.</p>
+          <h3>Kenapa naik RM 10 daripada 2025</h3>
+          <p class="small" style="margin-bottom:0">Savanna Hill ialah pusat latihan dengan pakej seorang dan katering kem. FELDA Tanjung Leman ialah resort hotel: makanan buffet dengan caj perkhidmatan 10% dan SST 8%, dewan dicaj berasingan. Sebagai balasan: pantai, dewan berhawa dingin dengan PA, bilik VVIP. Dorm Felda pula lebih murah — RM 32 semalam.</p>
         </div>
       </div>
     </div>
@@ -1368,15 +1387,15 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
   <div class="inner">
     <p class="eyebrow"><span class="n">12.2</span> Anggaran perbelanjaan</p>
     <h2>Tiga tanggungan, bukan satu senarai bercampur</h2>
-    <p class="sub">Setiap ringgit dalam bajet ini ada pemiliknya. Peserta menanggung kos peserta; Induk menanggung orang yang tidak membayar; bengkung dan Mandi Minyak disalurkan terus. Peralatan yang sudah dimiliki pertubuhan atau disediakan resort tidak dibeli semula.</p>
+    <p class="sub">Setiap ringgit dalam bajet ini ada pemiliknya. Peserta menanggung kos peserta; Induk menanggung orang yang tidak membayar; Mandi Minyak dan bengkung disalurkan terus. Peralatan yang sudah dimiliki pertubuhan atau disediakan resort tidak dibeli semula.</p>
     <div class="cols">
       <div class="card pick">
-        <h3>Ditanggung peserta · RM 380 seorang</h3>
-        <ul class="small" style="margin-bottom:0"><li>Dorm 2 malam dan 9 hidangan buffet resort</li><li>Sewa dewan 2 hari</li><li>Sijil, lanyard, buku program, banner, air minum sesi, bahan Gelung Berapi</li><li>Bengkung RM 80 dan Mandi Minyak RM 50 — disalurkan terus</li></ul>
+        <h3>Ditanggung peserta · RM 270 seorang</h3>
+        <ul class="small" style="margin-bottom:0"><li>Dorm 2 malam dan 6 hidangan buffet resort</li><li>Sewa dewan 2 hari</li><li>Sijil, lanyard, buku program, banner, air minum sesi, bahan Gelung Berapi</li><li>Mandi Minyak RM 50 — disalurkan terus</li><li>Bengkung RM 80 dikutip berasingan selepas keputusan, di luar bajet ini</li></ul>
       </div>
       <div class="card adat">
-        <h3>Ditanggung Induk · RM 4,479</h3>
-        <ul class="small" style="margin-bottom:0"><li>Dorm dan 9 hidangan untuk 15 AJK dan penguji</li><li>2 bilik Superior Deluxe dan 9 hidangan untuk 6 VVIP</li><li>Saguhati 6 jurulatih penguji, RM 50 seorang</li></ul>
+        <h3>Ditanggung Induk · RM 3,828</h3>
+        <ul class="small" style="margin-bottom:0"><li>Dorm dan 6 hidangan untuk 15 AJK dan penguji</li><li>2 bilik Superior Deluxe dan 6 hidangan untuk 6 VVIP</li><li>Saguhati 6 jurulatih penguji, RM 50 seorang</li></ul>
       </div>
       <div class="card">
         <h3>Disediakan resort · tiada kos</h3>
@@ -1395,25 +1414,24 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
 <section class="slide" data-part="Bajet" data-title="Jadual anggaran perbelanjaan" data-n="12.3">
   <div class="inner">
     <p class="eyebrow"><span class="n">12.3</span> Anggaran perbelanjaan</p>
-    <h2>Jadual anggaran — RM 19,460</h2>
-    <p class="sub">Semua angka dalam Ringgit Malaysia. Bahagian A dan C menggunakan kadar sebut harga resort; Bahagian B kadar pertubuhan; Bahagian D anggaran pasaran.</p>
+    <h2>Jadual anggaran — RM 14,369</h2>
+    <p class="sub">Semua angka dalam Ringgit Malaysia. Bahagian A dan C menggunakan kadar sebut harga resort; Bahagian B kadar pertubuhan; Bahagian D anggaran pasaran. Bengkung (40 × RM 80 = RM 3,200) dikutip berasingan dan tidak dimasukkan.</p>
     <div class="tw">
       <table>
         <thead><tr><th>Kod</th><th>Butiran</th><th class="num">Kuantiti</th><th class="num">Kadar</th><th class="num">Jumlah</th><th>Status</th></tr></thead>
         <tbody>
-          <tr class="grp"><td class="kod">A</td><td>Kos peserta — 40 orang</td><td class="num"></td><td class="num"></td><td class="num">8,360</td><td></td></tr>
+          <tr class="grp"><td class="kod">A</td><td>Kos peserta — 40 orang</td><td class="num"></td><td class="num"></td><td class="num">7,120</td><td></td></tr>
           <tr><td class="kod">A1</td><td>Dorm 16 katil, peserta lelaki — 2 unit × 2 malam</td><td class="num">4</td><td class="num">500.00</td><td class="num">2,000</td><td><span class="chip ok">Sebut harga</span></td></tr>
           <tr><td class="kod">A2</td><td>Dorm 8 katil, peserta wanita — 1 unit × 2 malam</td><td class="num">2</td><td class="num">300.00</td><td class="num">600</td><td><span class="chip ok">Sebut harga</span></td></tr>
-          <tr><td class="kod">A3</td><td>Makanan 9 hidangan, Hari 1 tengah hari hingga Hari 3 tengah hari</td><td class="num">40</td><td class="num">119.00</td><td class="num">4,760</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr><td class="kod">A3</td><td>Makanan 6 hidangan, Jumaat malam hingga Ahad tengah hari</td><td class="num">40</td><td class="num">88.00</td><td class="num">3,520</td><td><span class="chip ok">Sebut harga</span></td></tr>
           <tr><td class="kod">A4</td><td>Dewan Tenggaroh 5 dengan PA dan projektor — 2 hari</td><td class="num">2</td><td class="num">500.00</td><td class="num">1,000</td><td><span class="chip ok">Sebut harga</span></td></tr>
-          <tr class="grp"><td class="kod">B</td><td>Kos wajib peserta — disalurkan terus</td><td class="num"></td><td class="num"></td><td class="num">5,200</td><td></td></tr>
-          <tr><td class="kod">B1</td><td>Bengkung tahap seterusnya</td><td class="num">40</td><td class="num">80.00</td><td class="num">3,200</td><td><span class="chip ok">Kadar tetap</span></td></tr>
-          <tr><td class="kod">B2</td><td>Mandi Minyak — minyak dan bahan</td><td class="num">40</td><td class="num">50.00</td><td class="num">2,000</td><td><span class="chip ok">Kadar tetap</span></td></tr>
-          <tr class="grp"><td class="kod">C</td><td>Tanggungan Induk — AJK, penguji dan VVIP</td><td class="num"></td><td class="num"></td><td class="num">4,479</td><td></td></tr>
+          <tr class="grp"><td class="kod">B</td><td>Kos wajib peserta — disalurkan terus</td><td class="num"></td><td class="num"></td><td class="num">2,000</td><td></td></tr>
+          <tr><td class="kod">B1</td><td>Mandi Minyak — minyak dan bahan adat</td><td class="num">40</td><td class="num">50.00</td><td class="num">2,000</td><td><span class="chip ok">Kadar tetap</span></td></tr>
+          <tr class="grp"><td class="kod">C</td><td>Tanggungan Induk — AJK, penguji dan VVIP</td><td class="num"></td><td class="num"></td><td class="num">3,828</td><td></td></tr>
           <tr><td class="kod">C1</td><td>Dorm 16 katil, AJK dan penguji — 1 unit × 2 malam</td><td class="num">2</td><td class="num">500.00</td><td class="num">1,000</td><td><span class="chip ok">Sebut harga</span></td></tr>
-          <tr><td class="kod">C2</td><td>Makanan 9 hidangan, 15 AJK dan penguji</td><td class="num">15</td><td class="num">119.00</td><td class="num">1,785</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr><td class="kod">C2</td><td>Makanan 6 hidangan, 15 AJK dan penguji</td><td class="num">15</td><td class="num">88.00</td><td class="num">1,320</td><td><span class="chip ok">Sebut harga</span></td></tr>
           <tr><td class="kod">C3</td><td>Bilik Superior Deluxe, VVIP — 2 bilik × 2 malam</td><td class="num">4</td><td class="num">170.00</td><td class="num">680</td><td><span class="chip ok">Sebut harga</span></td></tr>
-          <tr><td class="kod">C4</td><td>Makanan 9 hidangan, 6 VVIP</td><td class="num">6</td><td class="num">119.00</td><td class="num">714</td><td><span class="chip ok">Sebut harga</span></td></tr>
+          <tr><td class="kod">C4</td><td>Makanan 6 hidangan, 6 VVIP</td><td class="num">6</td><td class="num">88.00</td><td class="num">528</td><td><span class="chip ok">Sebut harga</span></td></tr>
           <tr><td class="kod">C5</td><td>Saguhati jurulatih penguji</td><td class="num">6</td><td class="num">50.00</td><td class="num">300</td><td><span class="chip ok">Kadar tetap</span></td></tr>
           <tr class="grp"><td class="kod">D</td><td>Keperluan program</td><td class="num"></td><td class="num"></td><td class="num">1,421</td><td></td></tr>
           <tr><td class="kod">D1</td><td>Sijil penyertaan — 40 peserta dan 6 penguji</td><td class="num">46</td><td class="num">3.00</td><td class="num">138</td><td><span class="chip neu">Anggaran</span></td></tr>
@@ -1423,11 +1441,11 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
           <tr><td class="kod">D5</td><td>Buku program, borang dan alat tulis</td><td class="num">1</td><td class="num">150.00</td><td class="num">150</td><td><span class="chip neu">Anggaran</span></td></tr>
           <tr><td class="kod">D6</td><td>Bahan Lompatan Gelung Berapi — kain guni, dawai, minyak tanah (jika dibenarkan resort)</td><td class="num">1</td><td class="num">200.00</td><td class="num">200</td><td><span class="chip neu">Anggaran</span></td></tr>
           <tr><td class="kod">D7</td><td>Air mineral tambahan untuk sesi latihan</td><td class="num">1</td><td class="num">150.00</td><td class="num">150</td><td><span class="chip neu">Anggaran</span></td></tr>
-          <tr class="tot"><td class="kod"></td><td>Jumlah keseluruhan</td><td class="num"></td><td class="num"></td><td class="num">19,460</td><td></td></tr>
+          <tr class="tot"><td class="kod"></td><td>Jumlah keseluruhan</td><td class="num"></td><td class="num"></td><td class="num">14,369</td><td></td></tr>
         </tbody>
       </table>
     </div>
-    <p class="tiny" style="margin-top:10px">Tidak dikira: deposit keselamatan resort RM 50 seunit (RM 300 tunai, dikembalikan), pengangkutan peserta (zon), minyak kenderaan AJK, peti kecemasan dan genset (sedia ada Zon). Draf V3 berjumlah RM 10,230 untuk 50 orang tanpa bengkung dan Mandi Minyak; setara V4 tanpa Bahagian B ialah RM 14,260 untuk 61 orang.</p>
+    <p class="tiny" style="margin-top:10px">Tidak dikira: bengkung RM 3,200 (dikutip berasingan), deposit keselamatan resort RM 50 seunit (RM 300 tunai, dikembalikan), pengangkutan peserta (zon), minyak kenderaan AJK, peti kecemasan dan genset (sedia ada Zon). Draf V4 berjumlah RM 19,460 dengan 9 hidangan dan bengkung dalam yuran.</p>
   </div>
 </section>
 
@@ -1441,19 +1459,18 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
       <table style="font-size:12.5px">
         <thead><tr><th style="width:5%">Kod</th><th style="width:20%">Baris</th><th>Apa dan mengapa</th><th style="width:24%">Asas kadar</th></tr></thead>
         <tbody>
-          <tr class="grp"><td class="kod">A</td><td colspan="3">Kos peserta — ditanggung peserta melalui yuran program RM 250</td></tr>
+          <tr class="grp"><td class="kod">A</td><td colspan="3">Kos peserta — ditanggung peserta melalui yuran program RM 220</td></tr>
           <tr><td class="kod">A1</td><td>Dorm peserta lelaki</td><td>2 unit dorm 16 katil untuk 32 peserta lelaki, 2 malam. Dorm dipilih kerana RM 31 sekepala semalam berbanding RM 75 ke atas untuk bilik; tandas berkongsi.</td><td>Sebut harga resort: RM 500 seunit semalam</td></tr>
           <tr><td class="kod">A2</td><td>Dorm peserta wanita</td><td>1 unit dorm 8 katil untuk 8 peserta wanita, 2 malam, berasingan daripada dorm lelaki. Jika peserta wanita melebihi 8, unit 16 katil digunakan (+RM 400).</td><td>Sebut harga resort: RM 300 seunit semalam</td></tr>
-          <tr><td class="kod">A3</td><td>Makanan peserta</td><td>9 hidangan buffet resort dari makan tengah hari Hari 1 hingga jamuan penutup Hari 3 — 5 makan berat, 2 sarapan, 2 supper. Makanan luar tidak dibenarkan di resort, jadi tiada pilihan katering sendiri.</td><td>Sebut harga resort: sarapan 10, tengah hari 17, malam 17, supper 7 — RM 119 seorang</td></tr>
+          <tr><td class="kod">A3</td><td>Makanan peserta</td><td>6 hidangan buffet resort dari makan malam Hari 1 hingga jamuan penutup Hari 3 — 4 makan berat, 2 sarapan. Makan tengah hari Hari 1 di zon; supper tidak ditempah. Makanan luar tidak dibenarkan di resort, jadi tiada pilihan katering sendiri.</td><td>Sebut harga resort: sarapan 10, tengah hari 17, malam 17 — RM 88 seorang</td></tr>
           <tr><td class="kod">A4</td><td>Dewan Tenggaroh 5</td><td>Dewan tertutup berhawa dingin untuk semua sesi malam, pelan hujan monsun, Amanah Guru dan Majlis Penutup. Sewa termasuk 2 mikrofon wireless, projektor dan skrin, set kerusi majlis (sofa, rostrum, mic stand). Dikira 2 hari; jika resort mengira 3 hari, tambah RM 500.</td><td>Sebut harga resort: RM 500 sehari</td></tr>
-          <tr class="grp"><td class="kod">B</td><td colspan="3">Kos wajib peserta — dikutip bersama yuran, disalurkan terus, bukan pendapatan program</td></tr>
-          <tr><td class="kod">B1</td><td>Bengkung</td><td>Bengkung tahap seterusnya yang dianugerahkan pada Majlis Penutup. Dikutip oleh Zon dan diserahkan kepada Induk untuk pesanan mengikut senarai peserta dan tahap masing-masing.</td><td>Kadar Induk: RM 80 seorang</td></tr>
-          <tr><td class="kod">B2</td><td>Mandi Minyak</td><td>Bahan guna habis adat Mandi Minyak: minyak masak, gas, sabun dan kain. Kawah, tungku dan dapur gas disediakan Zon. Wajib untuk semua peserta sebagai sebahagian program; penyertaan fizikal tertakluk kepada kesihatan.</td><td>Kadar pertubuhan: RM 50 seorang</td></tr>
+          <tr class="grp"><td class="kod">B</td><td colspan="3">Kos wajib peserta — dikutip bersama yuran, disalurkan terus, bukan pendapatan program. Bengkung RM 80 dikutip selepas keputusan dan tidak dimasukkan dalam bajet</td></tr>
+          <tr><td class="kod">B1</td><td>Mandi Minyak</td><td>Bahan guna habis adat Mandi Minyak: minyak masak, gas, sabun dan kain. Kawah, tungku dan dapur gas disediakan Zon. Wajib untuk semua peserta sebagai sebahagian program; penyertaan fizikal tertakluk kepada kesihatan.</td><td>Kadar pertubuhan: RM 50 seorang</td></tr>
           <tr class="grp"><td class="kod">C</td><td colspan="3">Tanggungan Induk — orang yang hadir atas urusan pertubuhan, tidak membayar yuran</td></tr>
           <tr><td class="kod">C1</td><td>Dorm AJK &amp; penguji</td><td>1 unit dorm 16 katil untuk 9 AJK dan 6 penguji lelaki, 2 malam, berasingan daripada peserta supaya urus setia dan penguji ada ruang bermesyuarat.</td><td>Sebut harga resort: RM 500 seunit semalam</td></tr>
-          <tr><td class="kod">C2</td><td>Makanan AJK &amp; penguji</td><td>9 hidangan yang sama seperti peserta untuk 15 orang.</td><td>RM 119 seorang</td></tr>
+          <tr><td class="kod">C2</td><td>Makanan AJK &amp; penguji</td><td>6 hidangan yang sama seperti peserta untuk 15 orang.</td><td>RM 88 seorang</td></tr>
           <tr><td class="kod">C3</td><td>Bilik VVIP</td><td>2 bilik Superior Deluxe (garden &amp; sea view) untuk 6 VVIP — Guru, Waris Amanah dan Pengerusi — 3 sebilik, 2 malam. Bilik, bukan dorm, sebagai penghormatan kepada kedudukan mereka.</td><td>Sebut harga resort: RM 170 sebilik semalam</td></tr>
-          <tr><td class="kod">C4</td><td>Makanan VVIP</td><td>9 hidangan untuk 6 VVIP; dikira hadir sepanjang program.</td><td>RM 119 seorang</td></tr>
+          <tr><td class="kod">C4</td><td>Makanan VVIP</td><td>6 hidangan untuk 6 VVIP; dikira hadir sepanjang program.</td><td>RM 88 seorang</td></tr>
           <tr><td class="kod">C5</td><td>Saguhati penguji</td><td>Untuk 6 jurulatih penguji yang melatih dan menilai sepanjang 3 hari. AJK tidak menerima saguhati.</td><td>Kadar biasa pertubuhan: RM 50 seorang</td></tr>
           <tr class="grp"><td class="kod">D</td><td colspan="3">Keperluan program — barang yang peserta sendiri guna atau terima; RM 36 seorang dalam yuran</td></tr>
           <tr><td class="kod">D1</td><td>Sijil</td><td>Sijil penyertaan untuk 40 peserta dan 6 penguji (amalan pertubuhan: penguji turut diberi sijil). Bukan sijil bengkung — itu dikeluarkan Induk.</td><td>Anggaran: cetak kertas tebal A4 berwarna, RM 3 sekeping</td></tr>
@@ -1474,27 +1491,24 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
 <section class="slide" data-part="Bajet" data-title="Kepala hidangan mengikut tentatif" data-n="12.5">
   <div class="inner">
     <p class="eyebrow"><span class="n">12.5</span> Anggaran perbelanjaan</p>
-    <h2>Sembilan hidangan, 61 kepala setiap satu</h2>
-    <p class="sub">Resort mengenakan kadar sehidangan seorang, jadi bilangan kepala setiap hidangan boleh dilaraskan hingga tarikh jaminan. Kertas kerja ini mengira semua 61 orang hadir dari Hari 1 tengah hari hingga Hari 3 tengah hari. Makan tengah hari Hari 1 dihidang selepas ketibaan.</p>
+    <h2>Enam hidangan, 61 kepala setiap satu</h2>
+    <p class="sub">Resort mengenakan kadar sehidangan seorang, jadi bilangan kepala setiap hidangan boleh dilaraskan hingga tarikh jaminan. Peserta makan tengah hari di zon sebelum bertolak; supper tidak ditempah — minuman ringan disediakan sendiri jika resort membenarkan.</p>
     <div class="tw">
       <table>
         <thead><tr><th class="num">Bil</th><th>Hidangan</th><th>Masa</th><th class="num">Kadar</th><th class="num">Peserta</th><th class="num">AJK &amp; penguji</th><th class="num">VVIP</th><th class="num">Kepala</th><th class="num">Jumlah</th></tr></thead>
         <tbody>
-          <tr><td class="num">1</td><td>Makan tengah hari</td><td class="t">Jum 2.00 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
-          <tr><td class="num">2</td><td>Makan malam</td><td class="t">Jum 6.30 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
-          <tr><td class="num">3</td><td>Supper</td><td class="t">Jum 11.00 mlm</td><td class="num">7.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">427</td></tr>
-          <tr><td class="num">4</td><td>Sarapan pagi</td><td class="t">Sab 7.15 pg</td><td class="num">10.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">610</td></tr>
-          <tr><td class="num">5</td><td>Makan tengah hari</td><td class="t">Sab 1.15 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
-          <tr><td class="num">6</td><td>Makan malam</td><td class="t">Sab 6.30 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
-          <tr><td class="num">7</td><td>Supper</td><td class="t">Sab 11.45 mlm</td><td class="num">7.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">427</td></tr>
-          <tr><td class="num">8</td><td>Sarapan pagi</td><td class="t">Ahad 7.15 pg</td><td class="num">10.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">610</td></tr>
-          <tr><td class="num">9</td><td>Jamuan Majlis Penutup</td><td class="t">Ahad 1.00 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
-          <tr class="grp"><td></td><td colspan="3">Jumlah — RM 119 seorang</td><td class="num">4,760</td><td class="num">1,785</td><td class="num">714</td><td class="num">549</td><td class="num">7,259</td></tr>
+          <tr><td class="num">1</td><td>Makan malam</td><td class="t">Jum 6.30 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
+          <tr><td class="num">2</td><td>Sarapan pagi</td><td class="t">Sab 7.15 pg</td><td class="num">10.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">610</td></tr>
+          <tr><td class="num">3</td><td>Makan tengah hari</td><td class="t">Sab 1.15 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
+          <tr><td class="num">4</td><td>Makan malam</td><td class="t">Sab 6.30 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
+          <tr><td class="num">5</td><td>Sarapan pagi</td><td class="t">Ahad 7.15 pg</td><td class="num">10.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">610</td></tr>
+          <tr><td class="num">6</td><td>Jamuan Majlis Penutup</td><td class="t">Ahad 1.00 ptg</td><td class="num">17.00</td><td class="num">40</td><td class="num">15</td><td class="num">6</td><td class="num">61</td><td class="num">1,037</td></tr>
+          <tr class="grp"><td></td><td colspan="3">Jumlah — RM 88 seorang</td><td class="num">3,520</td><td class="num">1,320</td><td class="num">528</td><td class="num">366</td><td class="num">5,368</td></tr>
         </tbody>
       </table>
     </div>
     <div class="cols" style="margin-top:14px">
-      <div class="card soft"><h3>Ruang untuk jimat</h3><p class="small" style="margin-bottom:0">Dua supper (RM 14) dan makan tengah hari Hari 1 (RM 17) boleh digugurkan jika peserta tiba selepas Zohor — menjimatkan RM 31 seorang, RM 1,891 untuk 61 orang. Bajet ini mengekalkan kesemuanya supaya angka yang dibentangkan ialah angka maksimum.</p></div>
+      <div class="card soft"><h3>Yang digugurkan daripada V4</h3><p class="small" style="margin-bottom:0">Makan tengah hari Hari 1 (RM 17) dan dua supper (RM 14) — RM 31 seorang, RM 1,891 untuk 61 orang. Peserta tiba selepas Solat Jumaat; supper diganti minuman sendiri. Jika mahu ditambah semula, RM 31 seorang.</p></div>
       <div class="card"><h3>Tetamu majlis penutup</h3><p class="small" style="margin-bottom:0">Perwakilan zon, veteran dan waris yang hadir majlis penutup tidak dikira dalam 61. Setiap tetamu yang disahkan sebelum 20 November dimaklumkan kepada resort pada kadar RM 17 dan ditanggung lebihan yuran; tanpa pengesahan, hidangan tidak disediakan.</p></div>
     </div>
   </div>
@@ -1505,15 +1519,15 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
   <div class="inner">
     <p class="eyebrow"><span class="n">12.6</span> Anggaran perbelanjaan</p>
     <h2>Sumber pendapatan dan berapa peserta yang diperlukan</h2>
-    <p class="sub">Pada 40 peserta, pendapatan RM 19,679 melawan kos RM 19,460 — lebihan RM 219. Dorm, dewan dan tanggungan Induk ialah kos tetap; hanya makanan peserta yang turun apabila peserta berkurang.</p>
+    <p class="sub">Pada 40 peserta, pendapatan RM 14,628 melawan kos RM 14,369 — lebihan RM 259. Dorm, dewan dan tanggungan Induk ialah kos tetap; hanya makanan peserta yang turun apabila peserta berkurang.</p>
     <div class="cols two">
       <figure style="margin:0">
         <figcaption>Sumber pendapatan · 40 peserta</figcaption>
-        <p class="fignote">Jumlah RM 19,679 berbanding kos RM 19,460.</p>
+        <p class="fignote">Jumlah RM 14,628 berbanding kos RM 14,369.</p>
         <div class="rows">
-          <div class="row"><div class="rl">Yuran program<br><span class="tiny">40 × RM 250</span></div><div class="track" title="RM 10,000"><div class="fill good" style="width:100%"><span>10,000</span></div></div></div>
-          <div class="row"><div class="rl">Bengkung &amp; Mandi Minyak<br><span class="tiny">40 × RM 130 · salur terus</span></div><div class="track" title="RM 5,200"><div class="fill" style="width:52%"><span>5,200</span></div></div></div>
-          <div class="row"><div class="rl">Peruntukan Induk<br><span class="tiny">AJK, penguji, VVIP</span></div><div class="track" title="RM 4,479"><div class="fill" style="width:44.8%"><span>4,479</span></div></div></div>
+          <div class="row"><div class="rl">Yuran program<br><span class="tiny">40 × RM 220</span></div><div class="track" title="RM 8,800"><div class="fill good" style="width:100%"><span>8,800</span></div></div></div>
+          <div class="row"><div class="rl">Mandi Minyak<br><span class="tiny">40 × RM 50 · salur terus</span></div><div class="track" title="RM 2,000"><div class="fill" style="width:22.7%"><span>2,000</span></div></div></div>
+          <div class="row"><div class="rl">Peruntukan Induk<br><span class="tiny">AJK, penguji, VVIP</span></div><div class="track" title="RM 3,828"><div class="fill" style="width:43.5%"><span>3,828</span></div></div></div>
         </div>
         <div class="legend">
           <span><i style="background:var(--good)"></i>Menampung Bahagian A dan D</span>
@@ -1524,17 +1538,17 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
         <table>
           <thead><tr><th>Peserta daftar</th><th class="num">Yuran program</th><th class="num">Kos A + D</th><th class="num">Baki</th></tr></thead>
           <tbody>
-            <tr><td>40 — penuh</td><td class="num">10,000</td><td class="num">9,781</td><td class="num" style="color:var(--good)">+219</td></tr>
-            <tr><td>38 — titik seimbang</td><td class="num">9,500</td><td class="num">9,543</td><td class="num">−43</td></tr>
-            <tr><td>35</td><td class="num">8,750</td><td class="num">9,186</td><td class="num" style="color:var(--crit)">−436</td></tr>
-            <tr><td>30</td><td class="num">7,500</td><td class="num">8,591</td><td class="num" style="color:var(--crit)">−1,091</td></tr>
-            <tr><td>25</td><td class="num">6,250</td><td class="num">7,996</td><td class="num" style="color:var(--crit)">−1,746</td></tr>
+            <tr><td>40 — penuh</td><td class="num">8,800</td><td class="num">8,541</td><td class="num" style="color:var(--good)">+259</td></tr>
+            <tr><td>38 — titik seimbang</td><td class="num">8,360</td><td class="num">8,365</td><td class="num">−5</td></tr>
+            <tr><td>35</td><td class="num">7,700</td><td class="num">8,101</td><td class="num" style="color:var(--crit)">−401</td></tr>
+            <tr><td>30</td><td class="num">6,600</td><td class="num">7,661</td><td class="num" style="color:var(--crit)">−1,061</td></tr>
+            <tr><td>25</td><td class="num">5,500</td><td class="num">7,221</td><td class="num" style="color:var(--crit)">−1,721</td></tr>
           </tbody>
         </table>
-        <p class="tiny" style="margin:10px 0 0">Kos A + D = dorm dan dewan RM 3,600 (tetap) + makanan RM 119 seorang + keperluan program RM 1,421 (tetap). Bahagian B dan C tidak berubah dengan bilangan peserta.</p>
+        <p class="tiny" style="margin:10px 0 0">Kos A + D = dorm dan dewan RM 3,600 (tetap) + makanan RM 88 seorang + keperluan program RM 1,421 (tetap). Bahagian B dan C tidak berubah dengan bilangan peserta.</p>
       </div>
     </div>
-    <div class="note" style="margin-top:14px"><b>Jika peserta kurang daripada 38</b>, AJK Pengurusan mencadangkan langkah mengikut urutan: (1) gugurkan supper dan makan tengah hari Hari 1 — jimat RM 31 seorang untuk semua 61 orang, RM 1,891; (2) jika peserta lelaki 32 ke bawah termasuk AJK dan penguji, kurangkan satu dorm — jimat RM 1,000; (3) barulah naikkan yuran atau mohon tambahan Induk. Keputusan dibuat pada T−8 minggu sebelum bayaran progresif.</div>
+    <div class="note" style="margin-top:14px"><b>Jika peserta kurang daripada 38</b>, AJK Pengurusan mencadangkan langkah mengikut urutan: (1) jika peserta lelaki 32 ke bawah termasuk AJK dan penguji, kurangkan satu dorm — jimat RM 1,000; (2) kurangkan AJK yang menginap; (3) barulah mohon tambahan Induk atau naikkan yuran. Keputusan dibuat pada T−8 minggu sebelum bayaran progresif.</div>
   </div>
 </section>
 
@@ -1543,25 +1557,25 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
   <div class="inner">
     <p class="eyebrow"><span class="n">12.7</span> Anggaran perbelanjaan</p>
     <h2>Berbanding Sesi 2025</h2>
-    <p class="sub">Angka 2026 di bawah tidak termasuk bengkung dan Mandi Minyak (RM 5,200) supaya setara dengan 2025, yang juga tidak memasukkannya. Lima belas orang lebih ramai, kos sekepala naik RM 28 kerana dewan berasingan dan hidangan resort yang lebih penuh (supper, buffet), dan pantai.</p>
+    <p class="sub">Angka 2026 di bawah tidak termasuk Mandi Minyak (RM 2,000) dan bengkung supaya setara dengan 2025. Lima belas orang lebih ramai, kos sekepala turun RM 3, yuran naik RM 10 — dan tahun ini ada pantai, dewan berhawa dingin dan bilik VVIP.</p>
     <div class="cols two">
       <figure style="margin:0">
-        <figcaption>Jumlah kos program (tanpa bengkung dan Mandi Minyak)</figcaption>
+        <figcaption>Jumlah kos program (tanpa Mandi Minyak dan bengkung)</figcaption>
         <p class="fignote">Sesi 2025 melibatkan 46 orang; Sesi 2026 melibatkan 61 orang.</p>
         <div class="rows">
-          <div class="row"><div class="rl">Sesi 2025<br><span class="tiny">46 orang · RM 206 sekepala</span></div><div class="track" title="RM 9,480"><div class="fill" style="width:66.5%"><span>9,480</span></div></div></div>
-          <div class="row"><div class="rl">Draf V3 2026<br><span class="tiny">50 orang · RM 205 sekepala</span></div><div class="track" title="RM 10,230"><div class="fill" style="width:71.7%"><span>10,230</span></div></div></div>
-          <div class="row"><div class="rl">Draf V4 2026<br><span class="tiny">61 orang · RM 234 sekepala</span></div><div class="track" title="RM 14,260"><div class="fill good" style="width:100%"><span>14,260</span></div></div></div>
+          <div class="row"><div class="rl">Sesi 2025<br><span class="tiny">46 orang · RM 206 sekepala</span></div><div class="track" title="RM 9,480"><div class="fill" style="width:76.6%"><span>9,480</span></div></div></div>
+          <div class="row"><div class="rl">Draf V4 2026<br><span class="tiny">61 orang · RM 234 sekepala</span></div><div class="track" title="RM 14,260"><div class="fill" style="width:100%"><span>14,260</span></div></div></div>
+          <div class="row"><div class="rl">Draf V5 2026<br><span class="tiny">61 orang · RM 203 sekepala</span></div><div class="track" title="RM 12,369"><div class="fill good" style="width:86.7%"><span>12,369</span></div></div></div>
         </div>
       </figure>
       <figure style="margin:0">
         <figcaption>Permohonan peruntukan Induk</figcaption>
-        <p class="fignote">Siling yang dimaklumkan sebelum ini ialah RM 3,000; V4 memohon RM 4,479 dengan justifikasi di bawah.</p>
+        <p class="fignote">Siling yang dimaklumkan sebelum ini ialah RM 3,000; V5 memohon RM 3,828.</p>
         <div class="chartwrap">
           <div class="rows">
             <div class="row"><div class="rl">Sesi 2025</div><div class="track" title="RM 3,000"><div class="fill" style="width:67%"><span>3,000</span></div></div></div>
-            <div class="row"><div class="rl">Draf V3 2026</div><div class="track" title="RM 2,730"><div class="fill" style="width:61%"><span>2,730</span></div></div></div>
-            <div class="row"><div class="rl">Draf V4 2026</div><div class="track" title="RM 4,479 — melepasi siling RM 3,000 sebanyak RM 1,479"><div class="fill crit" style="width:100%"><span>4,479</span></div>
+            <div class="row"><div class="rl">Draf V4 2026</div><div class="track" title="RM 4,479"><div class="fill crit" style="width:100%"><span>4,479</span></div></div></div>
+            <div class="row"><div class="rl">Draf V5 2026</div><div class="track" title="RM 3,828 — melepasi siling RM 3,000 sebanyak RM 828"><div class="fill crit" style="width:85.5%"><span>3,828</span></div>
               <div class="thresh" style="left:67%"></div><div class="threshlab" style="left:67%">Siling RM 3,000</div></div></div>
           </div>
         </div>
@@ -1571,9 +1585,20 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
         </div>
       </figure>
     </div>
+    <div class="tw" style="margin-top:14px">
+      <table>
+        <thead><tr><th>Seorang peserta</th><th class="num">2025 Savanna Hill</th><th class="num">2026 V5 Felda Tanjung Leman</th></tr></thead>
+        <tbody>
+          <tr><td>Tempat dan makan</td><td class="num">172 (pakej)</td><td class="num">178 (dorm 65 + makan 88 + dewan 25)</td></tr>
+          <tr><td>Barang peserta dan penampan</td><td class="num">~38</td><td class="num">42</td></tr>
+          <tr class="tot"><td>Yuran program</td><td class="num">210</td><td class="num">220</td></tr>
+          <tr><td>Dikutip berasingan</td><td class="num">bengkung</td><td class="num">Mandi Minyak 50 · bengkung 80</td></tr>
+        </tbody>
+      </table>
+    </div>
     <div class="card adat" style="margin-top:14px">
-      <h3>Justifikasi permohonan RM 4,479</h3>
-      <p class="small" style="margin-bottom:0">Dalam Sesi 2025 dan Draf V3, peruntukan Induk menampung sebahagian kos peserta. Dalam V4, peserta menanggung kos mereka sepenuhnya dan Induk hanya menanggung <strong>orang yang hadir atas urusan pertubuhan</strong>: 15 AJK dan penguji (RM 2,785), 6 VVIP (RM 1,394) dan saguhati penguji (RM 300). Jika Induk mengekalkan siling RM 3,000, baki RM 1,479 perlu ditampung dengan menggugurkan supper dan makan tengah hari Hari 1 (RM 1,891) — Bahagian 12.5.</p>
+      <h3>Justifikasi permohonan RM 3,828</h3>
+      <p class="small" style="margin-bottom:0">Peserta menanggung kos mereka sepenuhnya; Induk hanya menanggung <strong>orang yang hadir atas urusan pertubuhan</strong>: 15 AJK dan penguji (RM 2,320), 6 VVIP (RM 1,208) dan saguhati penguji (RM 300). Jika Induk mengekalkan siling RM 3,000, baki RM 828 ditampung dengan mengurangkan AJK yang menginap kepada 6 orang (jimat 3 × RM 88 makanan dan berkongsi dorm) atau lebihan yuran RM 259 ditambah sumbangan zon.</p>
     </div>
   </div>
 </section>
@@ -1659,8 +1684,8 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
       <div class="card">
         <h3>E · Kewangan <span class="who">3</span></h3>
         <ul class="small" style="margin-bottom:0">
-          <li>Kelulusan Induk RM 4,479, atau siling RM 3,000 dengan hidangan dipangkas</li>
-          <li>Pengesahan yuran RM 380 dan sama ada Mandi Minyak wajib untuk semua peserta</li>
+          <li>Kelulusan Induk RM 3,828, atau siling RM 3,000 dengan AJK menginap dikurangkan</li>
+          <li>Pengesahan yuran RM 220 + RM 50 Mandi Minyak, dan bengkung RM 80 dikutip selepas keputusan</li>
           <li>Sumber tunai deposit 50% sebelum kutipan yuran mencukupi</li>
         </ul>
       </div>
@@ -1677,9 +1702,9 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
       <div>
         <ol class="steps" style="margin:0 0 14px; font-size:14px">
           <li><span>Kelulusan untuk melaksanakan Perkampungan Perdana Panglima Sesi 2026 pada 4 – 6 Disember 2026 di FELDA Residence Tanjung Leman mengikut kertas kerja ini.</span></li>
-          <li><span>Peruntukan Induk sebanyak <strong class="mono">RM 4,479</strong> bagi menanggung 15 AJK dan penguji, 6 VVIP dan saguhati penguji; atau <strong class="mono">RM 3,000</strong> dengan supper dan makan tengah hari Hari 1 digugurkan.</span></li>
-          <li><span>Pengesahan yuran peserta <strong class="mono">RM 380</strong> (RM 250 program, RM 80 bengkung, RM 50 Mandi Minyak) dan kapasiti maksimum 40 peserta.</span></li>
-          <li><span>Surat panggilan rasmi kepada semua zon dan negeri, dengan makluman pengangkutan diuruskan zon dan pakaian kapas diwajibkan bagi malam adat.</span></li>
+          <li><span>Peruntukan Induk sebanyak <strong class="mono">RM 3,828</strong> bagi menanggung 15 AJK dan penguji, 6 VVIP dan saguhati penguji; atau <strong class="mono">RM 3,000</strong> dengan AJK yang menginap dikurangkan.</span></li>
+          <li><span>Pengesahan yuran program <strong class="mono">RM 220</strong> dan Mandi Minyak RM 50 (peserta bayar RM 270), bengkung RM 80 dikutip selepas keputusan, dan kapasiti maksimum 40 peserta.</span></li>
+          <li><span>Surat panggilan rasmi kepada semua zon dan negeri, dengan makluman pengangkutan diuruskan zon, makan tengah hari Hari 1 di zon, dan pakaian kapas diwajibkan bagi malam adat.</span></li>
           <li><span>Keputusan Majlis Jurulatih mengenai silibus, penguji dan borang penilaian (Bahagian 9.0) selewat-lewatnya <strong>23 Oktober 2026</strong>.</span></li>
           <li><span>Ketetapan Majlis Adat mengenai perkara di Bahagian 10.0 dan kekananan VVIP pada tarikh yang sama.</span></li>
           <li><span>Perasmi penutup dan senarai jemputan rasmi Majlis Penutup, termasuk veteran pertubuhan, disahkan Induk sebelum surat jemputan dikeluarkan pada 6 November.</span></li>
@@ -1687,15 +1712,15 @@ figcaption{font-size:13px; font-weight:600; margin-bottom:2px}
       </div>
       <div class="card pick">
         <h3>Risiko yang perlu diketahui Induk</h3>
-        <p class="small">Bajet seimbang pada <strong>38 peserta ke atas</strong>. Dorm, dewan dan tanggungan Induk ialah kos tetap; setiap peserta yang tidak daftar mengurangkan pendapatan RM 250 tetapi hanya menjimatkan RM 119 makanan — lubang bersih RM 131 seorang.</p>
-        <p class="small" style="margin-bottom:0">Pada 30 peserta, kekurangan ialah RM 1,091 dan ditampung dengan menggugurkan supper dan makan tengah hari Hari 1. Deposit 50% kepada resort tidak dikembalikan, jadi bilangan peserta mesti muktamad sebelum bayaran progresif pada 13 November.</p>
+        <p class="small">Bajet seimbang pada <strong>38 peserta ke atas</strong>. Dorm, dewan dan tanggungan Induk ialah kos tetap; setiap peserta yang tidak daftar mengurangkan pendapatan RM 220 tetapi hanya menjimatkan RM 88 makanan — lubang bersih RM 132 seorang.</p>
+        <p class="small" style="margin-bottom:0">Pada 30 peserta, kekurangan ialah RM 1,061 dan ditampung dengan mengurangkan satu dorm dan AJK yang menginap. Deposit 50% kepada resort tidak dikembalikan, jadi bilangan peserta mesti muktamad sebelum bayaran progresif pada 13 November.</p>
       </div>
     </div>
     <p class="small" style="margin-top:16px;padding-top:14px;border-top:1px solid var(--line)">Semoga program ini mendapat kerjasama semua pihak agar berjalan lancar dan jayanya, serta mengukuhkan lagi hubungan silaturahim antara warga Silat Seni Gayung Cula Sakti Malaysia yang terlibat.</p>
     <div class="covermeta" style="margin-top:14px">
       <span>Disediakan oleh <b>Penyelaras Program, AJK Pengurusan Zon Johor Bahru</b></span>
       <span>Untuk disahkan oleh <b>Pengerusi PSSGCSM</b></span>
-      <span>Draf V4 · <b>10 September 2026</b></span>
+      <span>Draf V5 · <b>10 September 2026</b></span>
     </div>
   </div>
 </section>
