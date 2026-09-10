@@ -174,15 +174,15 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
         <h2>Hidangan &amp; dewan</h2>
         <p class="hint">Resort mengenakan kadar sehidangan seorang, jadi setiap hidangan boleh dibuang.</p>
         <div class="stack" style="gap:2px">
-          <label class="chk"><input type="checkbox" id="m_l1"> Hari 1 · makan tengah hari <small>RM 17</small></label>
-          <label class="chk"><input type="checkbox" id="m_d1"> Hari 1 · makan malam <small>RM 17</small></label>
-          <label class="chk"><input type="checkbox" id="m_s1"> Hari 1 · supper <small>RM 7</small></label>
-          <label class="chk"><input type="checkbox" id="m_b2"> Hari 2 · sarapan <small>RM 10</small></label>
-          <label class="chk"><input type="checkbox" id="m_l2"> Hari 2 · makan tengah hari <small>RM 17</small></label>
-          <label class="chk"><input type="checkbox" id="m_d2"> Hari 2 · makan malam <small>RM 17</small></label>
-          <label class="chk"><input type="checkbox" id="m_s2"> Hari 2 · supper <small>RM 7</small></label>
-          <label class="chk"><input type="checkbox" id="m_b3"> Hari 3 · sarapan <small>RM 10</small></label>
-          <label class="chk"><input type="checkbox" id="m_l3"> Hari 3 · jamuan penutup <small>RM 17</small></label>
+          <label class="chk"><input type="checkbox" id="m_l1"> Hari 1 · makan tengah hari <small class="rlL">RM 17</small></label>
+          <label class="chk"><input type="checkbox" id="m_d1"> Hari 1 · makan malam <small class="rlL">RM 17</small></label>
+          <label class="chk"><input type="checkbox" id="m_s1"> Hari 1 · supper <small class="rsL">RM 7</small></label>
+          <label class="chk"><input type="checkbox" id="m_b2"> Hari 2 · sarapan <small class="rbL">RM 10</small></label>
+          <label class="chk"><input type="checkbox" id="m_l2"> Hari 2 · makan tengah hari <small class="rlL">RM 17</small></label>
+          <label class="chk"><input type="checkbox" id="m_d2"> Hari 2 · makan malam <small class="rlL">RM 17</small></label>
+          <label class="chk"><input type="checkbox" id="m_s2"> Hari 2 · supper <small class="rsL">RM 7</small></label>
+          <label class="chk"><input type="checkbox" id="m_b3"> Hari 3 · sarapan <small class="rbL">RM 10</small></label>
+          <label class="chk"><input type="checkbox" id="m_l3"> Hari 3 · jamuan penutup <small class="rlL">RM 17</small></label>
           <div class="sep" style="margin:8px 0"></div>
           <div class="ctl"><label for="dh">Dewan Tenggaroh 5<small>hari × RM <span id="dewLab">500</span></small></label><input type="number" id="dh" min="0" max="3" step="1"></div>
           <div class="ctl"><label for="mlm">Bilangan malam</label><input type="number" id="mlm" min="1" max="4" step="1"></div>
@@ -192,7 +192,8 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
       <section class="panel">
         <h2>Yuran &amp; sumber</h2>
         <div class="stack">
-          <div class="ctl"><label for="fee">Yuran program<small>seorang peserta</small></label><input type="number" id="fee" min="0" step="5"></div>
+          <div class="ctl"><label for="feemode">Cara tetapkan yuran<small>tetap: penampan = baki · ikut kos: yuran = kos dibundarkan ke RM 10</small></label><select id="feemode"><option value="tetap">Tetap</option><option value="auto">Ikut kos</option></select></div>
+          <div class="ctl"><label for="fee">Yuran program<small id="feeHint">seorang peserta</small></label><input type="number" id="fee" min="0" step="5"></div>
           <div class="ctl"><label for="belt">Bengkung<small>0 = dikutip berasingan selepas keputusan (RM 80)</small></label><input type="number" id="belt" min="0" step="5"></div>
           <div class="ctl"><label for="oil">Mandi Minyak<small>disalurkan terus</small></label><input type="number" id="oil" min="0" step="5"></div>
           <div class="sep"></div>
@@ -266,7 +267,7 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
 (function(){
   var D = {pl:32,pp:8,ajk:9,pg:6,ajkp:0,share:0,vv:6,vvper:3,vvtype:170,
     m_l1:0,m_d1:1,m_s1:0,m_b2:1,m_l2:1,m_d2:1,m_s2:0,m_b3:1,m_l3:1,dh:2,mlm:2,
-    fee:220,belt:0,oil:50,induk:'',
+    fee:220,feemode:'tetap',belt:0,oil:50,induk:'',
     r16:500,r8:300,rdew:500,rb:10,rl:17,rs:7,sag:50,sij:3,cen:40,lan:3,ban:120,buk:150,air:150,gel:1,gelr:200};
   var S = {};
   var $ = function(id){return document.getElementById(id)};
@@ -287,7 +288,7 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     Object.keys(D).forEach(function(k){
       var el=$(k); if(!el) return;
       if(el.type==='checkbox'){ el.checked=!!S[k]; el.addEventListener('change',function(){S[k]=el.checked?1:0; update();}); }
-      else { el.value=S[k]; el.addEventListener('input',function(){ S[k]= (k==='induk' && el.value==='') ? '' : +el.value; var r=$(k+'_r'); if(r) r.value=el.value; update(); }); }
+      else { el.value=S[k]; el.addEventListener('input',function(){ S[k]= (k==='induk' && el.value==='') ? '' : (isNaN(+el.value)?el.value:+el.value); var r=$(k+'_r'); if(r) r.value=el.value; update(); }); }
       var r=$(k+'_r'); if(r){ r.value=S[k]; r.addEventListener('input',function(){ S[k]=+r.value; el.value=r.value; update(); }); }
     });
     $('btnReset').addEventListener('click',function(){ S=Object.assign({},D); Object.keys(D).forEach(function(k){var el=$(k); if(!el) return; if(el.type==='checkbox') el.checked=!!S[k]; else el.value=S[k]; var r=$(k+'_r'); if(r) r.value=S[k];}); history.replaceState(null,'',location.pathname); update(); });
@@ -336,6 +337,8 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     var vvRooms=s.vv>0?Math.ceil(s.vv/s.vvper):0; var vvRoomCost=vvRooms*s.vvtype*nights;
     var dewan=s.dh*s.rdew;
     var A = dormPeserta + peserta*mealPP + dewan;
+    var D0 = (peserta+s.pg)*s.sij + (s.vv+s.pg)*s.cen + pax*s.lan + s.ban + s.buk + s.air + (s.gel? s.gelr:0);
+    var fee = (s.feemode==='auto' && peserta>0) ? Math.ceil((A+D0)/peserta/10)*10 : s.fee;
     var B = peserta*(s.belt+s.oil);
     var C = dormStaff + staff*mealPP + vvRoomCost + s.vv*mealPP + s.pg*s.sag;
     var gel = s.gel? s.gelr:0;
@@ -343,11 +346,11 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     var total=A+B+C+D_;
     var indukAuto = C;
     var induk = (s.induk===''||s.induk===null||isNaN(+s.induk)) ? indukAuto : +s.induk;
-    var incFee=peserta*s.fee, incPass=peserta*(s.belt+s.oil);
+    var incFee=peserta*fee, incPass=peserta*(s.belt+s.oil);
     var bal = incFee + incPass + induk - total;
     var perPesertaVenue = peserta? (A/peserta):0;
     var breakEvenFee = peserta? ((A+D_+C-induk)/peserta):0;
-    return {mealPP:mealPP,nMeals:nMeals,peserta:peserta,staff:staff,staffM:staffM,staffF:staffF,pax:pax,aM:aM,aF:aF,aS:aS,dormM:dormM,dormF:dormF,dormS:dormS,dormPeserta:dormPeserta,dormStaff:dormStaff,vvRooms:vvRooms,vvRoomCost:vvRoomCost,dewan:dewan,A:A,B:B,C:C,D:D_,gel:gel,total:total,induk:induk,indukAuto:indukAuto,incFee:incFee,incPass:incPass,bal:bal,perPesertaVenue:perPesertaVenue,breakEvenFee:breakEvenFee,nights:nights};
+    return {fee:fee,mealPP:mealPP,nMeals:nMeals,peserta:peserta,staff:staff,staffM:staffM,staffF:staffF,pax:pax,aM:aM,aF:aF,aS:aS,dormM:dormM,dormF:dormF,dormS:dormS,dormPeserta:dormPeserta,dormStaff:dormStaff,vvRooms:vvRooms,vvRoomCost:vvRoomCost,dewan:dewan,A:A,B:B,C:C,D:D_,gel:gel,total:total,induk:induk,indukAuto:indukAuto,incFee:incFee,incPass:incPass,bal:bal,perPesertaVenue:perPesertaVenue,breakEvenFee:breakEvenFee,nights:nights};
   }
 
   function dormTxt(a){ var p=[]; if(a.u16) p.push(a.u16+' × 16 katil'); if(a.u8) p.push(a.u8+' × 8 katil'); return p.length?p.join(', '):'tiada'; }
@@ -394,7 +397,7 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     var ratio = (s.pl+s.pp)? s.pl/(s.pl+s.pp) : 0.8;
     var start=Math.max(4, Math.floor(maxN*0.35));
     for(var n=start;n<=maxN;n+=2){
-      var t=Object.assign({},s); t.pl=Math.round(n*ratio); t.pp=n-t.pl; t.induk=s.induk;
+      var t=Object.assign({},s); t.pl=Math.round(n*ratio); t.pp=n-t.pl; t.induk=s.induk; t.feemode='tetap'; t.fee=r.fee;
       var c=compute(t); pts.push({n:n,bal:c.bal});
     }
     var W=760,H=240,L=54,R=14,T=16,Bm=34; var w=W-L-R, h=H-T-Bm;
@@ -416,30 +419,32 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
 
   function update(){
     var r=compute(); save();
+    var feeEl=$('fee'); feeEl.disabled=(S.feemode==='auto'); feeEl.value=r.fee; $('feeHint').textContent = S.feemode==='auto' ? 'dikira automatik daripada kos' : 'seorang peserta';
     var s=S;
     $('k_pax').textContent=r.pax; $('k_paxn').textContent=r.peserta+' peserta · '+r.staff+' AJK & penguji · '+s.vv+' VVIP';
     $('k_tot').textContent=fmt(r.total); $('k_totn').textContent='termasuk RM '+fmt(r.B)+(s.belt>0?' bengkung & Mandi Minyak':' Mandi Minyak (salur terus)');
-    var nP=Math.max(1,r.peserta), dormPP=r.dormPeserta/nP, dewPP=r.dewan/nP, dPP=r.D/nP, pen=s.fee-(r.perPesertaVenue+dPP);
+    var nP=Math.max(1,r.peserta), dormPP=r.dormPeserta/nP, dewPP=r.dewan/nP, dPP=r.D/nP, pen=r.fee-(r.perPesertaVenue+dPP);
     $('k_pp').textContent=fmt(r.perPesertaVenue); $('k_ppn').textContent='tidur '+fmt(dormPP)+' + makan '+fmt(r.mealPP)+' + dewan '+fmt(dewPP);
-    $('k_yp').textContent=fmt(s.fee); $('k_ypn').textContent='tempat '+fmt(r.perPesertaVenue)+' + barang '+fmt(dPP)+(pen>=0?' + penampan '+fmt(pen):' — kurang '+fmt(-pen));
-    $('k_fee').textContent=fmt(s.fee+s.belt+s.oil); $('k_feen').textContent='yuran '+fmt(s.fee)+' + Mandi Minyak '+fmt(s.oil)+(s.belt>0?' + bengkung '+fmt(s.belt):' · bengkung RM 80 kemudian');
+    $('k_yp').textContent=fmt(r.fee); $('k_ypn').textContent='tempat '+fmt(r.perPesertaVenue)+' + barang '+fmt(dPP)+(pen>=0?' + penampan '+fmt(pen):' — kurang '+fmt(-pen));
+    $('k_fee').textContent=fmt(r.fee+s.belt+s.oil); $('k_feen').textContent='yuran '+fmt(r.fee)+' + Mandi Minyak '+fmt(s.oil)+(s.belt>0?' + bengkung '+fmt(s.belt):' · bengkung RM 80 kemudian');
     $('k_induk').textContent=fmt(r.induk); $('k_indukn').textContent=(s.induk===''?'ikut kos AJK, penguji & VVIP':'ditetapkan · kos sebenar RM '+fmt(r.indukAuto));
     $('k_bal').textContent=fmt(r.bal);
     var tb=$('t_bal'); tb.classList.remove('good','bad'); tb.classList.add(r.bal>=0?'good':'bad');
     $('k_baln').textContent= r.bal>=0 ? 'lebihan · yuran titik seimbang RM '+fmt(r.breakEvenFee) : 'kekurangan · yuran perlu RM '+fmt(r.breakEvenFee)+' atau tambah '+fmt(Math.abs(r.bal))+' dari Induk';
     $('shareNote').textContent = s.share ? 'jimat dorm' : '';
+    document.querySelectorAll('.rlL').forEach(function(e){e.textContent='RM '+fmt(s.rl)}); document.querySelectorAll('.rbL').forEach(function(e){e.textContent='RM '+fmt(s.rb)}); document.querySelectorAll('.rsL').forEach(function(e){e.textContent='RM '+fmt(s.rs)});
     $('sagLab').textContent=s.sag; $('dewLab').textContent=s.rdew; $('gelLab').textContent=s.gelr;
 
     // resit seorang peserta
     (function(){
       var n=Math.max(1,r.peserta);
       var parts=[['Tidur',r.dormPeserta/n,'rs1'],['Makan',r.mealPP,'rs2'],['Dewan',r.dewan/n,'rs3'],['Barang',r.D/n,'rs4']];
-      var used=parts.reduce(function(a,p){return a+p[1]},0); var pen=s.fee-used;
+      var used=parts.reduce(function(a,p){return a+p[1]},0); var pen=r.fee-used;
       if(pen>=0) parts.push(['Penampan',pen,'rs5']); else parts.push(['Kurang',-pen,'rs6']);
       var tot=parts.reduce(function(a,p){return a+p[1]},0)||1, h='';
       parts.forEach(function(p){ var w=p[1]/tot*100; if(p[1]<=0) return; h+='<div class="seg '+p[2]+'" style="width:'+w.toFixed(1)+'%" title="'+p[0]+' RM '+fmt(p[1])+'"><b>'+fmt(p[1])+'</b>'+(w>9?'<span>'+p[0]+'</span>':'')+'</div>'; });
       $('resit').innerHTML=h;
-      $('resitn').textContent='Yuran program RM '+fmt(s.fee)+' = tidur RM '+fmt(r.dormPeserta/n)+' + makan RM '+fmt(r.mealPP)+' ('+r.nMeals+' hidangan) + dewan RM '+fmt(r.dewan/n)+' + barang RM '+fmt(r.D/n)+(pen>=0?' + penampan RM '+fmt(pen):' — kekurangan RM '+fmt(-pen)+' seorang')+'. Dikutip berasingan: Mandi Minyak RM '+fmt(s.oil)+(s.belt>0?', bengkung RM '+fmt(s.belt):'; bengkung RM 80 selepas keputusan')+'.';
+      $('resitn').textContent='Yuran program RM '+fmt(r.fee)+' = tidur RM '+fmt(r.dormPeserta/n)+' + makan RM '+fmt(r.mealPP)+' ('+r.nMeals+' hidangan) + dewan RM '+fmt(r.dewan/n)+' + barang RM '+fmt(r.D/n)+(pen>=0?' + penampan RM '+fmt(pen):' — kekurangan RM '+fmt(-pen)+' seorang')+'. Dikutip berasingan: Mandi Minyak RM '+fmt(s.oil)+(s.belt>0?', bengkung RM '+fmt(s.belt):'; bengkung RM 80 selepas keputusan')+'.';
     })();
 
     $('dorms').innerHTML=dormCards(r);
@@ -473,7 +478,7 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     $('tbl').querySelector('tbody').innerHTML=t;
 
     var u='';
-    u+='<tr><td>Yuran program</td><td class="dim">'+r.peserta+' × RM '+fmt(s.fee)+'</td><td class="num">'+fmt(r.incFee)+'</td></tr>';
+    u+='<tr><td>Yuran program</td><td class="dim">'+r.peserta+' × RM '+fmt(r.fee)+'</td><td class="num">'+fmt(r.incFee)+'</td></tr>';
     u+='<tr><td>Bengkung & Mandi Minyak (salur terus)</td><td class="dim">'+r.peserta+' × RM '+fmt(s.belt+s.oil)+'</td><td class="num">'+fmt(r.incPass)+'</td></tr>';
     u+='<tr><td>Peruntukan Induk</td><td class="dim">'+(s.induk===''?'menampung Bahagian C':'ditetapkan')+'</td><td class="num">'+fmt(r.induk)+'</td></tr>';
     u+='<tr class="grp"><td>Jumlah pendapatan</td><td></td><td class="num">'+fmt(r.incFee+r.incPass+r.induk)+'</td></tr>';
