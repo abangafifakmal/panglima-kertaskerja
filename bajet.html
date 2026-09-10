@@ -63,7 +63,7 @@ details.panel .body{padding:0 18px 16px}
 .grp{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);font-weight:600;margin:8px 0 2px}
 
 /* KPI */
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
 .tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 15px;transition:background .25s}
 .tile .lab{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:7px}
 .tile .val{font-family:Bitter,Georgia,serif;font-weight:700;font-size:28px;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;transition:color .25s}
@@ -229,8 +229,9 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
       <div class="tiles" id="kpi">
         <div class="tile"><div class="lab">Kehadiran</div><div class="val" id="k_pax">—</div><div class="note" id="k_paxn"></div></div>
         <div class="tile"><div class="lab">Jumlah kos</div><div class="val"><small>RM</small><span id="k_tot">—</span></div><div class="note" id="k_totn"></div></div>
-        <div class="tile"><div class="lab">Kos tempat seorang peserta</div><div class="val"><small>RM</small><span id="k_pp">—</span></div><div class="note">dorm · hidangan · dewan</div></div>
-        <div class="tile"><div class="lab">Peserta bayar</div><div class="val"><small>RM</small><span id="k_fee">—</span></div><div class="note" id="k_feen"></div></div>
+        <div class="tile"><div class="lab">1 · Kos tempat seorang</div><div class="val"><small>RM</small><span id="k_pp">—</span></div><div class="note" id="k_ppn">dorm + makan + dewan</div></div>
+        <div class="tile"><div class="lab">2 · Yuran program</div><div class="val"><small>RM</small><span id="k_yp">—</span></div><div class="note" id="k_ypn"></div></div>
+        <div class="tile"><div class="lab">3 · Peserta bayar</div><div class="val"><small>RM</small><span id="k_fee">—</span></div><div class="note" id="k_feen"></div></div>
         <div class="tile hi"><div class="lab">Mohon Induk</div><div class="val"><small>RM</small><span id="k_induk">—</span></div><div class="note" id="k_indukn"></div></div>
         <div class="tile" id="t_bal"><div class="lab">Baki</div><div class="val"><small>RM</small><span id="k_bal">—</span></div><div class="note" id="k_baln"></div></div>
       </div>
@@ -417,9 +418,11 @@ h2.sh{font-family:Bitter,Georgia,serif;font-size:17px;margin:6px 0 -6px;font-wei
     var r=compute(); save();
     var s=S;
     $('k_pax').textContent=r.pax; $('k_paxn').textContent=r.peserta+' peserta · '+r.staff+' AJK & penguji · '+s.vv+' VVIP';
-    $('k_tot').textContent=fmt(r.total); $('k_totn').textContent='termasuk RM '+fmt(r.B)+' bengkung & Mandi Minyak';
-    $('k_pp').textContent=fmt(r.perPesertaVenue);
-    $('k_fee').textContent=fmt(s.fee+s.belt+s.oil); $('k_feen').textContent='RM '+fmt(s.fee)+' program + RM '+fmt(s.belt)+' bengkung + RM '+fmt(s.oil)+' minyak';
+    $('k_tot').textContent=fmt(r.total); $('k_totn').textContent='termasuk RM '+fmt(r.B)+(s.belt>0?' bengkung & Mandi Minyak':' Mandi Minyak (salur terus)');
+    var nP=Math.max(1,r.peserta), dormPP=r.dormPeserta/nP, dewPP=r.dewan/nP, dPP=r.D/nP, pen=s.fee-(r.perPesertaVenue+dPP);
+    $('k_pp').textContent=fmt(r.perPesertaVenue); $('k_ppn').textContent='tidur '+fmt(dormPP)+' + makan '+fmt(r.mealPP)+' + dewan '+fmt(dewPP);
+    $('k_yp').textContent=fmt(s.fee); $('k_ypn').textContent='tempat '+fmt(r.perPesertaVenue)+' + barang '+fmt(dPP)+(pen>=0?' + penampan '+fmt(pen):' — kurang '+fmt(-pen));
+    $('k_fee').textContent=fmt(s.fee+s.belt+s.oil); $('k_feen').textContent='yuran '+fmt(s.fee)+' + Mandi Minyak '+fmt(s.oil)+(s.belt>0?' + bengkung '+fmt(s.belt):' · bengkung RM 80 kemudian');
     $('k_induk').textContent=fmt(r.induk); $('k_indukn').textContent=(s.induk===''?'ikut kos AJK, penguji & VVIP':'ditetapkan · kos sebenar RM '+fmt(r.indukAuto));
     $('k_bal').textContent=fmt(r.bal);
     var tb=$('t_bal'); tb.classList.remove('good','bad'); tb.classList.add(r.bal>=0?'good':'bad');
